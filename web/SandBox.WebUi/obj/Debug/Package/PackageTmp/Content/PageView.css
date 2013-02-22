@@ -1,0 +1,142 @@
+﻿#page_header{
+	background-color: white;
+	padding: 3px 5px;
+	color:black;
+	font: 19px Arial, Helvetica, sans-serif;
+	margin-left: 5px;
+	margin-top: 5px; 
+}
+
+.page_table
+{
+    background-color: white;
+    padding: 5px 18px;
+    color:black;
+}
+
+table.form{
+	border:0px;
+	border-collapse:collapse;
+	margin-left: 18px;
+	margin-top: 20px;
+}   
+
+table.panel{
+	border:0px;
+	border-collapse:collapse;
+	width:100%;
+}
+	table.panel tr{
+		border:0px;
+	}
+	
+	table.panel td{	
+		padding:3px;
+	}
+
+	table.panel td.panel-left{
+		width:50%;
+		background-color:white;
+	}
+
+	table.panel td.panel-center{
+		width:10px;
+		border:0px;
+		background:none;
+	}
+	table.panel td.panel-right{
+		width:50%;
+		background-color:white;
+	}
+
+table.linktable{
+	border-collapse:collapse;
+	width:100%;	
+	background-color: lightgray;
+}
+	/*Разделитель между строк*/
+	table.linktable tr{
+		border-top:1px solid gray;
+	}
+	table.linktable tr:first-child{
+		border-top:none;
+	}
+
+	/*Все вправо, первая влево*/
+	table.linktable td{
+		padding: 1px 3px;
+		vertical-align:middle;
+		text-align:right;
+	}
+	table.linktable td:first-child{
+		text-align:left;
+	}
+	
+.linktable-label{
+	text-decoration:underline;
+}
+.panel-label{
+	color:black;
+	font-weight:bolder;
+	font: 15px Arial, Helvetica, sans-serif;
+	margin-left: 15px;
+	margin-top: 5px;
+}
+.panel-text{
+	background-color: white;
+	font:italic;
+	margin-left: 15px;
+	font: 13px Arial, Helvetica, sans-serif;
+	color: GrayText;
+}
+.panel-text-nomargin{
+	background-color: white;
+	font:italic;
+	font: 11px Arial, Helvetica, sans-serif;
+	color: GrayText;
+}
+
+.panel-text a{
+	background-color: white;
+	font: italic;
+	font: 11px Arial, Helvetica, sans-serif;
+}
+
+.simple_text {
+	background-color: white;
+	font: italic;
+	font: 11px Arial, Helvetica, sans-serif;
+}
+
+
+.table_header{
+	background-color: white;
+	font:italic;
+	margin-left: 5px;
+	font: 12px Arial, Helvetica, sans-serif;
+	color: GrayText;
+}
+
+.table_text{
+	background-color: white;
+	font:italic;
+	margin-left: 15px;
+	font: 11px Arial, Helvetica, sans-serif;
+	color: Black;
+}
+
+
+.tbl_header{
+	font: 17px Arial, Helvetica, sans-serif;
+}
+
+.Header {
+   padding-left: 30px;
+}
+.Header div {
+   padding-right: 30px;
+}
+.Header div div {
+   padding: 0;
+   height: 30px;
+}

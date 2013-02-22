@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<items> 
+  <item Text="Информация" NavigateUrl="~/Pages/Information/Index.aspx" />
+  <item Text="Исследования" NavigateUrl="~/Pages/Research/Index.aspx" />
+</items>
