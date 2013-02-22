@@ -168,8 +168,14 @@ namespace SandBox.WebUi
 
                 Vm vm = VmManager.GetVmByMac(envMac);
                 if (vm == null) return;
-
                 VmManager.UpdateEnvData(vm.Id, envId, envIp);
+
+                Research r = ResearchManager.GetResearchByVmName(vm.Name);
+                if (r != null)
+                {
+                    Current.StartResearch(String.Format("{0}", r.Id));
+                }
+               
             }
             catch (Exception)
             {
@@ -242,11 +248,15 @@ namespace SandBox.WebUi
 
             Int32 Length = Convert.ToInt32(parameters[0][0]);
             String machineName = Encoding.UTF8.GetString(parameters[1], 0, Length);
+            Byte[] mac = parameters[2];
             Vm vm = VmManager.GetVm(machineName);
             VmManager.UpdateVmState(machineName, (Int32)VmManager.State.STOPPED);
             if (ResearchManager.GetResearchByVmName(machineName) != null)
             {
                 Resources.StartVm(vm.Id);
+                VmManager.UpdateVmState(machineName, (Int32)VmManager.State.STARTED);
+                VmManager.UpdateVmEnvMac(vm.Id, DataUtils.ByteArrayToHexString(mac));
+               
             }
 
         }

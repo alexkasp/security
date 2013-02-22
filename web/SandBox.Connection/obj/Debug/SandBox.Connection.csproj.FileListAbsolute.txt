@@ -61,3 +61,10 @@ D:\work\votchina\web\SandBox.Connection\bin\Debug\SandBox.Data.pdb
 D:\work\votchina\web\SandBox.Connection\obj\Debug\ResolveAssemblyReference.cache
 D:\work\votchina\web\SandBox.Connection\obj\Debug\SandBox.Connection.dll
 D:\work\votchina\web\SandBox.Connection\obj\Debug\SandBox.Connection.pdb
+D:\work\git\votchina\web\SandBox.Connection\bin\Debug\SandBox.Connection.dll
+D:\work\git\votchina\web\SandBox.Connection\bin\Debug\SandBox.Connection.pdb
+D:\work\git\votchina\web\SandBox.Connection\bin\Debug\SandBox.Data.dll
+D:\work\git\votchina\web\SandBox.Connection\bin\Debug\SandBox.Data.pdb
+D:\work\git\votchina\web\SandBox.Connection\obj\Debug\ResolveAssemblyReference.cache
+D:\work\git\votchina\web\SandBox.Connection\obj\Debug\SandBox.Connection.dll
+D:\work\git\votchina\web\SandBox.Connection\obj\Debug\SandBox.Connection.pdb

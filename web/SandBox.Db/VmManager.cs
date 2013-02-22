@@ -16,6 +16,7 @@ namespace SandBox.Db
             STARTING = 5,
             UNAVAILABLE = 6,
             ERROR = 7,
+            RESEARCHING = 8
         }
 
         public static stats GetFullStats()
@@ -266,6 +267,30 @@ namespace SandBox.Db
             {
                 var names = from v in db.Vms
                             orderby v.Name
+                            select v.Name;
+                return names.ToList();
+            }
+        }
+        public static List<String> GetVmReadyForResearch()
+        {
+            using (SandBoxDataContext db = new SandBoxDataContext())
+            {
+                var names = from v in db.Vms
+                            orderby v.Name
+                            where v.State != Convert.ToInt32(VmManager.State.RESEARCHING)
+                            select v.Name;
+                return names.ToList();
+            }
+        }
+
+        public static List<String> GetVmReadyForResearch(Int32 userId)
+        {
+            using (SandBoxDataContext db = new SandBoxDataContext())
+            {
+                var names = from v in db.Vms
+                            orderby v.Name
+                            where v.State != Convert.ToInt32(VmManager.State.RESEARCHING)
+                            where v.CreatedBy == userId
                             select v.Name;
                 return names.ToList();
             }

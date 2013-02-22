@@ -33,3 +33,10 @@ D:\work\votchina\web\SandBox.Log\bin\Debug\NLog.dll
 D:\work\votchina\web\SandBox.Log\obj\Debug\ResolveAssemblyReference.cache
 D:\work\votchina\web\SandBox.Log\obj\Debug\SandBox.Log.dll
 D:\work\votchina\web\SandBox.Log\obj\Debug\SandBox.Log.pdb
+D:\work\git\votchina\web\SandBox.Log\bin\Debug\NLog.config
+D:\work\git\votchina\web\SandBox.Log\bin\Debug\SandBox.Log.dll
+D:\work\git\votchina\web\SandBox.Log\bin\Debug\SandBox.Log.pdb
+D:\work\git\votchina\web\SandBox.Log\bin\Debug\NLog.dll
+D:\work\git\votchina\web\SandBox.Log\obj\Debug\ResolveAssemblyReference.cache
+D:\work\git\votchina\web\SandBox.Log\obj\Debug\SandBox.Log.dll
+D:\work\git\votchina\web\SandBox.Log\obj\Debug\SandBox.Log.pdb

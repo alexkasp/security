@@ -21,7 +21,8 @@ namespace SandBox.WebUi.Pages.Research
             base.Page_Load(sender, e);
             PageTitle = "Создание нового исследования";
             PageMenu = "~/App_Data/SideMenu/Research/ResearchMenu.xml";
-            List<string> vmList = IsUserInRole("Administrator") ? VmManager.GetVmReadyNameList() : VmManager.GetVmReadyNameList(UserId);
+            //   List<string> vmList = IsUserInRole("Administrator") ? VmManager.GetVmReadyNameList() : VmManager.GetVmReadyNameList(UserId);
+            List<string> vmList = IsUserInRole("Administrator") ? VmManager.GetVmReadyForResearch() : VmManager.GetVmReadyForResearch(UserId);
             //ASPxComboBox2.Items.Clear();
             if (ASPxComboBox3.SelectedIndex == -1)
             {
@@ -89,9 +90,23 @@ namespace SandBox.WebUi.Pages.Research
             Mlwr mlwr = MlwrManager.GetMlwr(cbMalware.Value.ToString());
             Int32 timeLeft = Convert.ToInt32(spinTime.Value);
 
-            Int32 researchVmData = ResearchManager.AddResearchVmData(vm.Name, vm.Type, vm.System, vm.EnvType, vm.EnvMac, vm.EnvIp, vm.Description);
-
-            Int32 researchId = ResearchManager.AddResearch(UserId, mlwr.Id, vm.Id, researchVmData, timeLeft, tbLir.Text);
+            String NewName="";
+            Int32 researchVmData = 0;
+            Int32 researchId = 0;
+            if (vm.Type == 1)
+            {
+                NewName = GenRandString(20);
+                VmManager.AddVm(NewName, 2, vm.System, UserId, vm.EnvType);
+                Vm newvm = VmManager.GetVm(NewName);
+                researchVmData = ResearchManager.AddResearchVmData(NewName, 2, newvm.System, newvm.EnvType, newvm.EnvMac, newvm.EnvIp, newvm.Description);
+                researchId = ResearchManager.AddResearch(UserId, mlwr.Id, newvm.Id, researchVmData, timeLeft, tbLir.Text);
+            }
+            else
+            {
+                researchVmData = ResearchManager.AddResearchVmData(vm.Name, vm.Type, vm.System, vm.EnvType, vm.EnvMac, vm.EnvIp, vm.Description);
+                researchId = ResearchManager.AddResearch(UserId, mlwr.Id, vm.Id, researchVmData, timeLeft, tbLir.Text);
+            }
+          
 
             AddTasks(researchId, vm.EnvId);
 
@@ -112,7 +127,8 @@ namespace SandBox.WebUi.Pages.Research
             #endregion
 
             MLogger.LogTo(Level.TRACE, false, "Create research '" + tbLir.Text + "' by user '" + UserManager.GetUser(UserId).UserName + "'");
-            Current.StartResearch(String.Format("{0}", researchId));
+            if (CreateOrStartVm(vm.Name,NewName))
+                Current.StartResearch(String.Format("{0}", researchId));
             Response.Redirect("~/Pages/Research/Current.aspx");
         }
 
@@ -120,17 +136,21 @@ namespace SandBox.WebUi.Pages.Research
         {
             byte[] randBuffer = new byte[length];
             RandomNumberGenerator.Create().GetBytes(randBuffer);
-            return System.Convert.ToBase64String(randBuffer).Remove(length);
+            String prepare = System.Convert.ToBase64String(randBuffer).Remove(length).Replace("+", "p");
+            prepare = prepare.Replace("/","s");
+            prepare = prepare.Replace("\\","w");
+            return prepare;
         }
 
-        protected bool CreateOrStartVm(String VmName)
+        protected bool CreateOrStartVm(String VmName,String NewName)
         {
             Vm baseVm = VmManager.GetVm(VmName);
 
             if (baseVm.Type == 1)
             {
-                String newName = GenRandString(20);
-                VmManager.AddVm(newName, 2, baseVm.System, UserId, baseVm.EnvType);
+
+                String newName = NewName;// 
+               
                 Packet packet = new Packet { Type = PacketType.CMD_VM_CREATE, Direction = PacketDirection.REQUEST };
                 packet.AddParameter(Encoding.UTF8.GetBytes(VmName));
                 packet.AddParameter(Encoding.UTF8.GetBytes(newName));

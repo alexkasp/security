@@ -17,3 +17,8 @@ D:\work\votchina\web\SandBox.Data\bin\Debug\SandBox.Data.pdb
 D:\work\votchina\web\SandBox.Data\obj\Debug\ResolveAssemblyReference.cache
 D:\work\votchina\web\SandBox.Data\obj\Debug\SandBox.Data.dll
 D:\work\votchina\web\SandBox.Data\obj\Debug\SandBox.Data.pdb
+D:\work\git\votchina\web\SandBox.Data\bin\Debug\SandBox.Data.dll
+D:\work\git\votchina\web\SandBox.Data\bin\Debug\SandBox.Data.pdb
+D:\work\git\votchina\web\SandBox.Data\obj\Debug\ResolveAssemblyReference.cache
+D:\work\git\votchina\web\SandBox.Data\obj\Debug\SandBox.Data.dll
+D:\work\git\votchina\web\SandBox.Data\obj\Debug\SandBox.Data.pdb
