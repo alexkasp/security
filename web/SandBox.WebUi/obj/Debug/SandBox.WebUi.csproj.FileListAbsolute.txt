@@ -1,0 +1,90 @@
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.WebUi\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.WebUi\obj\Debug\SandBoxWebUi.dll.licenses
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.WebUi\bin\app.config
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.WebUi\bin\NLog.config
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBoxWebUi.dll
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBoxWebUi.pdb
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.WebUi\bin\NLog.dll
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Connection.dll
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Data.dll
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Log.dll
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Connection.pdb
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Data.pdb
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Log.pdb
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.WebUi\bin\NLog.xml
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.WebUi\obj\Debug\SandBoxWebUi.dll
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.WebUi\obj\Debug\SandBoxWebUi.pdb
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\app.config
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\NLog.config
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBoxWebUi.dll
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBoxWebUi.pdb
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\NLog.dll
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Connection.dll
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Data.dll
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Log.dll
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Connection.pdb
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Data.pdb
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Log.pdb
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\NLog.xml
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.WebUi\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.WebUi\obj\Debug\SandBoxWebUi.dll.licenses
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.WebUi\obj\Debug\SandBoxWebUi.dll
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.WebUi\obj\Debug\SandBoxWebUi.pdb
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.WebUi\obj\Debug\SandBox.WebUi.csprojResolveAssemblyReference.cache
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.WebUi\obj\Debug\SandBoxWebUi.dll.licenses
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.WebUi\obj\Debug\SandBoxWebUi.dll
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\app.config
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\NLog.config
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBoxWebUi.dll
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBoxWebUi.pdb
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\NLog.dll
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Connection.dll
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Data.dll
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Db.dll
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Log.dll
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Connection.pdb
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Data.pdb
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Db.pdb
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\SandBox.Log.pdb
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.WebUi\bin\NLog.xml
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.WebUi\obj\Debug\SandBoxWebUi.pdb
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.WebUi\bin\app.config
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.WebUi\bin\NLog.config
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.WebUi\bin\SandBoxWebUi.dll
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.WebUi\bin\SandBoxWebUi.pdb
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.WebUi\bin\NLog.dll
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.WebUi\bin\SandBox.Connection.dll
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.WebUi\bin\SandBox.Data.dll
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.WebUi\bin\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.WebUi\bin\SandBox.Log.dll
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.WebUi\bin\SandBox.Connection.pdb
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.WebUi\bin\SandBox.Data.pdb
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.WebUi\bin\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.WebUi\bin\SandBox.Log.pdb
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.WebUi\bin\NLog.xml
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.WebUi\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.WebUi\obj\Debug\SandBoxWebUi.dll.licenses
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.WebUi\obj\Debug\SandBoxWebUi.dll
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.WebUi\obj\Debug\SandBoxWebUi.pdb
+D:\work\votchina\web\SandBox.WebUi\bin\app.config
+D:\work\votchina\web\SandBox.WebUi\bin\NLog.config
+D:\work\votchina\web\SandBox.WebUi\bin\SandBoxWebUi.dll
+D:\work\votchina\web\SandBox.WebUi\bin\SandBoxWebUi.pdb
+D:\work\votchina\web\SandBox.WebUi\bin\NLog.dll
+D:\work\votchina\web\SandBox.WebUi\bin\SandBox.Connection.dll
+D:\work\votchina\web\SandBox.WebUi\bin\SandBox.Data.dll
+D:\work\votchina\web\SandBox.WebUi\bin\SandBox.Db.dll
+D:\work\votchina\web\SandBox.WebUi\bin\SandBox.Log.dll
+D:\work\votchina\web\SandBox.WebUi\bin\SandBox.Connection.pdb
+D:\work\votchina\web\SandBox.WebUi\bin\SandBox.Data.pdb
+D:\work\votchina\web\SandBox.WebUi\bin\SandBox.Db.pdb
+D:\work\votchina\web\SandBox.WebUi\bin\SandBox.Log.pdb
+D:\work\votchina\web\SandBox.WebUi\bin\NLog.xml
+D:\work\votchina\web\SandBox.WebUi\obj\Debug\ResolveAssemblyReference.cache
+D:\work\votchina\web\SandBox.WebUi\obj\Debug\SandBoxWebUi.dll.licenses
+D:\work\votchina\web\SandBox.WebUi\obj\Debug\SandBoxWebUi.dll
+D:\work\votchina\web\SandBox.WebUi\obj\Debug\SandBoxWebUi.pdb

@@ -1,0 +1,3 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Root.master" AutoEventWireup="true" CodeBehind="NestedMasterPage1.master.cs" Inherits="SandBox.WebUi.NestedMasterPage1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="server">
+</asp:Content>

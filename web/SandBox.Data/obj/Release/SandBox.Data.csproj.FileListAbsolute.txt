@@ -1,0 +1,43 @@
+C:\Users\dru\Documents\Visual Studio 2010\Projects\sandBoxDE\SandBox.Data\bin\Release\SandBox.Data.dll
+C:\Users\dru\Documents\Visual Studio 2010\Projects\sandBoxDE\SandBox.Data\bin\Release\SandBox.Data.pdb
+C:\Users\dru\Documents\Visual Studio 2010\Projects\sandBoxDE\SandBox.Data\obj\Release\ResolveAssemblyReference.cache
+C:\Users\dru\Documents\Visual Studio 2010\Projects\sandBoxDE\SandBox.Data\obj\Release\SandBox.Data.dll
+C:\Users\dru\Documents\Visual Studio 2010\Projects\sandBoxDE\SandBox.Data\obj\Release\SandBox.Data.pdb
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.Data\bin\Release\SandBox.Data.dll
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.Data\bin\Release\SandBox.Data.pdb
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.Data\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.Data\obj\Release\SandBox.Data.dll
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.Data\obj\Release\SandBox.Data.pdb
+E:\110213\src\SandBox.Data\bin\Release\SandBox.Data.dll
+E:\110213\src\SandBox.Data\bin\Release\SandBox.Data.pdb
+E:\110213\src\SandBox.Data\obj\Release\SandBox.Data.dll
+E:\110213\src\SandBox.Data\obj\Release\SandBox.Data.pdb
+E:\120213\110213\src\SandBox.Data\bin\Release\SandBox.Data.dll
+E:\120213\110213\src\SandBox.Data\bin\Release\SandBox.Data.pdb
+E:\120213\110213\src\SandBox.Data\obj\Release\SandBox.Data.dll
+E:\120213\110213\src\SandBox.Data\obj\Release\SandBox.Data.pdb
+C:\Users\Панда\Desktop\Александр\120213\110213\src\SandBox.Data\bin\Release\SandBox.Data.dll
+C:\Users\Панда\Desktop\Александр\120213\110213\src\SandBox.Data\bin\Release\SandBox.Data.pdb
+C:\Users\Панда\Desktop\Александр\120213\110213\src\SandBox.Data\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Панда\Desktop\Александр\120213\110213\src\SandBox.Data\obj\Release\SandBox.Data.dll
+C:\Users\Панда\Desktop\Александр\120213\110213\src\SandBox.Data\obj\Release\SandBox.Data.pdb
+D:\Поработать\Армада\ОКР\web\src\SandBox.Data\bin\Release\SandBox.Data.dll
+D:\Поработать\Армада\ОКР\web\src\SandBox.Data\bin\Release\SandBox.Data.pdb
+D:\Поработать\Армада\ОКР\web\src\SandBox.Data\obj\Release\ResolveAssemblyReference.cache
+D:\Поработать\Армада\ОКР\web\src\SandBox.Data\obj\Release\SandBox.Data.dll
+D:\Поработать\Армада\ОКР\web\src\SandBox.Data\obj\Release\SandBox.Data.pdb
+D:\SandBox\LAST\src\SandBox.Data\bin\Release\SandBox.Data.dll
+D:\SandBox\LAST\src\SandBox.Data\bin\Release\SandBox.Data.pdb
+D:\SandBox\LAST\src\SandBox.Data\obj\Release\ResolveAssemblyReference.cache
+D:\SandBox\LAST\src\SandBox.Data\obj\Release\SandBox.Data.dll
+D:\SandBox\LAST\src\SandBox.Data\obj\Release\SandBox.Data.pdb
+D:\SandBox\17.02.13\src\SandBox.Data\bin\Release\SandBox.Data.dll
+D:\SandBox\17.02.13\src\SandBox.Data\bin\Release\SandBox.Data.pdb
+D:\SandBox\17.02.13\src\SandBox.Data\obj\Release\ResolveAssemblyReference.cache
+D:\SandBox\17.02.13\src\SandBox.Data\obj\Release\SandBox.Data.dll
+D:\SandBox\17.02.13\src\SandBox.Data\obj\Release\SandBox.Data.pdb
+D:\SandBox\18.02.13\src\SandBox.Data\bin\Release\SandBox.Data.dll
+D:\SandBox\18.02.13\src\SandBox.Data\bin\Release\SandBox.Data.pdb
+D:\SandBox\18.02.13\src\SandBox.Data\obj\Release\ResolveAssemblyReference.cache
+D:\SandBox\18.02.13\src\SandBox.Data\obj\Release\SandBox.Data.dll
+D:\SandBox\18.02.13\src\SandBox.Data\obj\Release\SandBox.Data.pdb

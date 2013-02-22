@@ -1,0 +1,92 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Root.master.cs" Inherits="SandBox.WebUi.RootMaster" %>
+
+<%-- DXCOMMENT: Page Root.master is a master page that contains the root layout (it includes Header, Cental Area, and Footer) --%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>web-console</title>
+    <link rel="stylesheet" type="text/css" href="Content/Site.css" />
+    <link rel="stylesheet" type="text/css" href="Content/login-box.css"  />
+</head>
+<body runat="server" id="Body">
+    <form id="form1" runat="server">
+
+    <asp:ScriptManager ID="AjaxScriptManager" runat="server" 
+        onasyncpostbackerror="AjaxScriptManager_AsyncPostBackError" EnablePageMethods="true">
+    </asp:ScriptManager>
+
+    <dx:ASPxSplitter ID="ASPxSplitter1" runat="server" AllowResize="False" Orientation="Vertical"
+        FullscreenMode="True" SeparatorVisible="False" Height="100%" Width="100%">
+        <Styles>
+            <Pane>
+                <Paddings Padding="0px" />
+                <Border BorderWidth="0px" />
+            </Pane>
+        </Styles>
+        <Panes>
+            <dx:SplitterPane Name="Header" Size="83px" MinSize="83px">
+                <PaneStyle CssClass="headerPane">
+                    <BorderBottom BorderWidth="1px" />
+                </PaneStyle>
+                <ContentCollection>
+                    <dx:SplitterContentControl ID="SplitterContentControl1" runat="server">
+                        <div class="headerTop">
+                            <div class="templateTitle">
+                                <a id="TitleLink" href="~/" runat="server">web-console</a>
+                            </div>
+                            <div class="loginControl">
+                                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                                    <AnonymousTemplate>
+                                        <a href="~/Account/Login.aspx" runat="server" id="loginLink">вход</a> 
+                                    </AnonymousTemplate>
+                                    <LoggedInTemplate>
+                                        <img src="../../Content/Images/Icons/user.png" />  <span class="bold">
+                                            <b><asp:LoginName ID="HeadLoginName" runat="server" /></b>
+                                        </span> [
+                                        <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="выход"
+                                            LogoutPageUrl="~/" />
+                                        ]
+                                    </LoggedInTemplate>
+                                </asp:LoginView>
+                            </div>
+                        </div>
+                        <div class="headerMenu">
+                            <%-- DXCOMMENT: Configure the header menu --%>
+<dx:ASPxMenu ID="ASPxMenu1" runat="server" RenderMode="Lightweight" Width="100%"
+    DataSourceID="XmlDataSourceHeader">
+    <Border BorderWidth="0px" />
+    <BorderTop BorderWidth="1px" />
+</dx:ASPxMenu>
+
+
+                        </div>
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+            </dx:SplitterPane>
+            <dx:SplitterPane Name="Content" MinSize="375px">
+				<PaneStyle CssClass="mainContentPane"></PaneStyle>
+                <ContentCollection>
+                    <dx:SplitterContentControl ID="SplitterContentControl3" runat="server" SupportsDisabledAttribute="True">
+                        <asp:ContentPlaceHolder ID="Content" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+                <PaneStyle BackColor="white">
+                    <BorderBottom BorderWidth="1px" />
+                </PaneStyle>
+            </dx:SplitterPane>
+
+        </Panes>
+    </dx:ASPxSplitter>
+	
+<%-- DXCOMMENT: Configure a datasource for the header menu --%>
+<asp:XmlDataSource ID="XmlDataSourceHeader" runat="server" DataFile="~/App_Data/MainMenu/EmptyMenu.xml"
+    XPath="/items/*"></asp:XmlDataSource>
+
+	
+
+
+	
+    </form>
+</body>
+</html>

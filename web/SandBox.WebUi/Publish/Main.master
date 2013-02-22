@@ -1,0 +1,54 @@
+<%@ Master Language="C#" MasterPageFile="~/Root.master" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="SandBox.WebUi.MainMaster" %>
+
+<%-- DXCOMMENT: Page Main.master is a master page that contains central area layout --%>
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
+    <dx:ASPxSplitter ID="ContentSplitter" runat="server" Width="100%" Height="100%" AllowResize="False" SeparatorVisible="True">
+        <Styles>
+            <Pane>
+                <Paddings Padding="0px" />
+                <Border BorderWidth="0px" />
+            </Pane>
+        </Styles>
+        <Panes>
+            <dx:SplitterPane Name="ContentLeft" ShowCollapseBackwardButton="False" Size="15%">
+				<PaneStyle CssClass="leftPane"></PaneStyle>
+                <PaneStyle>
+                    <Paddings Padding="1px" />
+                </PaneStyle>
+                <ContentCollection>
+                    <dx:SplitterContentControl>
+                        <div class="leftPanel">
+							<%-- DXCOMMENT: Configure the left panel's ASPxMenu --%>
+<dx:ASPxMenu ID="ASPxMenu2" DataSourceID="XmlDataSourceLeft" runat="server" Orientation="Vertical"
+    RenderMode="Lightweight" Width="100%">
+    <Border BorderWidth="0px" />
+</dx:ASPxMenu>
+
+
+                        </div>
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+            </dx:SplitterPane>
+            <dx:SplitterPane Name="ContentCenter" ScrollBars="Auto">
+				<PaneStyle CssClass="contentPane"></PaneStyle>
+                <Separator Visible="True">
+                    <SeparatorStyle>
+                        <Border BorderWidth="1px" />
+                        <BorderTop BorderWidth="0px" />
+                    </SeparatorStyle>
+                </Separator>
+                <ContentCollection>
+                    <dx:SplitterContentControl>
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+            </dx:SplitterPane>
+			
+        </Panes>
+    </dx:ASPxSplitter>
+	
+<%-- DXCOMMENT: Configure a datasource for the left panel's ASPxMenu --%>
+<asp:XmlDataSource ID="XmlDataSourceLeft" runat="server" DataFile="~/App_Data/SideMenu.xml"
+    XPath="/menu/*"></asp:XmlDataSource>
+	
+</asp:Content>

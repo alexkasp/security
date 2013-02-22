@@ -1,0 +1,258 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Root.master.cs" Inherits="SandBox.WebUi.RootMaster" %>
+
+<%-- DXCOMMENT: Page Root.master is a master page that contains the root layout (it includes Header, Cental Area, and Footer) --%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Мониторинг ВПО</title>
+    <link rel="stylesheet" type="text/css" href="Content/Site.css" />
+    <link rel="stylesheet" type="text/css" href="Content/login-box.css" />
+    <link href="Content/general.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../../Content/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../../Content/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../../Content/lib/raphael-min.js"></script>
+    <script type="text/javascript" src="../../Content/lib/g.raphael-min.js" ></script>
+    <script type="text/javascript" src="../../Content/lib/g.hbar-min.js" ></script>
+    <script type="text/javascript" src="../../Content/lib/pieChart.js"></script>
+</head>
+<body runat="server" id="Body">
+    <div class="wrapper_full">
+        <form id="form1" runat="server">
+    <asp:ScriptManager ID="AjaxScriptManager" runat="server" OnAsyncPostBackError="AjaxScriptManager_AsyncPostBackError"
+        EnablePageMethods="true">
+    </asp:ScriptManager>
+
+                    <div id="header">
+                    <div id="header-sh">
+
+                            <div id="header-top">
+                            <div id="sname">Информационно-аналитическая система мониторинга ВПО</div>
+                            
+                                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                                    <AnonymousTemplate>
+                                        <div class="button_exit">
+                                            <a href="~/Account/Login.aspx" runat="server" id="loginLink" visible="False">вход</a> 
+                                            <dx:ASPxHyperLink ID="ASPxHyperLink1" runat="server" 
+                                                ImageUrl="~/Content/Images/btn_exit.png" NavigateUrl="~/Account/Login.aspx" 
+                                                Text="ASPxHyperLink" />
+                                        </div>
+                                    </AnonymousTemplate>
+                                    <LoggedInTemplate>
+                                        <div id="button_exit">
+                                            <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect"  LogoutImageUrl="~/Content/Images/btn_exit.png"
+                                             LogoutPageUrl="~/" />
+                                        </div> 
+                                        <div id="username">
+                                            <asp:LoginName ID="HeadLoginName" runat="server" />
+                                        </div> 
+                                    </LoggedInTemplate>
+                                </asp:LoginView>
+                            </div>
+                            
+                            <div id="header-center">
+			                    <div id="header-menu">
+				                        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" 
+                                            RenderingMode="List" CssClass="top-menu" 
+                                            StaticMenuStyle-CssClass="top-menu">
+                                            <Items>
+                                                <asp:MenuItem NavigateUrl="/Pages/Research/Current.aspx" Text="Исследования" 
+                                                    Value="Главная"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="/Pages/Information/Resources.aspx" Text="Ресурсы" 
+                                                    Value="Ресурсы"></asp:MenuItem>
+                                                <asp:MenuItem NavigateUrl="/Pages/Settings/Users.aspx" Text="Настройки" 
+                                                    Value="Настройки"></asp:MenuItem>
+                                                <asp:MenuItem Text="Поиск" Value="Поиск" 
+                                                    NavigateUrl="/Pages/Research/Search.aspx"></asp:MenuItem>
+                                            </Items>
+                                            <StaticMenuStyle CssClass="top-menu" />
+                                        </asp:Menu>
+			                    </div>
+		                    </div>
+
+
+
+                            		<div id="header-bottom">
+			<div id="vresourcebox" class="vpanelbox">
+				<div id="vresource" class="vpanel">
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <asp:Timer ID="Timer1" runat="server" Interval="4000" ontick="Timer1_Tick">
+                        </asp:Timer>
+                         <% RefreshServerState(); %>
+
+				  <table width="264" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td colspan="4" class="vname">Ресурсы</td>
+                    </tr>
+                    <tr>
+                      <td valign="center" rowspan="2" id="vrestlir"><%=SandBox.Db.ReportManager.GetVnUsage() %></td>
+                      <td valign="center" rowspan="2" id="vresilir">Загружено сред</td>
+                      <td valign="top" class="vrescpuinv">CPU</td>
+                      <td id="vrescpuinv" class="vrescpu" valign="bottom" align="center">
+                          <dx:ASPxLabel ID="Lcpu" runat="server">
+                          </dx:ASPxLabel>
+                        </td>
+                    </tr>
+                    <tr valign="top" >
+                      <td class="vrescpu">CPU0:</td>
+                      <td class="vrescpu">
+                          <dx:ASPxLabel ID="Lcpu0" runat="server">
+                          </dx:ASPxLabel>
+                        </td>
+                    </tr>
+                    <tr valign="top" >
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td class="vrescpu">CPU1:</td>
+                      <td class="vrescpu">
+                          <dx:ASPxLabel ID="Lcpu1" runat="server">
+                          </dx:ASPxLabel>
+                        </td>
+                    </tr>
+                    <tr valign="top" >
+                      <td rowspan="2" class="vresozu">ОЗУ:</td>
+                      <td rowspan="2" class="vrescozu">
+                          <dx:ASPxLabel ID="Lozu" runat="server" EnableDefaultAppearance="False">
+                          </dx:ASPxLabel>
+                        </td>
+                      <td class="vrescpu">CPU2:</td>
+                      <td class="vrescpu">
+                          <dx:ASPxLabel ID="Lcpu2" runat="server">
+                          </dx:ASPxLabel>
+                        </td>
+                    </tr>
+                    <tr valign="top" >
+                      <td class="vrescpu">CPU3:</td>
+                      <td class="vrescpu">
+                          <dx:ASPxLabel ID="Lcpu3" runat="server">
+                          </dx:ASPxLabel>
+                        </td>
+                    </tr>
+                  </table>
+                  </ContentTemplate>
+                    </asp:UpdatePanel>
+				</div>
+			</div>
+			<div id="vresearchbox" class="vpanelbox">
+				<div id="vresearch" class="vpanel">
+				  <table width="407" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td class="vname">Исследования</td>
+                    </tr>
+                    <tr>
+                      <td align="center">
+<div class="ResearchChart">
+<table border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td width="155">Частота использования</td>
+                          <td width="60"><span style="font-size:18px">ОС</span></td>
+                          <td width="172">Кол-во вредоносных воздействий</td>
+                        </tr>
+                        <tr>
+                          <td>                                                                              
+                          <div id="chartOSuse">
+                          </div>
+                          </td>
+                          <td id="OStable">
+						  <table border="0" align="center" cellpadding="0" cellspacing="0">
+						    <tr><td>W7sp1x64</td></tr>
+							<tr><td>W7sp1x64</td></tr>
+							<tr><td>W7sp1x64</td></tr>
+							<tr><td>W7sp1x64</td></tr>
+							<tr><td>W7sp1x64</td></tr>
+						  </table>
+						  </td>
+                          <td id = "rightChart">
+							<div id="chartCountEv">
+                            </div>
+						  </td>
+                        </tr>
+</table>
+</div>
+
+                      <%--<img src="/Content/images/vresearch.png" width="378" height="88" />--%>
+                      </td>
+                    </tr>
+                  </table>
+				</div>
+			</div>
+			<div id="vtopdangerbox" class="vpanelbox">
+				<div id="vtopdanger" class="vpanel">
+				  <table width="194" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td class="vname">ВПО топ-5</td>
+                    </tr>
+                    <tr>
+                      <td align="center">
+                        <div class="ResearchChart">
+                         <table width="174" border="0" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <td height="22px">Сравненние степени опасности</td>
+                          </tr>
+                          <tr>
+                            <td>
+    	                        <div id="chartDanger"></div>	
+	                        </td>
+                          </tr>
+                        </table>
+                       </div>                      
+                      </td>
+                    </tr>
+                  </table>
+				</div>
+			</div>
+			<div id="vimpactdirbox" class="vpanelbox">
+				<div id="vimpactdir" class="vpanel">
+			<table width="336" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="4" class="vname" height="40px">Направления воздействия</td>
+    </tr>
+  <tr valign="middle">
+    <td width="100" class="nvtxtl">Файловая система </td>
+    <td class="nvperc" id="vnvtl"><% =SandBox.Db.ReportManager.GetFsSatas() %></td>
+    <td class="nvperc" id="vnvtr"><% =SandBox.Db.ReportManager.GetRegStats() %></td>
+    <td width="100" class="nvtxtr">Реестр</td>
+  </tr>
+  <tr valign="middle">
+    <td class="nvtxtl">Сеть</td>
+    <td id="vnvbl" class="nvperc"><% =SandBox.Db.ReportManager.GetNetStats() %></td>
+    <td id="vnvbr" class="nvperc"><% =SandBox.Db.ReportManager.GetProcsStats() %></td>
+    <td class="nvtxtr">Процессы</td>
+  </tr>
+</table>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+<dx:ASPxMenu ID="ASPxMenu1" runat="server" RenderMode="Lightweight" Width="100%"
+    DataSourceID="XmlDataSourceHeader" Visible = "false">
+    <Border BorderWidth="0px" />
+    <BorderTop BorderWidth="1px" />
+</dx:ASPxMenu>
+
+
+                   
+                        </div>
+</div>
+
+
+	<!-- Content --> 	
+    <div id="FullContent">                
+                        <asp:ContentPlaceHolder ID="Content" runat="server"/>
+                
+<asp:XmlDataSource ID="XmlDataSourceHeader" runat="server" DataFile="~/App_Data/MainMenu/EmptyMenu.xml"
+    XPath="/items/*"></asp:XmlDataSource>
+    	</div><!-- Content -->
+
+	<!-- Footer --> 	
+    <div id="footer">
+	
+	</div><!-- Footer -->
+    </form>
+    </div>
+</body>
+</html>

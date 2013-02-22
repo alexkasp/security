@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="sandBox" Class="SandBoxDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=sandBox;Integrated Security=True" SettingsObjectName="SandBox.Db.Properties.Settings" SettingsPropertyName="sandBoxConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Login" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PasswordSalt" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastLoginDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastLoginIp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="UsersInRole_User" Member="UsersInRole" ThisKey="UserId" OtherKey="UserId" Type="UsersInRole" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Roles" Member="Roles">
+    <Type Name="Role">
+      <Column Name="RoleId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="UsersInRole_Role" Member="UsersInRole" ThisKey="RoleId" OtherKey="RoleId" Type="UsersInRole" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UsersInRoles" Member="UsersInRoles">
+    <Type Name="UsersInRole">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="UsersInRole_User" Member="Users" ThisKey="UserId" OtherKey="UserId" Type="User" />
+      <Association Name="UsersInRole_Role" Member="Roles" ThisKey="RoleId" OtherKey="RoleId" Type="Role" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ConnectionSettings" Member="ConnectionSettings">
+    <Type Name="ConnectionSetting">
+      <Column Name="RemoteHost" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RemotePort" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reconnect" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VmState" Member="VmStates">
+    <Type Name="VmState">
+      <Column Name="State" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Vm_VmState" Member="Vm" ThisKey="State" OtherKey="State" Type="Vm" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VmSystem" Member="VmSystems">
+    <Type Name="VmSystem">
+      <Column Name="System" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Vm_VmSystem" Member="Vm" ThisKey="System" OtherKey="System" Type="Vm" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VmType" Member="VmTypes">
+    <Type Name="VmType">
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Vm_VmType" Member="Vm" ThisKey="Type" OtherKey="Type" Type="Vm" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Mlwr" Member="Mlwrs">
+    <Type Name="Mlwr">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Path" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ResearchCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Class" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LoadedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LoadedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsDeleted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Mlwr_MlwrClass" Member="MlwrClasses" ThisKey="Class" OtherKey="Class" Type="MlwrClass" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MlwrClass" Member="MlwrClasses">
+    <Type Name="MlwrClass">
+      <Column Name="Class" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Mlwr_MlwrClass" Member="Mlwr" ThisKey="Class" OtherKey="Class" Type="Mlwr" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ResearchesState" Member="ResearchesStates">
+    <Type Name="ResearchesState">
+      <Column Name="State" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Research_ResearchesState" Member="Research" ThisKey="State" OtherKey="State" Type="Research" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vm" Member="Vms">
+    <Type Name="Vm">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="System" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EnvId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EnvType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EnvMac" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="EnvIp" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Vm_VmState" Member="VmStates" ThisKey="State" OtherKey="State" Type="VmState" />
+      <Association Name="Vm_VmSystem" Member="VmSystems" ThisKey="System" OtherKey="System" Type="VmSystem" />
+      <Association Name="Vm_VmType" Member="VmTypes" ThisKey="Type" OtherKey="Type" Type="VmType" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Report" Member="Reports">
+    <Type Name="Report">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TIme" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ResearchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModuleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ActionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Object" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Target" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Additional" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tasks" Member="Tasks">
+    <Type Name="Task">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ResearchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Task_TaskType" Member="TaskTypes" ThisKey="Type" OtherKey="Type" Type="TaskType" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaskType" Member="TaskTypes">
+    <Type Name="TaskType">
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ModuleName" Type="System.String" DbType="VarChar(16)" CanBeNull="false" />
+      <Association Name="Task_TaskType" Member="Task" ThisKey="Type" OtherKey="Type" Type="Task" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Requests" Member="Requests">
+    <Type Name="Request">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ResearchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Result" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ResearchesVmData" Member="ResearchesVmDatas">
+    <Type Name="ResearchesVmData">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VmName" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="VmType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VmSystem" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VmEnvType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VmEnvMac" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="VmEnvIp" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="VmDescription" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Research_ResearchesVmData" Member="Research" ThisKey="Id" OtherKey="ResearchVmData" Type="Research" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Researches" Member="Researches">
+    <Type Name="Research">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MlwrId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VmId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ResearchVmData" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ResearchName" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Duration" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StartedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StoppedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TrafficFileReady" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TrafficFileName" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Research_ResearchesState" Member="ResearchesStates" ThisKey="State" OtherKey="State" Type="ResearchesState" />
+      <Association Name="Research_ResearchesVmData" Member="ResearchesVmDatas" ThisKey="ResearchVmData" OtherKey="Id" Type="ResearchesVmData" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Proc]" Member="Proc">
+    <Type Name="Proc">
+      <Column Name="rschID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="procName" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="pid1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="streamsCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RegTest" Member="RegTest">
+    <Type Name="RegTest">
+      <Column Name="rschID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="path" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="event" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ports" Member="Ports">
+    <Type Name="Ports">
+      <Column Name="rschID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="port" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="destanation" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FileList" Member="FileList">
+    <Type Name="FileList">
+      <Column Name="rschId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dt" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="sourse" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MlwrTargeting" Member="MlwrTargeting">
+    <Type Name="MlwrTargeting">
+      <Column Name="MlwrId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TargetingValue" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MlwrFeature" Member="MlwrFeature">
+    <Type Name="MlwrFeature">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MlwrId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FClass" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SClass" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Monitor" Member="Monitor">
+    <Type Name="Monitor">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RschId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FClass" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SClass" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RschEvents" Member="RschEvents">
+    <Type Name="RschEvents">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RschId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FClass" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SClass" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStamp" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RootClassificationScheme" Member="RootClassificationScheme">
+    <Type Name="RootClassificationScheme">
+      <Column Name="RootElementOfClassification" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SecondaryElementOfClassification" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tasks" Member="Tasks1">
+    <Type Name="Tasks">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ResearchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TasksClassification" Member="TasksClassification">
+    <Type Name="TasksClassification">
+      <Column Name="TaskClassType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TaskType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaskType" Member="TaskType1">
+    <Type Name="TaskType1">
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EventsEventDescriptions" Member="EventsEventDescriptions">
+    <Type Name="EventsEventDescriptions">
+      <Column Name="EventID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EventsEventDescription" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EventsModulesDescriptions" Member="EventsModulesDescriptions">
+    <Type Name="EventsModulesDescriptions">
+      <Column Name="EventModuleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Regs" Member="Regs">
+    <Type Name="Regs">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KeyName" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="KeyIndex" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Parent" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="RschID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Procs" Member="Procs">
+    <Type Name="Procs">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Pid1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Pid2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RschId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EventAdditionalInfo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ModulesVsEvents" Member="ModulesVsEvents">
+    <Type Name="ModulesVsEvents">
+      <Column Name="Event" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Module" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DirectoryOfEvents" Member="DirectoryOfEvents">
+    <Type Name="DirectoryOfEvents">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="significance" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="module" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="event" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="who" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="dest" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MlwrComments" Member="MlwrComments">
+    <Type Name="MlwrComments">
+      <Column Name="MlwrId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CommentValue" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PortList" Member="PortList">
+    <Type Name="PortList">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="rschID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="port" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="destination" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="process" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MlwrReport" Member="MlwrReport">
+    <Type Name="MlwrReport">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="mlwrId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="message" Type="System.String" DbType="NChar(512) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.stats" Member="stats">
+    <Type Name="stats">
+      <Column Name="cpu" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="cpu0" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="cpu1" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="cpu2" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="cpu3" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="meminfo" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Files" Member="Files">
+    <Type Name="Files">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="IsDir" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RschId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PathPrefix" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EventAdditionalInfo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fileindex" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="parent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Commands" Member="Commands">
+    <Type Name="Commands">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Command" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CommandParams" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CommandStartTime" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="RschId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StopEvents" Member="StopEvents">
+    <Type Name="StopEvents">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="module" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="event" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="who" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="dest" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="rschId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StopRschStatus" Member="StopRschStatus">
+    <Type Name="StopRschStatus">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="stopStatus" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="rschId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.events" Member="events">
+    <Type Name="events">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="module" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="event" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="who" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="dest" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="descr" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="rschId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="adddata1" Type="System.String" DbType="NChar(250)" CanBeNull="true" />
+      <Column Name="adddata2" Type="System.String" DbType="NChar(250)" CanBeNull="true" />
+      <Column Name="timeofevent" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vpodir" Member="vpodirs">
+    <Type Name="vpodir">
+      <Column Name="Fs" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Net" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Reg" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Procs" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vmusage" Member="vmusages">
+    <Type Name="vmusage">
+      <Column Name="usage" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ClEvents" Member="ClEvents">
+    <Type Name="ClEvent">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClMlwrId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClType" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="module" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="event" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="who" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="dest" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="descr" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="pid1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="adddata1" Type="System.String" DbType="NChar(250)" CanBeNull="true" />
+      <Column Name="adddata2" Type="System.String" DbType="NChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ClMlwr" Member="ClMlwrs">
+    <Type Name="ClMlwr">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MlwrCl" Member="MlwrCls">
+    <Type Name="MlwrCl">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClMlwrId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MlwrId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ResearchesTableView" Member="ResearchesTableViews">
+    <Type Name="ResearchesTableView">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ResearchName" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Malware" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="VmType" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="VmSystem" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="StartedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StoppedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Duration" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[User]" Member="User" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="fsEventsCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="regEventsCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="netEventsCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="procEventsCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TasksViewForRsch" Member="TasksViewForRsches">
+    <Type Name="TasksViewForRsch">
+      <Column Name="ResearchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModuleX" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="TypeX" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ValueX" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EventsChartCount" Member="EventsChartCounts">
+    <Type Name="EventsChartCount">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Module" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Sign" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

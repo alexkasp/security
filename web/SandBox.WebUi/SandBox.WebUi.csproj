@@ -1,0 +1,679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AC8D0B18-C620-4592-BE41-DD4D0415BFE8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SandBox.WebUi</RootNamespace>
+    <AssemblyName>SandBoxWebUi</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v12.1.Core, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v12.1.resources, Version=12.1.0.0, Culture=ru, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v12.1.Core, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v12.1.Core.resources, Version=12.1.0.0, Culture=ru, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.SpellChecker.v12.1.Core, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v12.1.resources, Version=12.1.0.0, Culture=ru, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxEditors.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxEditors.v12.1.resources, Version=12.1.0.0, Culture=ru, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxGauges.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxGridView.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxGridView.v12.1.Export, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxGridView.v12.1.resources, Version=12.1.0.0, Culture=ru, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v12.1.resources, Version=12.1.0.0, Culture=ru, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxPivotGrid.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxPivotGrid.v12.1.Export, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxScheduler.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxScheduler.v12.1.resources, Version=12.1.0.0, Culture=ru, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxSpellChecker.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxSpellChecker.v12.1.resources, Version=12.1.0.0, Culture=ru, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxTreeList.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxTreeList.v12.1.resources, Version=12.1.0.0, Culture=ru, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.v12.1.resources, Version=12.1.0.0, Culture=ru, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v12.1.resources, Version=12.1.0.0, Culture=ru, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v12.1.Web, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v12.1.Core, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v12.1.Presets, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v12.1.resources, Version=12.1.0.0, Culture=ru, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v12.1.Core, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v12.1.Core.resources, Version=12.1.0.0, Culture=ru, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="SandboxTheme">
+      <HintPath>..\..\Theme\SandboxTheme.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\AddUser.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterSuccess.aspx" />
+    <Content Include="App_Data\MainMenu\AdminMenu.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\MainMenu\FileManagerMenu.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\MainMenu\EmptyMenu.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\SideMenu\Malware\MalwareMenu.xml" />
+    <Content Include="App_Data\SideMenu\Research\ResearchMenu.xml" />
+    <Content Include="App_Data\SideMenu\Settings\SettingsMenu.xml" />
+    <Content Include="App_Data\MainMenu\UserMenu.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\SideMenu\Information\InformationMenu.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Base\BaseLightPage.aspx" />
+    <Content Include="Base\BaseEmptyPage.aspx" />
+    <Content Include="Content\Error.css" />
+    <Content Include="Content\general.css" />
+    <Content Include="Content\Images\AquaHeader.jpg" />
+    <Content Include="Content\Images\Bkg.png" />
+    <Content Include="Content\Images\BlackGlassHeader.jpg" />
+    <Content Include="Content\Images\btn_compres.jpg" />
+    <Content Include="Content\Images\btn_createres.jpg" />
+    <Content Include="Content\Images\btn_exit.png" />
+    <Content Include="Content\Images\btn_remres.jpg" />
+    <Content Include="Content\Images\btn_report.png" />
+    <Content Include="Content\Images\btn_tablenav.jpg" />
+    <Content Include="Content\Images\Charts.png" />
+    <Content Include="Content\Images\footerbg.jpg" />
+    <Content Include="Content\Images\GlassHeader.jpg" />
+    <Content Include="Content\Images\headerbg.jpg" />
+    <Content Include="Content\Images\headertopbg.png" />
+    <Content Include="Content\Images\Icons\add_lir.png" />
+    <Content Include="Content\Images\Icons\add_vlir.png" />
+    <Content Include="Content\Images\Icons\delete.png" />
+    <Content Include="Content\Images\Icons\edit.png" />
+    <Content Include="Content\Images\Icons\user.png" />
+    <Content Include="Content\Images\lg_bkg.png" />
+    <Content Include="Content\Images\login-box-backg.png" />
+    <Content Include="Content\Images\login-btn.png" />
+    <Content Include="Content\Images\nvbl.png" />
+    <Content Include="Content\Images\nvbr.png" />
+    <Content Include="Content\Images\nvtl.png" />
+    <Content Include="Content\Images\nvtr.png" />
+    <Content Include="Content\Images\PlasticBlueHeader.jpg" />
+    <Content Include="Content\Images\RedWineHeader.jpg" />
+    <Content Include="Content\Images\Icons\run.png" />
+    <Content Include="Content\Images\Icons\stop.png" />
+    <Content Include="Content\Images\researchtable.jpg" />
+    <Content Include="Content\Images\shadowbh.png" />
+    <Content Include="Content\Images\shadowtc.png" />
+    <Content Include="Content\Images\shadowth.png" />
+    <Content Include="Content\Images\UserIcon.png" />
+    <Content Include="Content\Images\vpanelbg.png" />
+    <Content Include="Content\Images\vresearch.png" />
+    <Content Include="Content\Images\vtopvpo.png" />
+    <Content Include="Content\lib\g.hbar-min.js" />
+    <Content Include="Content\lib\g.raphael-min.js" />
+    <Content Include="Content\lib\jquery.min.js" />
+    <Content Include="Content\lib\pieChart.js" />
+    <Content Include="Content\lib\raphael-min.js" />
+    <Content Include="Content\lib\underscore-min.js" />
+    <Content Include="Content\PageView.css" />
+    <Content Include="Content\login-box.css" />
+    <Content Include="Content\Login.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Pages\Index.aspx" />
+    <Content Include="Pages\Information\DirectoryOfEvents.aspx" />
+    <Content Include="Pages\Information\Test.aspx" />
+    <Content Include="Pages\Information\LoadMalware.aspx" />
+    <Content Include="Pages\Information\CreateEtalonMachine.aspx" />
+    <Content Include="Pages\Information\MalwareInfo.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Light.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Main.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pages\Information\Index.aspx" />
+    <Content Include="Pages\Error\CommunicationError.aspx" />
+    <Content Include="Pages\Error\DbError.aspx" />
+    <Content Include="Pages\Information\CreateMachine.aspx" />
+    <Content Include="Pages\Information\Resources.aspx" />
+    <Content Include="Pages\Information\СonsolidatedReport.aspx" />
+    <Content Include="Pages\Malware\Index.aspx" />
+    <Content Include="Pages\Malware\MalwareCard.aspx" />
+    <Content Include="Pages\Malware\Malwares.aspx" />
+    <Content Include="Pages\Malware\Classification.aspx" />
+    <Content Include="Pages\Malware\MlwrNetReport.aspx" />
+    <Content Include="Pages\Research\ChartOfEvents.aspx" />
+    <Content Include="Pages\Research\Comparer.aspx" />
+    <Content Include="Pages\Research\CurrentReportList.aspx" />
+    <Content Include="Pages\Research\EventsReport.aspx" />
+    <Content Include="Pages\Research\PortsList.aspx" />
+    <Content Include="Pages\Research\ProcessList.aspx" />
+    <Content Include="Pages\Research\ProcTree.aspx" />
+    <Content Include="Pages\Research\RegsTree.aspx" />
+    <Content Include="Pages\Research\ReportList.aspx" />
+    <Content Include="Pages\Research\RegistryList.aspx" />
+    <Content Include="Pages\Research\FileList.aspx" />
+    <Content Include="Pages\Research\Current.aspx" />
+    <Content Include="Pages\Research\Index.aspx" />
+    <Content Include="Pages\Research\NewResearch.aspx" />
+    <Content Include="Pages\Research\Reports.aspx" />
+    <Content Include="Pages\Research\SetMonitor.aspx" />
+    <Content Include="Pages\Settings\Index.aspx" />
+    <Content Include="Pages\Settings\Users.aspx" />
+    <Content Include="Root.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Base\BaseMainPage.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AddUser.aspx.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AddUser.aspx.designer.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterSuccess.aspx.cs">
+      <DependentUpon>RegisterSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterSuccess.aspx.designer.cs">
+      <DependentUpon>RegisterSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Base\BaseLightPage.aspx.cs">
+      <DependentUpon>BaseLightPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\BaseLightPage.aspx.designer.cs">
+      <DependentUpon>BaseLightPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Base\BaseEmptyPage.aspx.cs">
+      <DependentUpon>BaseEmptyPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\BaseEmptyPage.aspx.designer.cs">
+      <DependentUpon>BaseEmptyPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CompareTrees.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="Empty.Master.cs">
+      <DependentUpon>Empty.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empty.Master.designer.cs">
+      <DependentUpon>Empty.Master</DependentUpon>
+    </Compile>
+    <Compile Include="NestedMasterPage1.master.cs">
+      <DependentUpon>NestedMasterPage1.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NestedMasterPage1.master.designer.cs">
+      <DependentUpon>NestedMasterPage1.master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Information\DirectoryOfEvents.aspx.cs">
+      <DependentUpon>DirectoryOfEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Information\DirectoryOfEvents.aspx.designer.cs">
+      <DependentUpon>DirectoryOfEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Information\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Information\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Information\LoadMalware.aspx.cs">
+      <DependentUpon>LoadMalware.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Information\LoadMalware.aspx.designer.cs">
+      <DependentUpon>LoadMalware.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Information\CreateEtalonMachine.aspx.cs">
+      <DependentUpon>CreateEtalonMachine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Information\CreateEtalonMachine.aspx.designer.cs">
+      <DependentUpon>CreateEtalonMachine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Information\MalwareInfo.aspx.cs">
+      <DependentUpon>MalwareInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Information\MalwareInfo.aspx.designer.cs">
+      <DependentUpon>MalwareInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Light.master.cs">
+      <DependentUpon>Light.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Light.master.designer.cs">
+      <DependentUpon>Light.master</DependentUpon>
+    </Compile>
+    <Compile Include="Main.master.cs">
+      <DependentUpon>Main.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.master.designer.cs">
+      <DependentUpon>Main.master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Information\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Information\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PacketAnalyzer.cs" />
+    <Compile Include="Pages\Error\CommunicationError.aspx.cs">
+      <DependentUpon>CommunicationError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Error\CommunicationError.aspx.designer.cs">
+      <DependentUpon>CommunicationError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Error\DbError.aspx.cs">
+      <DependentUpon>DbError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Error\DbError.aspx.designer.cs">
+      <DependentUpon>DbError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Information\CreateMachine.aspx.cs">
+      <DependentUpon>CreateMachine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Information\CreateMachine.aspx.designer.cs">
+      <DependentUpon>CreateMachine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Information\Resources.aspx.cs">
+      <DependentUpon>Resources.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Information\Resources.aspx.designer.cs">
+      <DependentUpon>Resources.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Information\СonsolidatedReport.aspx.cs">
+      <DependentUpon>СonsolidatedReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Information\СonsolidatedReport.aspx.designer.cs">
+      <DependentUpon>СonsolidatedReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Malware\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Malware\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Malware\MalwareCard.aspx.cs">
+      <DependentUpon>MalwareCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Malware\MalwareCard.aspx.designer.cs">
+      <DependentUpon>MalwareCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Malware\Malwares.aspx.cs">
+      <DependentUpon>Malwares.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Malware\Malwares.aspx.designer.cs">
+      <DependentUpon>Malwares.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Malware\Classification.aspx.cs">
+      <DependentUpon>Classification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Malware\Classification.aspx.designer.cs">
+      <DependentUpon>Classification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Malware\MlwrNetReport.aspx.cs">
+      <DependentUpon>MlwrNetReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Malware\MlwrNetReport.aspx.designer.cs">
+      <DependentUpon>MlwrNetReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Research\ChartOfEvents.aspx.cs">
+      <DependentUpon>ChartOfEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Research\ChartOfEvents.aspx.designer.cs">
+      <DependentUpon>ChartOfEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Research\Comparer.aspx.cs">
+      <DependentUpon>Comparer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Research\Comparer.aspx.designer.cs">
+      <DependentUpon>Comparer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Research\Current.aspx.designer.cs">
+      <DependentUpon>Current.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Research\CurrentReportList.aspx.cs">
+      <DependentUpon>CurrentReportList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Research\CurrentReportList.aspx.designer.cs">
+      <DependentUpon>CurrentReportList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Research\EventsReport.aspx.cs">
+      <DependentUpon>EventsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Research\EventsReport.aspx.designer.cs">
+      <DependentUpon>EventsReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Research\PortsList.aspx.cs">
+      <DependentUpon>PortsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Research\PortsList.aspx.designer.cs">
+      <DependentUpon>PortsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Research\ProcessList.aspx.cs">
+      <DependentUpon>ProcessList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Research\ProcessList.aspx.designer.cs">
+      <DependentUpon>ProcessList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Research\ProcTree.aspx.cs">
+      <DependentUpon>ProcTree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Research\ProcTree.aspx.designer.cs">
+      <DependentUpon>ProcTree.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Research\RegsTree.aspx.cs">
+      <DependentUpon>RegsTree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Research\RegsTree.aspx.designer.cs">
+      <DependentUpon>RegsTree.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Research\ReportList.aspx.cs">
+      <DependentUpon>ReportList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Research\ReportList.aspx.designer.cs">
+      <DependentUpon>ReportList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Research\RegistryList.aspx.cs">
+      <DependentUpon>RegistryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Research\RegistryList.aspx.designer.cs">
+      <DependentUpon>RegistryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Research\FileList.aspx.cs">
+      <DependentUpon>FileList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Research\FileList.aspx.designer.cs">
+      <DependentUpon>FileList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Research\Current.aspx.cs">
+      <DependentUpon>Current.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Research\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Research\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Research\NewResearch.aspx.cs">
+      <DependentUpon>NewResearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Research\NewResearch.aspx.designer.cs">
+      <DependentUpon>NewResearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Research\Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Research\Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Research\SetMonitor.aspx.cs">
+      <DependentUpon>SetMonitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Research\SetMonitor.aspx.designer.cs">
+      <DependentUpon>SetMonitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Settings\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Settings\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Settings\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Settings\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\CustomMembershipProvider.cs" />
+    <Compile Include="Providers\CustomRoleProvider.cs" />
+    <Compile Include="ReportsBuilder.cs" />
+    <Compile Include="ResearchTimeChecker.cs" />
+    <Compile Include="Root.master.cs">
+      <DependentUpon>Root.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Root.master.designer.cs">
+      <DependentUpon>Root.master</DependentUpon>
+    </Compile>
+    <Compile Include="Base\BaseMainPage.aspx.cs">
+      <DependentUpon>BaseMainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\BaseMainPage.aspx.designer.cs">
+      <DependentUpon>BaseMainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaskStruct.cs" />
+    <Compile Include="TreeViewBuilder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SandBox.Connection\SandBox.Connection.csproj">
+      <Project>{49BB7F51-BF6E-43CF-9CAA-92E4E3F2612E}</Project>
+      <Name>SandBox.Connection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SandBox.Data\SandBox.Data.csproj">
+      <Project>{96BBDC15-C8BF-478F-90F1-2D08D08C4FBD}</Project>
+      <Name>SandBox.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SandBox.Db\SandBox.Db.csproj">
+      <Project>{8BE032C5-882D-46FF-8DD0-D9A3CD27F9B9}</Project>
+      <Name>SandBox.Db</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SandBox.Log\SandBox.Log.csproj">
+      <Project>{E04A4D25-1D12-421D-AD23-3F2BB5387A55}</Project>
+      <Name>SandBox.Log</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Empty.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NestedMasterPage1.master" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2005</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1274/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

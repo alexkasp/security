@@ -1,0 +1,18 @@
+﻿.accountpanel {
+width: 200px;
+height: 200px;
+position: fixed;
+top: 50%;
+left: 50%;
+/*margin-top: -200px;
+margin-left: -300px;*/
+}
+
+#account-box {
+	width:300px;
+	height: 260px;
+	padding: 38px 76px 0 50px;
+	color: #ebebeb;
+	font: 11px Arial, Helvetica, sans-serif;
+	background: url(images/login-box-backg.png) no-repeat left top;
+}
