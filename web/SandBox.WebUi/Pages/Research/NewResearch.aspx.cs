@@ -96,9 +96,9 @@ namespace SandBox.WebUi.Pages.Research
             if (vm.Type == 1)
             {
                 NewName = GenRandString(20);
-                VmManager.AddVm(NewName, 2, vm.System, UserId, vm.EnvType);
+                VmManager.AddVm(NewName, 2, vm.System, UserId, 0);
                 Vm newvm = VmManager.GetVm(NewName);
-                researchVmData = ResearchManager.AddResearchVmData(NewName, 2, newvm.System, newvm.EnvType, newvm.EnvMac, newvm.EnvIp, newvm.Description);
+                researchVmData = ResearchManager.AddResearchVmData(NewName, 2, newvm.System, 0, newvm.EnvMac, newvm.EnvIp, newvm.Description);
                 researchId = ResearchManager.AddResearch(UserId, mlwr.Id, newvm.Id, researchVmData, timeLeft, tbLir.Text);
             }
             else

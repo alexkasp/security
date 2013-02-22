@@ -89,7 +89,10 @@ namespace SandBox.WebUi
                     case 0xFA: VmManager.UpdateVmState(machineName, (Int32)VmManager.State.STOPPED); break;
                 }
 
-                GetVmStatus(machineName);
+                if (Convert.ToInt32(vm.EnvType)>0)
+                    GetVmStatus(machineName);
+                else
+                    VmManager.DeleteVm(vm.Id);
             }
             catch (Exception)
             {

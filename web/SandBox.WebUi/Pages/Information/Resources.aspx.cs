@@ -160,23 +160,36 @@ namespace SandBox.WebUi.Pages.Information
             SendPacket(packet.ToByteArray());
         }
 
-        private static void StopVm(Int32 id)
+        
+        private static void TryDeleteVm(Int32 id)
         {
-            String machineName = VmManager.GetVmName(id);
-            Packet packet = new Packet { Type = PacketType.CMD_VM_STOP, Direction = PacketDirection.REQUEST };
-            packet.AddParameter(Encoding.UTF8.GetBytes(machineName));
-            SendPacket(packet.ToByteArray());
-        }
-
-        private void DeleteVm(Int32 id)
-        {
-            String machineName = VmManager.GetVmName(id);
+             String machineName = VmManager.GetVmName(id);
             Packet packet = new Packet { Type = PacketType.CMD_VM_DELETE, Direction = PacketDirection.REQUEST };
             packet.AddParameter(Encoding.UTF8.GetBytes(machineName));
             SendPacket(packet.ToByteArray());
 
             VmManager.DeleteVm(id);
+        }
+        private void DeleteVm(Int32 id)
+        {
+            TryDeleteVm(id);
             UpdateTableView();
+        }
+
+        public static void StopVm(Int32 id)
+        {
+            Vm vm = VmManager.GetVm(id);
+
+            if (vm != null)
+            {
+                Packet packet = new Packet { Type = PacketType.CMD_VM_STOP, Direction = PacketDirection.REQUEST };
+                packet.AddParameter(Encoding.UTF8.GetBytes(vm.Name));
+                SendPacket(packet.ToByteArray());
+
+                if (vm.EnvType == 0)
+                    TryDeleteVm(vm.Id);
+            }
+
         }
 
         protected void GridViewMachinesHtmlRowPrepared(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewTableRowEventArgs e)

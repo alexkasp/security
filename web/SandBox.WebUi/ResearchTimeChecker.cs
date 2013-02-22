@@ -5,6 +5,7 @@ using System.Threading;
 using SandBox.Connection;
 using SandBox.Db;
 using SandBox.Log;
+using SandBox.WebUi.Pages.Information;
 
 namespace SandBox.WebUi
 {
@@ -68,9 +69,12 @@ namespace SandBox.WebUi
 
                             //Останаливаем виртуалку
                             String machineName = VmManager.GetVmName(research.VmId);
-                            Packet packet = new Packet { Type = PacketType.CMD_VM_STOP, Direction = PacketDirection.REQUEST };
-                            packet.AddParameter(Encoding.UTF8.GetBytes(machineName));
-                            _client.Send(packet.ToByteArray());
+                            if(machineName!=null)
+                            {
+                                Resources.StopVm(research.VmId);
+                              
+                            }
+                           
 
                             ResearchManager.UpdateResearchStopTime(research.Id);
                             ResearchManager.UpdateResearchState(research.Id, ResearchState.COMPLETED);
