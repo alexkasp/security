@@ -1,1 +1,0 @@
-<%@ Application Codebehind="Global.asax.cs" Inherits="SandBox.WebUi.Global_asax" Language="C#" %>

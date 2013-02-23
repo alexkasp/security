@@ -260,6 +260,7 @@
     <dx:ASPxComboBox ID="ASPxComboBox3" runat="server" Width="50%" 
         AutoPostBack="True" LoadingPanelText="Загрузка&amp;hellip;">
         <Items>
+             <dx:ListEditItem Text="весь реестр" Value="full" />
             <dx:ListEditItem Text="HKEY_CLASSES_ROOT" Value="HKEY_CLASSES_ROOT" />
             <dx:ListEditItem Text="HKEY_CURRENT_USER" Value="HKEY_CURRENT_USER" />
             <dx:ListEditItem Text="HKEY_LOCAL_MACHINE" Value="HKEY_LOCAL_MACHINE" />

@@ -13,3 +13,8 @@ D:\work\git\votchina\web\StopRschByEvent\obj\x86\Debug\StopRschByEvent.Form1.res
 D:\work\git\votchina\web\StopRschByEvent\obj\x86\Debug\StopRschByEvent.Properties.Resources.resources
 D:\work\git\votchina\web\StopRschByEvent\obj\x86\Debug\GenerateResource.read.1.tlog
 D:\work\git\votchina\web\StopRschByEvent\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\work\security\votchina\web\StopRschByEvent\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\security\votchina\web\StopRschByEvent\obj\x86\Debug\StopRschByEvent.Form1.resources
+D:\work\security\votchina\web\StopRschByEvent\obj\x86\Debug\StopRschByEvent.Properties.Resources.resources
+D:\work\security\votchina\web\StopRschByEvent\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\work\security\votchina\web\StopRschByEvent\obj\x86\Debug\GenerateResource.write.1.tlog

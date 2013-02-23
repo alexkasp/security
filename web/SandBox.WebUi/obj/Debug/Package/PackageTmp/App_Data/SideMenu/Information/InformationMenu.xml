@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<menu>
-    <item Text="Ресурсы"  NavigateUrl="~/Pages/Information/Resources.aspx" />
-    <item Text="ВПО"      NavigateUrl="~/Pages/Information/MalwareInfo.aspx" />
-</menu>
