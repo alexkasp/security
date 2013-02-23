@@ -18,9 +18,7 @@
 <body runat="server" id="Body">
     <div class="wrapper_full">
         <form id="form1" runat="server">
-    <asp:ScriptManager ID="AjaxScriptManager" runat="server" OnAsyncPostBackError="AjaxScriptManager_AsyncPostBackError"
-        EnablePageMethods="true">
-    </asp:ScriptManager>
+    <asp:ScriptManager ID="AjaxScriptManager" runat="server"> </asp:ScriptManager>
 
                     <div id="header">
                     <div id="header-sh">
@@ -76,7 +74,7 @@
 				<div id="vresource" class="vpanel">
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
-                        <asp:Timer ID="Timer1" runat="server" Interval="4000" ontick="Timer1_Tick">
+                        <asp:Timer ID="Timer1" runat="server" Interval="10000" ontick="Timer1_Tick">
                         </asp:Timer>
                          <% RefreshServerState(); %>
 

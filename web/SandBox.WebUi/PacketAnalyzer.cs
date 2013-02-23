@@ -11,7 +11,6 @@ using SandBox.WebUi.Pages.Research;
 
 
 namespace SandBox.WebUi
-
 {
     public class PacketAnalyzer
     {
@@ -172,7 +171,6 @@ namespace SandBox.WebUi
                 Vm vm = VmManager.GetVmByMac(envMac);
                 if (vm == null) return;
                 VmManager.UpdateEnvData(vm.Id, envId, envIp);
-
                 Research r = ResearchManager.GetResearchByVmName(vm.Name);
                 if (r != null)
                 {

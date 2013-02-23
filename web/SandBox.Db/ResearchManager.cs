@@ -284,6 +284,16 @@ namespace SandBox.Db
         }
         
 
+        public static IQueryable GetSearchEventsView(string searchtxt)
+        {
+            var db = new SandBoxDataContext();
+            return from evts in db.EventsTableViews
+                   where evts.who.Contains(searchtxt)
+                   orderby evts.rschId
+                   select new { evts.Id, evts.ModuleId, evts.EventCode, evts.who, evts.dest, evts.Description, evts.rschId, pid = evts.pid1, evts.pid2, evts.adddata1, evts.adddata2, evts.timeofevent };
+
+        }
+
         /// <summary>
         /// Возвращает ередставление для тыблицы событий исследования
         /// </summary>
@@ -328,13 +338,22 @@ namespace SandBox.Db
         {
             var db = new SandBoxDataContext();
             if (!dscnding)
-                return from evts in db.events
+                return from evts in db.EventsTableViews
                        where evts.rschId == rschId
-                       select new { Id = evts.Id, ModuleId = GetEvtModuleDescription(evts.module), EventCode = GetEvtEvtDescription(evts.@event), Who = evts.who, Dest = evts.dest, Description = evts.descr, RschId = evts.rschId, pid = evts.pid1, pid2 = evts.pid2, adddata1 = evts.adddata1, adddata2 = evts.adddata2, timeOfEvent = evts.timeofevent };
-            return from evts in db.events
+                       orderby evts.Id
+                       select new { evts.Id, evts.ModuleId, evts.EventCode, evts.who, evts.dest, evts.Description, evts.rschId, pid = evts.pid1, evts.pid2, evts.adddata1, evts.adddata2, evts.timeofevent };
+            return from evts in db.EventsTableViews
                    where evts.rschId == rschId
                    orderby evts.Id descending
-                   select new { Id = evts.Id, ModuleId = GetEvtModuleDescription(evts.module), EventCode = GetEvtEvtDescription(evts.@event), Who = evts.who, Dest = evts.dest, Description = evts.descr, RschId = evts.rschId, pid = evts.pid1, pid2 = evts.pid2, adddata1 = evts.adddata1, adddata2 = evts.adddata2, timeOfEvent = evts.timeofevent };
+                   select new { evts.Id, evts.ModuleId, evts.EventCode, evts.who, evts.dest, evts.Description, evts.rschId, pid = evts.pid1, evts.pid2, evts.adddata1, evts.adddata2, evts.timeofevent };
+//                return from evts in db.events
+//                       where evts.rschId == rschId
+//                       select new { Id = evts.Id, ModuleId = GetEvtModuleDescription(evts.module), EventCode = GetEvtEvtDescription(evts.@event), Who = evts.who, Dest = evts.dest, Description = evts.descr, RschId = evts.rschId, pid = evts.pid1, pid2 = evts.pid2, adddata1 = evts.adddata1, adddata2 = evts.adddata2, timeOfEvent = evts.timeofevent };
+//            return from evts in db.events
+//
+//                   where evts.rschId == rschId
+//                   orderby evts.Id descending
+//                   select new { Id = evts.Id, ModuleId = GetEvtModuleDescription(evts.module), EventCode = GetEvtEvtDescription(evts.@event), Who = evts.who, Dest = evts.dest, Description = evts.descr, RschId = evts.rschId, pid = evts.pid1, pid2 = evts.pid2, adddata1 = evts.adddata1, adddata2 = evts.adddata2, timeOfEvent = evts.timeofevent };
 
         }
 
@@ -918,7 +937,6 @@ namespace SandBox.Db
                 db.SubmitChanges();
             }
         }
-
 
         //**********************************************************
         //* Получение данных о Vm

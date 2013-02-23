@@ -5,18 +5,16 @@ body {
 	background-repeat: repeat-y;
 	background-position: right;
 	background-color: #558b9e;
-	margin: 0 auto;
-	padding: 0px;
 	min-width: 1280px;
+	height: 100%;
 }
 .wrapper_full {
 	width: 100%;
-	height: 100%;
 	background-image: url(/Content/images/globus.png);
 	background-repeat: no-repeat;
 	background-position: right top;
+	height: 100%;
 	position: absolute;
-	overflow: auto;
 }
 #topm {
 	height: 15px;

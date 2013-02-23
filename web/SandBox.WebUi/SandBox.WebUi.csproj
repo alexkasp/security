@@ -221,6 +221,7 @@
     <Content Include="Pages\Research\NewResearch.aspx" />
     <Content Include="Pages\Research\Reports.aspx" />
     <Content Include="Pages\Research\SetMonitor.aspx" />
+    <Content Include="Pages\Research\Search.aspx" />
     <Content Include="Pages\Settings\Index.aspx" />
     <Content Include="Pages\Settings\Users.aspx" />
     <Content Include="Root.master" />
@@ -573,6 +574,13 @@
     </Compile>
     <Compile Include="Pages\Research\SetMonitor.aspx.designer.cs">
       <DependentUpon>SetMonitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Research\Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Research\Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Settings\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

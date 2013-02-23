@@ -9,8 +9,6 @@ using System.Security.Cryptography;
 using SandBox.Connection;
 using System.Text;
 
-
-
 namespace SandBox.WebUi.Pages.Research
 {
     public partial class NewResearch : BaseMainPage

@@ -75,3 +75,10 @@ D:\work\security\votchina\web\SandBox.Connection\bin\Debug\SandBox.Data.pdb
 D:\work\security\votchina\web\SandBox.Connection\obj\Debug\ResolveAssemblyReference.cache
 D:\work\security\votchina\web\SandBox.Connection\obj\Debug\SandBox.Connection.dll
 D:\work\security\votchina\web\SandBox.Connection\obj\Debug\SandBox.Connection.pdb
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Connection\bin\Debug\SandBox.Connection.dll
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Connection\bin\Debug\SandBox.Connection.pdb
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Connection\bin\Debug\SandBox.Data.dll
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Connection\bin\Debug\SandBox.Data.pdb
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Connection\obj\Debug\ResolveAssemblyReference.cache
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Connection\obj\Debug\SandBox.Connection.dll
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Connection\obj\Debug\SandBox.Connection.pdb

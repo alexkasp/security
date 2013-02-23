@@ -81,3 +81,10 @@ D:\work\security\votchina\web\SandBox.Db\bin\Debug\SandBox.Db.pdb
 D:\work\security\votchina\web\SandBox.Db\obj\Debug\ResolveAssemblyReference.cache
 D:\work\security\votchina\web\SandBox.Db\obj\Debug\SandBox.Db.dll
 D:\work\security\votchina\web\SandBox.Db\obj\Debug\SandBox.Db.pdb
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Db\bin\Debug\app.config
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Db\bin\Debug\SandBox.Db.dll.config
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Db\bin\Debug\SandBox.Db.dll
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Db\bin\Debug\SandBox.Db.pdb
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Db\obj\Debug\ResolveAssemblyReference.cache
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Db\obj\Debug\SandBox.Db.dll
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Db\obj\Debug\SandBox.Db.pdb

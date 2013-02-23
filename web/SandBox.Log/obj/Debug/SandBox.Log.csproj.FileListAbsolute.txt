@@ -47,3 +47,10 @@ D:\work\security\votchina\web\SandBox.Log\bin\Debug\NLog.dll
 D:\work\security\votchina\web\SandBox.Log\obj\Debug\ResolveAssemblyReference.cache
 D:\work\security\votchina\web\SandBox.Log\obj\Debug\SandBox.Log.dll
 D:\work\security\votchina\web\SandBox.Log\obj\Debug\SandBox.Log.pdb
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Log\bin\Debug\NLog.config
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Log\bin\Debug\SandBox.Log.dll
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Log\bin\Debug\SandBox.Log.pdb
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Log\bin\Debug\NLog.dll
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Log\obj\Debug\ResolveAssemblyReference.cache
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Log\obj\Debug\SandBox.Log.dll
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Log\obj\Debug\SandBox.Log.pdb

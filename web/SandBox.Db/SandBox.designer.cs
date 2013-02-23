@@ -580,6 +580,13 @@ namespace SandBox.Db
 			}
 		}
 		
+		public System.Data.Linq.Table<EventsTableView> EventsTableViews
+		{
+			get
+			{
+				return this.GetTable<EventsTableView>();
+			}
+		}
 		public System.Data.Linq.Table<vpotoos> vpotoos
 		{
 			get
@@ -8434,6 +8441,230 @@ namespace SandBox.Db
 				if ((this._Id != value))
 				{
 					this._Id = value;
+				}
+			}
+		}
+	}
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.EventsTableView")]
+	public partial class EventsTableView
+	{
+		
+		private long _Id;
+		
+		private string _ModuleId;
+		
+		private string _EventCode;
+		
+		private string _who;
+		
+		private string _dest;
+		
+		private string _Description;
+		
+		private int _rschId;
+		
+		private System.Nullable<int> _pid1;
+		
+		private System.Nullable<int> _pid2;
+		
+		private string _adddata1;
+		
+		private string _adddata2;
+		
+		private System.Nullable<System.DateTime> _timeofevent;
+		
+		public EventsTableView()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="BigInt NOT NULL")]
+		public long Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModuleId", DbType="VarChar(MAX)")]
+		public string ModuleId
+		{
+			get
+			{
+				return this._ModuleId;
+			}
+			set
+			{
+				if ((this._ModuleId != value))
+				{
+					this._ModuleId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EventCode", DbType="VarChar(MAX)")]
+		public string EventCode
+		{
+			get
+			{
+				return this._EventCode;
+			}
+			set
+			{
+				if ((this._EventCode != value))
+				{
+					this._EventCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_who", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string who
+		{
+			get
+			{
+				return this._who;
+			}
+			set
+			{
+				if ((this._who != value))
+				{
+					this._who = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dest", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string dest
+		{
+			get
+			{
+				return this._dest;
+			}
+			set
+			{
+				if ((this._dest != value))
+				{
+					this._dest = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(150)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rschId", DbType="Int NOT NULL")]
+		public int rschId
+		{
+			get
+			{
+				return this._rschId;
+			}
+			set
+			{
+				if ((this._rschId != value))
+				{
+					this._rschId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pid1", DbType="Int")]
+		public System.Nullable<int> pid1
+		{
+			get
+			{
+				return this._pid1;
+			}
+			set
+			{
+				if ((this._pid1 != value))
+				{
+					this._pid1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pid2", DbType="Int")]
+		public System.Nullable<int> pid2
+		{
+			get
+			{
+				return this._pid2;
+			}
+			set
+			{
+				if ((this._pid2 != value))
+				{
+					this._pid2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_adddata1", DbType="NChar(250)")]
+		public string adddata1
+		{
+			get
+			{
+				return this._adddata1;
+			}
+			set
+			{
+				if ((this._adddata1 != value))
+				{
+					this._adddata1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_adddata2", DbType="NChar(250)")]
+		public string adddata2
+		{
+			get
+			{
+				return this._adddata2;
+			}
+			set
+			{
+				if ((this._adddata2 != value))
+				{
+					this._adddata2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timeofevent", DbType="DateTime")]
+		public System.Nullable<System.DateTime> timeofevent
+		{
+			get
+			{
+				return this._timeofevent;
+			}
+			set
+			{
+				if ((this._timeofevent != value))
+				{
+					this._timeofevent = value;
 				}
 			}
 		}
