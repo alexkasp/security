@@ -579,6 +579,14 @@ namespace SandBox.Db
 				return this.GetTable<EventsChartCount>();
 			}
 		}
+		
+		public System.Data.Linq.Table<vpotoos> vpotoos
+		{
+			get
+			{
+				return this.GetTable<vpotoos>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
@@ -8345,6 +8353,87 @@ namespace SandBox.Db
 				if ((this._Count != value))
 				{
 					this._Count = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vpotoos")]
+	public partial class vpotoos
+	{
+		
+		private string _name;
+		
+		private System.Nullable<int> _count;
+		
+		private System.Nullable<int> _danger;
+		
+		private long _Id;
+		
+		public vpotoos()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NChar(50)")]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this._name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_count", DbType="Int")]
+		public System.Nullable<int> count
+		{
+			get
+			{
+				return this._count;
+			}
+			set
+			{
+				if ((this._count != value))
+				{
+					this._count = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_danger", DbType="Int")]
+		public System.Nullable<int> danger
+		{
+			get
+			{
+				return this._danger;
+			}
+			set
+			{
+				if ((this._danger != value))
+				{
+					this._danger = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.Always, DbType="BigInt NOT NULL IDENTITY", IsDbGenerated=true)]
+		public long Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
 				}
 			}
 		}

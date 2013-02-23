@@ -2,6 +2,7 @@ using System;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using SandBox.Db;
+using System.Collections.Generic;
 
 namespace SandBox.WebUi {
     public partial class RootMaster : MasterPage
@@ -11,7 +12,10 @@ namespace SandBox.WebUi {
         private const Int32 MENU_EMPTY          = 2;
         private const Int32 MENU_FILEMANAGER    = 3;
 
-        
+        private Dictionary<string, int> _vpoDanger = new Dictionary<string, int>();
+        string[] _vpoTopNames = new string[] { "", "", "", "", "" };
+        int[] _vpoTopValues = new int[] { 0, 0, 0, 0, 0 };
+
         protected void Page_Load(object sender, EventArgs e)
         {     
             if (!Page.User.Identity.IsAuthenticated)
@@ -42,10 +46,19 @@ namespace SandBox.WebUi {
                       item.Selected = true;
                    }
                 }
+            _vpoDanger = ReportManager.GetTopFiveMlwr();
+            int i = 0;
+            foreach (var v in _vpoDanger)
+            {
+                if (i == 5) break;
+                _vpoTopNames[i] = v.Key;
+                _vpoTopValues[i] = v.Value;
+                i++;
+            }
             //string someScript = "";
             string someScript2 = "";
             //someScript = "<SCRIPT TYPE=\"text/javascript\">$(document).ready(function () { var r2 = new Raphael(\"chartOSuse\"); r2.hbarchart(0, 0, 130, 90, [[155, 55, 55, 32, 5]],{\"gutter\":\"30%\",\"colors\":[\"#ffffff\"],\"rtl\":true}).label([]);});  </SCRIPT>";
-            someScript2 = " <SCRIPT TYPE=\"text/javascript\">$(document).ready(function () { var r =  new Raphael(\"chartCountEv\"); r.hbarchart(0, 0, 147, 90, [[155, 55, 55, 32, 5]],{\"gutter\":\"30%\",\"colors\":[\"#ffffff\"]}).label([]);var r2 = new Raphael(\"chartOSuse\"); r2.hbarchart(0, 0, 130, 90, [[35, 85, 15, 2, 51]],{\"gutter\":\"30%\",\"colors\":[\"#ffffff\"],\"rtl\":true}).label([]);});var r3 = new Raphael(\"chartDanger\"); r3.hbarchart(0, 0, 152, 90, [[5, 7, 3, 15, 5]], { \"gutter\": \"30%\", \"colors\": [\"#ffffff\"] }).label([\"calc\", \"regedit\", \"injector\", \"testvpo\", \"explorer\"]);</SCRIPT>";
+            someScript2 = " <SCRIPT TYPE=\"text/javascript\">$(document).ready(function () { var r =  new Raphael(\"chartCountEv\"); r.hbarchart(0, 0, 147, 90, [[155, 55, 55, 32, 5]],{\"gutter\":\"30%\",\"colors\":[\"#ffffff\"]}).label([]);var r2 = new Raphael(\"chartOSuse\"); r2.hbarchart(0, 0, 130, 90, [[35, 85, 15, 2, 51]],{\"gutter\":\"30%\",\"colors\":[\"#ffffff\"],\"rtl\":true}).label([]);});var r3 = new Raphael(\"chartDanger\"); r3.hbarchart(0, 0, 152, 90, [[" + _vpoTopValues[0] + ", " + _vpoTopValues[1] + "," + _vpoTopValues[2] + ", " + _vpoTopValues[3] + ", " + _vpoTopValues[4] + "]], { \"gutter\": \"30%\", \"colors\": [\"#ffffff\"] }).label([\"" + _vpoTopNames[0] + "\", \"" + _vpoTopNames[1] + "\", \"" + _vpoTopNames[2] + "\", \"" + _vpoTopNames[3] + "\", \"" + _vpoTopNames[4] + "\"]);</SCRIPT>";
             //Page.ClientScript.RegisterStartupScript(this.GetType(), "onload", someScript);
             Page.ClientScript.RegisterStartupScript(this.GetType(), "onload", someScript2);
         }

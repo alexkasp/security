@@ -8,7 +8,29 @@ namespace SandBox.Db
 {
     public class ReportManager : DbManager
     {
+        public static Dictionary<string, int> GetTopFiveMlwr()
+        {
+            using (var db = new SandBoxDataContext())
+            {
+                Dictionary<string, int> res = new Dictionary<string, int>();
+                var mlwr = from m in db.vpotoos
+                           select m;
+                foreach (var m in mlwr)
+                {
+                    if (res.ContainsKey(m.name))
+                    {
+                        res[m.name] += m.danger ?? 0;
 
+                    }
+                    else
+                    {
+                        res.Add(m.name, m.danger ?? 0);
+                    }
+                }
+                res.OrderByDescending(x => x.Value);
+                return res;
+            }
+        }
         public static long GetFsEventsCountForRsch(int rschId)
         {
             return GetEventsOfModuleCuntForRsch(1, rschId);

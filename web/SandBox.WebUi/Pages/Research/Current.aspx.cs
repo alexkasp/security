@@ -536,10 +536,11 @@ namespace SandBox.WebUi.Pages.Research
                 }
 
                 grid.ClientSideEvents.Init = "function(s, e) { drawHalfPie('chartHolder1',Array(" + FileEvs[1].ToString() + ","
-                    + FileEvs[0].ToString() + ")); drawHalfPie('chartHolder2',Array(" + RegistryEvs[1].ToString() + ","
-                    + RegistryEvs[0].ToString() + ")); drawHalfPie('chartHolder3',Array(" + ProcessEvs[1].ToString() + ","
-                    + ProcessEvs[0].ToString() + ")); drawHalfPie('chartHolder4',Array(" + NetEvs[1].ToString() + ","
-                    + NetEvs[0].ToString() + ")); }";
+                     + FileEvs[0].ToString() + ")); drawHalfPie('chartHolder2',Array(" + RegistryEvs[1].ToString() + ","
+                     + RegistryEvs[0].ToString() + ")); drawHalfPie('chartHolder3',Array(" + ProcessEvs[1].ToString() + ","
+                     + ProcessEvs[0].ToString() + ")); drawHalfPie('chartHolder4',Array(" + NetEvs[1].ToString() + ","
+                     + NetEvs[0].ToString() + "));"
+                     + "$('.detailrowreport > a').attr('href', 'ReportList.aspx?researchId=" + rschIdx + "')}";
             }
             catch (Exception)
             {
