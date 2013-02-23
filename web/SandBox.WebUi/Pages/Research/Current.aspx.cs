@@ -203,6 +203,8 @@ namespace SandBox.WebUi.Pages.Research
 
                 ResearchManager.UpdateResearchState(researchId, ResearchState.EXECUTING);
                 ResearchManager.UpdateResearchStartTime(researchId); //?? Должно быть выше
+                VmManager.UpdateVmState(vm.Id, VmManager.State.RESEARCHING);
+                ResearchManager.UpdateResearchVmData(ResearchManager.GetResearch(researchId).ResearchVmData, vm.EnvMac, vm.EnvIp);
             }
             else
             {

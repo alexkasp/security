@@ -907,6 +907,18 @@ namespace SandBox.Db
             }
         }
 
+        public static void UpdateResearchVmData(Int32 researchVmId,String vmEnvMac, String vmEnvIp)
+        {
+            using (SandBoxDataContext db = new SandBoxDataContext())
+            {
+                ResearchesVmData researchVm = db.ResearchesVmDatas.FirstOrDefault(x => x.Id == researchVmId);
+                if (researchVm == null) return;
+                researchVm.VmEnvIp = vmEnvIp;
+                researchVm.VmEnvMac = vmEnvMac;
+                db.SubmitChanges();
+            }
+        }
+
 
         //**********************************************************
         //* Получение данных о Vm
