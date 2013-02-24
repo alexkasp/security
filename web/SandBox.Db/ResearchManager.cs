@@ -958,6 +958,7 @@ namespace SandBox.Db
                 var research = from r in db.Researches
                                join datas in db.ResearchesVmDatas on r.ResearchVmData equals datas.Id
                                where datas.VmName == VmName
+                               orderby r.Id descending
                                select r;
                 return research.First();
             }
