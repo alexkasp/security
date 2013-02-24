@@ -55,7 +55,8 @@
                     oncustombuttoncallback="GridViewMachinesCustomButtonCallback" 
                         KeyFieldName="Id" EnableCallBacks="False" 
                         oncustomcallback="gridViewMachines_CustomCallback" 
-                        ClientInstanceName="gridViewMachines">
+                        ClientInstanceName="gridViewMachines" 
+                        oncustombuttoninitialize="gridViewMachines_CustomButtonInitialize">
         <ClientSideEvents CustomButtonClick="function(s, e) {
  if (e.buttonID == 'btnDelete') {
  if (!confirm(&quot;Вы уверены, что хотите удалить ресурс?&quot;)) { return;}}
@@ -65,8 +66,7 @@
             <dx:GridViewCommandColumn VisibleIndex="0" ButtonType="Image" Width = "50px" 
                 Caption="Статус">
                 <CustomButtons>
-                    <dx:GridViewCommandColumnCustomButton ID="btnStatus">
-                        <Image ToolTip="Запустить" Url="../../Content/Images/Icons/run.png" />
+                    <dx:GridViewCommandColumnCustomButton ID="btnStatus" Image-Url="../../Content/Images/Icons/run.png" Image-ToolTip="Запустить" Image-AlternateText="Запустить">
                     </dx:GridViewCommandColumnCustomButton>
                 </CustomButtons>
                 <CellStyle HorizontalAlign="Center">
