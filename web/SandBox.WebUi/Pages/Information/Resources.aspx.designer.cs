@@ -13,49 +13,31 @@ namespace SandBox.WebUi.Pages.Information {
     public partial class Resources {
         
         /// <summary>
-        /// ASPxHyperLink2 control.
+        /// btnAddLIR control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxHyperLink ASPxHyperLink2;
+        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnAddLIR;
         
         /// <summary>
-        /// ASPxHyperLink1 control.
+        /// btnAddVLIR control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxHyperLink ASPxHyperLink1;
+        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnAddVLIR;
         
         /// <summary>
-        /// linkRegisterNewVm control.
+        /// gridResourceViewPager control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxHyperLink linkRegisterNewVm;
-        
-        /// <summary>
-        /// linkCreateNewVm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxHyperLink linkCreateNewVm;
-        
-        /// <summary>
-        /// linkAddNewResearch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxHyperLink linkAddNewResearch;
+        protected global::DevExpress.Web.ASPxPager.ASPxPager gridResourceViewPager;
         
         /// <summary>
         /// labelNoItems control.
@@ -94,39 +76,21 @@ namespace SandBox.WebUi.Pages.Information {
         protected global::DevExpress.Web.ASPxGridView.ASPxGridView gridViewMachines;
         
         /// <summary>
-        /// runButton control.
+        /// btnStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView.GridViewCommandColumnCustomButton runButton;
+        protected global::DevExpress.Web.ASPxGridView.GridViewCommandColumnCustomButton btnStatus;
         
         /// <summary>
-        /// stopButton control.
+        /// btnDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView.GridViewCommandColumnCustomButton stopButton;
-        
-        /// <summary>
-        /// editButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView.GridViewCommandColumnCustomButton editButton;
-        
-        /// <summary>
-        /// deleteButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView.GridViewCommandColumnCustomButton deleteButton;
+        protected global::DevExpress.Web.ASPxGridView.GridViewCommandColumnCustomButton btnDelete;
     }
 }
