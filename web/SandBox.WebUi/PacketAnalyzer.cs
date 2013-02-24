@@ -47,11 +47,20 @@ namespace SandBox.WebUi
 
         private static void OnStopByEvent(IList<byte[]> parameters)
         {
-            MLogger.LogTo(Level.TRACE, false, "[ANS_VM_STOP_BY_EVENT] received");
-            Int32 rschId = Convert.ToInt32(parameters[0][0]);
+            try
+            {
+                Int32 EnvId = Convert.ToInt32(parameters[0][0]);
+                MLogger.LogTo(Level.TRACE, false, "[ANS_VM_STOP_BY_EVENT] received");
 
-            Research rsh = ResearchManager.GetResearch(rschId);
-            Resources.StopVm(rsh.VmId);
+               
+                Vm vm = VmManager.GetVmByEnvId(EnvId);
+              
+                Resources.StopVm(vm.Id);
+            }
+            catch(Exception)
+            {
+                MLogger.LogTo(Level.WARNING, false, "OnStopByEvent, catch");
+            }
 
         }
         private static void OnReceiveVmStart(IList<byte[]> parameters)
@@ -99,8 +108,10 @@ namespace SandBox.WebUi
                 }
 
                 Research research = ResearchManager.GetResearchByVmName(machineName);
-                ReportList.AskPCAPFile(research.Id);
 
+                Current.StartResearch(String.Format("{0}", research.Id));
+                ReportList.AskPCAPFile(research.Id);
+                ResearchManager.UpdateResearchState(research.Id, ResearchState.COMPLETED);
 
 
 
@@ -195,9 +206,9 @@ namespace SandBox.WebUi
                 }
 
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                MLogger.LogTo(Level.WARNING, false, "OnReceiveVmReady, catch");
+                MLogger.LogTo(Level.WARNING, false, "OnReceiveVmReady, catch"+e.Message);
             }
 
 

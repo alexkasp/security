@@ -36,12 +36,12 @@ namespace SandBox.Db
             return GetTasks(researchId).FirstOrDefault(x => x.Type == 17);
         }
 
-        public static void AddCommand(int rschId, string command, string commandParams, int startTime)
+        public static void AddCommand(int rschId, string command, string commandParams="", int startTime=60)
         {
             var db = new SandBoxDataContext();
             try
             {
-                if ((command != null && command != String.Empty) && (commandParams != null && commandParams != String.Empty))
+                if ((command != null && command != String.Empty))
                 {
                     Commands newCommand = new Commands()
                     {
