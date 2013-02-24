@@ -89,6 +89,12 @@ namespace SandBox.WebUi
                     case 0xFA: VmManager.UpdateVmState(machineName, (Int32)VmManager.State.STOPPED); break;
                 }
 
+                Research research = ResearchManager.GetResearchByVmName(machineName);
+                ReportList.AskPCAPFile(research.Id);
+
+               
+
+
                 if (Convert.ToInt32(vm.EnvType)>0)
                     GetVmStatus(machineName);
                 else

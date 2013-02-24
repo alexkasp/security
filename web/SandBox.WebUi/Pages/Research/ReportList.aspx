@@ -88,7 +88,8 @@
 
                 <tr>
                   <td class='panel-left'>
-                      <div class='panel-text-nomargin'>
+                     
+                       <div class='panel-text-nomargin'>
                         <dx:ASPxHyperLink ID="linkGetTraffic" runat="server" 
                               Text="Получить перехват сетевого траффика" NavigateUrl="javascript:;" 
                               Visible="False" Enabled="False">
@@ -97,6 +98,9 @@
                               Text="Запросить перехват сетевого трафика" onclick="BtnGetClick" Width="276px">
                     </dx:ASPxButton>
                       </div>
+                     
+                     
+
                   </td> 
                 </tr>
                 

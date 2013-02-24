@@ -12,17 +12,17 @@
          <Members>
           <Member Name="#btnSendReport_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-02-23 11:28:11Z" FixCategory="DependsOnFix">
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-02-23 13:39:04Z" FixCategory="DependsOnFix">
              <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="D:\work\security\votchina\web\SandBox.TestConnection" File="MainForm.cs" Line="74">In method 'MainForm.btnSendReport_Click(object, EventArgs)', call System.IDisposable.Dispose on object 'commandForm' before all references to it are out of scope.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#Dispose(System.Boolean)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
            <Messages>
-            <Message Id="_server" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2013-02-23 11:28:11Z" FixCategory="NonBreaking">
+            <Message Id="_server" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2013-02-23 13:39:04Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning" Path="D:\work\security\votchina\web\SandBox.TestConnection" File="MainForm.Designer.cs" Line="15">'MainForm' contains field 'MainForm._server' that is of IDisposable type: 'ConnectionServer'. Change the Dispose method on 'MainForm' to call Dispose or Close on this field.</Issue>
             </Message>
-            <Message Id="db2" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2013-02-23 11:28:11Z" FixCategory="NonBreaking">
+            <Message Id="db2" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2013-02-23 13:39:04Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning" Path="D:\work\security\votchina\web\SandBox.TestConnection" File="MainForm.Designer.cs" Line="15">'MainForm' contains field 'MainForm.db2' that is of IDisposable type: 'SandBoxDataContext'. Change the Dispose method on 'MainForm' to call Dispose or Close on this field.</Issue>
             </Message>
            </Messages>
