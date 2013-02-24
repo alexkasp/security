@@ -25,7 +25,7 @@ namespace SandBox.WebUi.Pages.Research
             }
             catch
             {
-                researchId =  Convert.ToInt32(Request.QueryString["researchId"]);
+                researchId =  Convert.ToInt32(Request.QueryString["research"]);
             }
             /*Convert.ToInt32(Request.QueryString["research"]);*/
             Rs = ResearchManager.GetResearch(researchId);           
