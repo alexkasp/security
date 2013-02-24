@@ -29,29 +29,39 @@ namespace SandBox.WebUi
             _client = client;
             switch (packet.Type)
             {
-                case PacketType.ANS_VM_START:       OnReceiveVmStart(packet.GetParameters()); break;
-                case PacketType.ANS_VM_STOP:        OnReceiveVmStop(packet.GetParameters()); break;
-                case PacketType.ANS_VM_STATUS:      OnReceiveVmStatus(packet.GetParameters()); break;
-                case PacketType.ANS_VM_CREATE:      OnReceiveVmCreate(packet.GetParameters()); break;
-                case PacketType.ANS_LOAD_MALWARE:   OnReceiveMalwareLoad(packet.GetParameters()); break;
-                case PacketType.ANS_SET_TARGET:     OnReceiveSetTarget(packet.GetParameters()); break;
-                case PacketType.ANS_REPORT:         OnReceiveReport(packet.GetParameters()); break;
-                case PacketType.ANS_SET_OBJECT:     OnReceiveSetObject(packet.GetParameters()); break;
-                case PacketType.ANS_VM_READY:       OnReceiveVmReady(packet.GetParameters()); break;
-                case PacketType.ANS_VM_COMPLETE:    OnReceiveVmComplete(packet.GetParameters()); break;
-                case PacketType.ANS_LOAD_TRAFFIC:   OnReceiveLoadTraffic(packet.GetParameters()); break;
+                case PacketType.ANS_VM_START: OnReceiveVmStart(packet.GetParameters()); break;
+                case PacketType.ANS_VM_STOP: OnReceiveVmStop(packet.GetParameters()); break;
+                case PacketType.ANS_VM_STATUS: OnReceiveVmStatus(packet.GetParameters()); break;
+                case PacketType.ANS_VM_CREATE: OnReceiveVmCreate(packet.GetParameters()); break;
+                case PacketType.ANS_LOAD_MALWARE: OnReceiveMalwareLoad(packet.GetParameters()); break;
+                case PacketType.ANS_SET_TARGET: OnReceiveSetTarget(packet.GetParameters()); break;
+                case PacketType.ANS_REPORT: OnReceiveReport(packet.GetParameters()); break;
+                case PacketType.ANS_SET_OBJECT: OnReceiveSetObject(packet.GetParameters()); break;
+                case PacketType.ANS_VM_READY: OnReceiveVmReady(packet.GetParameters()); break;
+                case PacketType.ANS_VM_COMPLETE: OnReceiveVmComplete(packet.GetParameters()); break;
+                case PacketType.ANS_LOAD_TRAFFIC: OnReceiveLoadTraffic(packet.GetParameters()); break;
                 case PacketType.ANS_VM_NEWCREATE: OnReceiveVmCreateEvent(packet.GetParameters()); break;
+                case PacketType.ANS_VM_STOPED_BY_EVENT: OnStopByEvent(packet.GetParameters()); break;
             }
         }
 
+        private static void OnStopByEvent(IList<byte[]> parameters)
+        {
+            MLogger.LogTo(Level.TRACE, false, "[ANS_VM_STOP_BY_EVENT] received");
+            Int32 rschId = Convert.ToInt32(parameters[0][0]);
+
+            Research rsh = ResearchManager.GetResearch(rschId);
+            Resources.StopVm(rsh.VmId);
+
+        }
         private static void OnReceiveVmStart(IList<byte[]> parameters)
         {
             try
             {
                 MLogger.LogTo(Level.TRACE, false, "[ANS_VM_START] received");
-                
-                String machineName  = Encoding.UTF8.GetString(parameters[0], 0, parameters[0].Length);
-                Byte   status       = parameters[1][0];
+
+                String machineName = Encoding.UTF8.GetString(parameters[0], 0, parameters[0].Length);
+                Byte status = parameters[1][0];
 
                 Vm vm = VmManager.GetVm(machineName);
                 if (vm == null) return;
@@ -75,7 +85,7 @@ namespace SandBox.WebUi
             try
             {
                 MLogger.LogTo(Level.TRACE, false, "[ANS_VM_STOP] received");
-                
+
                 String machineName = Encoding.UTF8.GetString(parameters[0], 0, parameters[0].Length);
                 Byte status = parameters[1][0];
 
@@ -91,10 +101,10 @@ namespace SandBox.WebUi
                 Research research = ResearchManager.GetResearchByVmName(machineName);
                 ReportList.AskPCAPFile(research.Id);
 
-               
 
 
-                if (Convert.ToInt32(vm.EnvType)>0)
+
+                if (Convert.ToInt32(vm.EnvType) > 0)
                     GetVmStatus(machineName);
                 else
                     VmManager.DeleteVm(vm.Id);
@@ -102,7 +112,7 @@ namespace SandBox.WebUi
             catch (Exception)
             {
                 MLogger.LogTo(Level.WARNING, false, "OnReceiveVmStop, catch");
-            }  
+            }
         }
 
         private static void OnReceiveVmStatus(IList<byte[]> parameters)
@@ -110,27 +120,27 @@ namespace SandBox.WebUi
             try
             {
                 MLogger.LogTo(Level.TRACE, false, "[ANS_VM_STATUS] received");
-                
+
                 String machineName = Encoding.UTF8.GetString(parameters[0], 0, parameters[0].Length);
                 Byte status = parameters[1][0];
-                Byte[] mac  = parameters[2];
+                Byte[] mac = parameters[2];
 
                 Vm vm = VmManager.GetVm(machineName);
                 if (vm == null) return;
 
                 switch (status)
                 {
-                    case 0xF0: 
+                    case 0xF0:
                         VmManager.UpdateVmState(machineName, (Int32)VmManager.State.STARTED); break;
-                    case 0xF1: 
-                        VmManager.UpdateVmState(machineName, (Int32)VmManager.State.STOPPED); 
+                    case 0xF1:
+                        VmManager.UpdateVmState(machineName, (Int32)VmManager.State.STOPPED);
                         VmManager.ResetEnvData(vm.EnvId);
                         break;
-                    case 0xF9: 
+                    case 0xF9:
                         VmManager.UpdateVmState(machineName, (Int32)VmManager.State.UNAVAILABLE);
                         VmManager.ResetEnvData(vm.EnvId);
                         break;
-                    case 0xFE: 
+                    case 0xFE:
                         VmManager.UpdateVmState(machineName, (Int32)VmManager.State.ERROR);
                         VmManager.ResetEnvData(vm.EnvId);
                         break;
@@ -141,7 +151,7 @@ namespace SandBox.WebUi
             catch (Exception)
             {
                 MLogger.LogTo(Level.WARNING, false, "OnReceiveVmStatus, catch");
-            }  
+            }
         }
 
         private static void OnReceiveVmCreate(List<byte[]> parameters)
@@ -160,7 +170,7 @@ namespace SandBox.WebUi
         {
         }
 
-        
+
         //Отчет о готовности ИС к работе
         private static void OnReceiveVmReady(IList<byte[]> parameters)
         {
@@ -169,27 +179,28 @@ namespace SandBox.WebUi
                 MLogger.LogTo(Level.TRACE, false, "[ANS_VM_READY] received");
 
                 Byte[] vmReadyStr = parameters[0];
-                
-                Int32  envId = Convert.ToInt32(vmReadyStr[0]);
+
+                Int32 envId = Convert.ToInt32(vmReadyStr[0]);
                 String envIp = Convert.ToInt32(vmReadyStr[2]) + "." + Convert.ToInt32(vmReadyStr[3]) + "." + Convert.ToInt32(vmReadyStr[4]) + "." + Convert.ToInt32(vmReadyStr[5]);
                 String envMac = DataUtils.ByteArrayToHexString(new[] { vmReadyStr[6], vmReadyStr[7], vmReadyStr[8], vmReadyStr[9], vmReadyStr[10], vmReadyStr[11] });
 
                 Vm vm = VmManager.GetVmByMac(envMac);
                 if (vm == null) return;
                 VmManager.UpdateEnvData(vm.Id, envId, envIp);
+
                 Research r = ResearchManager.GetResearchByVmName(vm.Name);
                 if (r != null)
                 {
-                    Current.StartResearch(String.Format("{0}", r.Id));
+                   Current.StartResearch(String.Format("{0}", r.Id));
                 }
-               
+
             }
             catch (Exception)
             {
                 MLogger.LogTo(Level.WARNING, false, "OnReceiveVmReady, catch");
             }
-            
-            
+
+
         }
 
 
@@ -198,7 +209,7 @@ namespace SandBox.WebUi
             try
             {
                 MLogger.LogTo(Level.TRACE, false, "[ANS_VM_COMPLETE] Vm_complete message received");
-                
+
                 Byte[] vmCompleteStr = parameters[0];
                 Byte envId = vmCompleteStr[0];
 
@@ -212,7 +223,7 @@ namespace SandBox.WebUi
             catch (Exception)
             {
                 MLogger.LogTo(Level.WARNING, false, "OnReceiveVmComplete, catch");
-            }  
+            }
         }
 
 
@@ -247,7 +258,7 @@ namespace SandBox.WebUi
             catch (Exception)
             {
                 MLogger.LogTo(Level.WARNING, false, "OnReceiveReport, catch");
-            } 
+            }
         }
 
         private static void OnReceiveVmCreateEvent(List<byte[]> parameters)
@@ -263,7 +274,7 @@ namespace SandBox.WebUi
                 Resources.StartVm(vm.Id);
                 VmManager.UpdateVmState(machineName, (Int32)VmManager.State.STARTED);
                 VmManager.UpdateVmEnvMac(vm.Id, DataUtils.ByteArrayToHexString(mac));
-               
+
             }
 
         }
@@ -273,8 +284,8 @@ namespace SandBox.WebUi
             try
             {
                 MLogger.LogTo(Level.TRACE, false, "[ANS_LOAD_TRAFFIC] received");
-                
-                String ip        = Encoding.UTF8.GetString(parameters[0]);
+
+                String ip = Encoding.UTF8.GetString(parameters[0]);
                 String startTime = Encoding.UTF8.GetString(parameters[1]);
                 String filename = ip + startTime + ".pcap";
 
