@@ -179,6 +179,7 @@
     <Content Include="Content\Login.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Pages\Index.aspx" />
+    <Content Include="Pages\Information\CreateNewVlir.aspx" />
     <Content Include="Pages\Information\DirectoryOfEvents.aspx" />
     <Content Include="Pages\Information\Test.aspx" />
     <Content Include="Pages\Information\LoadMalware.aspx" />
@@ -325,6 +326,13 @@
     </Compile>
     <Compile Include="Pages\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Information\CreateNewVlir.aspx.cs">
+      <DependentUpon>CreateNewVlir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Information\CreateNewVlir.aspx.designer.cs">
+      <DependentUpon>CreateNewVlir.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Information\DirectoryOfEvents.aspx.cs">
       <DependentUpon>DirectoryOfEvents.aspx</DependentUpon>

@@ -209,6 +209,7 @@ namespace SandBox.Db
                                 on v.Type equals vt.Type
                             join vst in db.VmSystems
                                 on v.System equals vst.System
+                            where v.EnvType != 0
                             select new { v.Id, v.Name, State = vs.Description, Type = vt.Description, System = vst.Description, v.EnvType, EnvState = v.EnvId == 0 ? "не готова" : "готова", EnvMac = v.EnvMac == "null" ? "не определен" : v.EnvMac, EnvIp = v.EnvIp == "null" ? "не определен" : v.EnvIp };
                 return items;
             }
@@ -222,6 +223,7 @@ namespace SandBox.Db
                             join vst in db.VmSystems
                                 on v.System equals vst.System
                             where v.Type == 2
+                            where v.EnvType != 0
                             select new { v.Id, v.Name, State = vs.Description, Type = vt.Description, System = vst.Description, v.EnvType, EnvState = v.EnvId == 0 ? "не готова" : "готова", EnvMac = v.EnvMac == "null" ? "не определен" : v.EnvMac, EnvIp = v.EnvIp == "null" ? "не определен" : v.EnvIp };
                 return items;
  
@@ -507,7 +509,7 @@ namespace SandBox.Db
         //**********************************************************
         //* Добавление новой Vm
         //**********************************************************
-        public static void AddVm(String name, Int32 type, Int32 system, Int32 userId, Int32 envType, String description = "null")
+        public static void AddVm(String name, Int32 type, Int32 system, Int32 userId, Int32 envType, String description = "null", string envMac = "null")
         {
             using (SandBoxDataContext db = new SandBoxDataContext())
             {
@@ -521,7 +523,7 @@ namespace SandBox.Db
                     CreatedDate = DateTime.Now,
                     EnvId = 0,
                     EnvType = envType,
-                    EnvMac = "null",
+                    EnvMac = envMac,
                     EnvIp = "null",
                     Description = description
                 };

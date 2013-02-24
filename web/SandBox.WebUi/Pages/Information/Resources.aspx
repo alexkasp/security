@@ -67,6 +67,9 @@
                 Caption="Статус">
                 <CustomButtons>
                     <dx:GridViewCommandColumnCustomButton ID="btnStatus" Image-Url="../../Content/Images/Icons/run.png" Image-ToolTip="Запустить" Image-AlternateText="Запустить">
+                        <Image AlternateText="Запустить" ToolTip="Запустить" 
+                            Url="../../Content/Images/Icons/run.png">
+                        </Image>
                     </dx:GridViewCommandColumnCustomButton>
                 </CustomButtons>
                 <CellStyle HorizontalAlign="Center">
