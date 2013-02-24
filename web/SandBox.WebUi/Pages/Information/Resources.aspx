@@ -7,9 +7,17 @@
 		    <div id="toolbuttons">
             <table>
                 <tr>
+                 <td>
+                        <dx:ASPxButton ID="btnAddHardware" AutoPostBack="False" runat="server" 
+                            Text="Добавить ЛИР"  Visible="False">
+                            <ClientSideEvents Click="function(s, e) {
+	document.location.href = '/Pages/Information/CreateNewVlir.aspx';
+}" />
+                        </dx:ASPxButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
                     <td>
                         <dx:ASPxButton ID="btnAddLIR" AutoPostBack="False" runat="server" 
-                            Text="Добавить ЛИР"  Visible="False">
+                            Text="Добавить ВЛИР"  Visible="False">
                             <ClientSideEvents Click="function(s, e) {
 	document.location.href = '/Pages/Information/CreateEtalonMachine.aspx';
 }" />

@@ -38,6 +38,7 @@ namespace SandBox.WebUi.Pages.Information
                 if (IsUserInRole("Administrator"))
                 {
                     btnAddLIR.Visible = true;
+                    btnAddHardware.Visible = true;
                 }
             }
 

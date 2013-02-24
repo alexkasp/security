@@ -26,7 +26,7 @@ namespace SandBox.WebUi.Pages.Information
             String value = list[cbSystem.SelectedIndex];
             Int32 system = VmManager.GetSystem(value).System;
             String newName = (tbLir.Text).Replace(" ", "_");
-            VmManager.AddVm(newName, 3, system, UserId, 0,"null", tbLirMac.Text);
+            VmManager.AddVm(newName, 3, system, UserId, 1,VmManager.State.STOPPED,"null", tbLirMac.Text);
         }
     }
 }
