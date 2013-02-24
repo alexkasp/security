@@ -246,6 +246,11 @@ namespace SandBox.WebUi.Pages.Information
                         e.Row.BackColor = Color.FromArgb(0xE3, 0xE3, 0xDC);
                         break;
                     }
+                case (Int32)VmManager.State.RESEARCHING:
+                    {
+                        e.Row.BackColor = Color.FromArgb(100, 150, 200);
+                        break;
+                    }
                 case (Int32)VmManager.State.STOPPED:
                     {
                         e.Row.BackColor = Color.FromArgb(0xF2, 0xEF, 0x8A);

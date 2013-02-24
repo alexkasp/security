@@ -16,7 +16,8 @@ namespace SandBox.Db
             STARTING = 5,
             UNAVAILABLE = 6,
             ERROR = 7,
-            RESEARCHING = 8
+            RESEARCHING = 8,
+            DELETED = 9
         }
 
         public static stats GetFullStats()
@@ -278,6 +279,10 @@ namespace SandBox.Db
                 var names = from v in db.Vms
                             orderby v.Name
                             where v.State != Convert.ToInt32(VmManager.State.RESEARCHING)
+                            where v.State!= Convert.ToInt32(VmManager.State.DELETED)
+                            where v.State!=Convert.ToInt32(VmManager.State.ERROR)
+                            where v.State != Convert.ToInt32(VmManager.State.UNAVAILABLE)
+                            where v.State != Convert.ToInt32(VmManager.State.UPDATING)
                             select v.Name;
                 return names.ToList();
             }
@@ -637,7 +642,7 @@ namespace SandBox.Db
             {
                 Vm vm = db.Vms.FirstOrDefault(x => x.Id == id);
                 if (vm == null) return;
-                db.Vms.DeleteOnSubmit(vm);
+                vm.State = Convert.ToInt32(VmManager.State.DELETED);
                 db.SubmitChanges();
             }
         }

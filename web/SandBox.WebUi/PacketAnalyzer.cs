@@ -108,8 +108,8 @@ namespace SandBox.WebUi
                 }
 
                 Research research = ResearchManager.GetResearchByVmName(machineName);
-
-                Current.StartResearch(String.Format("{0}", research.Id));
+               
+                Current.StopResearch(String.Format("{0}",research.Id));
                 ReportList.AskPCAPFile(research.Id);
                 ResearchManager.UpdateResearchState(research.Id, ResearchState.COMPLETED);
 
