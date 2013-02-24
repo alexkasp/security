@@ -1,0 +1,61 @@
+C:\Users\dru\Documents\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\bin\Release\app.config
+C:\Users\dru\Documents\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\bin\Release\SandBox.Db.dll.config
+C:\Users\dru\Documents\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\bin\Release\SandBox.Db.dll
+C:\Users\dru\Documents\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\bin\Release\SandBox.Db.pdb
+C:\Users\dru\Documents\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\obj\Release\ResolveAssemblyReference.cache
+C:\Users\dru\Documents\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\obj\Release\SandBox.Db.dll
+C:\Users\dru\Documents\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\obj\Release\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.Db\bin\Release\app.config
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.Db\bin\Release\SandBox.Db.dll.config
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.Db\bin\Release\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.Db\bin\Release\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.Db\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.Db\obj\Release\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.Db\obj\Release\SandBox.Db.pdb
+E:\110213\src\SandBox.Db\bin\Release\app.config
+E:\110213\src\SandBox.Db\bin\Release\SandBox.Db.dll.config
+E:\110213\src\SandBox.Db\bin\Release\SandBox.Db.dll
+E:\110213\src\SandBox.Db\bin\Release\SandBox.Db.pdb
+E:\110213\src\SandBox.Db\obj\Release\SandBox.Db.dll
+E:\110213\src\SandBox.Db\obj\Release\SandBox.Db.pdb
+E:\120213\110213\src\SandBox.Db\bin\Release\app.config
+E:\120213\110213\src\SandBox.Db\bin\Release\SandBox.Db.dll.config
+E:\120213\110213\src\SandBox.Db\bin\Release\SandBox.Db.dll
+E:\120213\110213\src\SandBox.Db\bin\Release\SandBox.Db.pdb
+E:\120213\110213\src\SandBox.Db\obj\Release\SandBox.Db.dll
+E:\120213\110213\src\SandBox.Db\obj\Release\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\120213\110213\src\SandBox.Db\bin\Release\app.config
+C:\Users\Панда\Desktop\Александр\120213\110213\src\SandBox.Db\bin\Release\SandBox.Db.dll.config
+C:\Users\Панда\Desktop\Александр\120213\110213\src\SandBox.Db\bin\Release\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\120213\110213\src\SandBox.Db\bin\Release\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\120213\110213\src\SandBox.Db\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Панда\Desktop\Александр\120213\110213\src\SandBox.Db\obj\Release\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\120213\110213\src\SandBox.Db\obj\Release\SandBox.Db.pdb
+D:\Поработать\Армада\ОКР\web\src\SandBox.Db\bin\Release\app.config
+D:\Поработать\Армада\ОКР\web\src\SandBox.Db\bin\Release\SandBox.Db.dll.config
+D:\Поработать\Армада\ОКР\web\src\SandBox.Db\bin\Release\SandBox.Db.dll
+D:\Поработать\Армада\ОКР\web\src\SandBox.Db\bin\Release\SandBox.Db.pdb
+D:\Поработать\Армада\ОКР\web\src\SandBox.Db\obj\Release\ResolveAssemblyReference.cache
+D:\Поработать\Армада\ОКР\web\src\SandBox.Db\obj\Release\SandBox.Db.dll
+D:\Поработать\Армада\ОКР\web\src\SandBox.Db\obj\Release\SandBox.Db.pdb
+D:\SandBox\LAST\src\SandBox.Db\bin\Release\app.config
+D:\SandBox\LAST\src\SandBox.Db\bin\Release\SandBox.Db.dll.config
+D:\SandBox\LAST\src\SandBox.Db\bin\Release\SandBox.Db.dll
+D:\SandBox\LAST\src\SandBox.Db\bin\Release\SandBox.Db.pdb
+D:\SandBox\LAST\src\SandBox.Db\obj\Release\ResolveAssemblyReference.cache
+D:\SandBox\LAST\src\SandBox.Db\obj\Release\SandBox.Db.dll
+D:\SandBox\LAST\src\SandBox.Db\obj\Release\SandBox.Db.pdb
+D:\SandBox\17.02.13\src\SandBox.Db\bin\Release\app.config
+D:\SandBox\17.02.13\src\SandBox.Db\bin\Release\SandBox.Db.dll.config
+D:\SandBox\17.02.13\src\SandBox.Db\bin\Release\SandBox.Db.dll
+D:\SandBox\17.02.13\src\SandBox.Db\bin\Release\SandBox.Db.pdb
+D:\SandBox\17.02.13\src\SandBox.Db\obj\Release\ResolveAssemblyReference.cache
+D:\SandBox\17.02.13\src\SandBox.Db\obj\Release\SandBox.Db.dll
+D:\SandBox\17.02.13\src\SandBox.Db\obj\Release\SandBox.Db.pdb
+D:\SandBox\18.02.13\src\SandBox.Db\bin\Release\app.config
+D:\SandBox\18.02.13\src\SandBox.Db\bin\Release\SandBox.Db.dll.config
+D:\SandBox\18.02.13\src\SandBox.Db\bin\Release\SandBox.Db.dll
+D:\SandBox\18.02.13\src\SandBox.Db\bin\Release\SandBox.Db.pdb
+D:\SandBox\18.02.13\src\SandBox.Db\obj\Release\ResolveAssemblyReference.cache
+D:\SandBox\18.02.13\src\SandBox.Db\obj\Release\SandBox.Db.dll
+D:\SandBox\18.02.13\src\SandBox.Db\obj\Release\SandBox.Db.pdb

@@ -25,7 +25,7 @@ namespace SandBox.WebUi.Pages.Research
             }
             catch
             {
-                researchId =  Convert.ToInt32(Request.QueryString["research"]);
+                researchId =  Convert.ToInt32(Request.QueryString["researchId"]);
             }
             /*Convert.ToInt32(Request.QueryString["research"]);*/
             Rs = ResearchManager.GetResearch(researchId);           
@@ -84,6 +84,7 @@ namespace SandBox.WebUi.Pages.Research
             }
         }
 
+
         public static void AskPCAPFile(Int32 researchId)
         {
             var research = ResearchManager.GetResearch(researchId);
@@ -103,6 +104,7 @@ namespace SandBox.WebUi.Pages.Research
             String filename = ip + beginTime + ".pcap";
             ResearchManager.UpdateTrafficInfo(research.Id, TrafficFileReady.EXECUTING, filename);
         }
+
 
         protected void CBPagingSize_SelectedIndexChanged(object sender, EventArgs e)
         {

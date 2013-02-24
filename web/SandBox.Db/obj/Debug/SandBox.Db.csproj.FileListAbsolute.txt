@@ -1,0 +1,90 @@
+C:\Documents and Settings\andnov\мои документы\visual studio 2010\Projects\sandBoxTest\SandBox.Db\bin\Debug\app.config
+C:\Documents and Settings\andnov\мои документы\visual studio 2010\Projects\sandBoxTest\SandBox.Db\bin\Debug\SandBox.Db.dll.config
+C:\Documents and Settings\andnov\мои документы\visual studio 2010\Projects\sandBoxTest\SandBox.Db\bin\Debug\SandBox.Db.dll
+C:\Documents and Settings\andnov\мои документы\visual studio 2010\Projects\sandBoxTest\SandBox.Db\bin\Debug\SandBox.Db.pdb
+C:\Documents and Settings\andnov\мои документы\visual studio 2010\Projects\sandBoxTest\SandBox.Db\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\andnov\мои документы\visual studio 2010\Projects\sandBoxTest\SandBox.Db\obj\Debug\SandBox.Db.dll
+C:\Documents and Settings\andnov\мои документы\visual studio 2010\Projects\sandBoxTest\SandBox.Db\obj\Debug\SandBox.Db.pdb
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\bin\Debug\app.config
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\bin\Debug\SandBox.Db.dll.config
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\bin\Debug\SandBox.Db.dll
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\bin\Debug\SandBox.Db.pdb
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\obj\Debug\SandBox.Db.dll
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\obj\Debug\SandBox.Db.pdb
+C:\Users\dru\Documents\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\bin\Debug\app.config
+C:\Users\dru\Documents\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\bin\Debug\SandBox.Db.dll.config
+C:\Users\dru\Documents\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\bin\Debug\SandBox.Db.dll
+C:\Users\dru\Documents\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\bin\Debug\SandBox.Db.pdb
+C:\Users\dru\Documents\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dru\Documents\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\obj\Debug\SandBox.Db.dll
+C:\Users\dru\Documents\Visual Studio 2010\Projects\sandBoxDE\SandBox.Db\obj\Debug\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.Db\bin\Debug\app.config
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.Db\bin\Debug\SandBox.Db.dll.config
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.Db\bin\Debug\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.Db\bin\Debug\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.Db\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.Db\obj\Debug\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.Db\obj\Debug\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.Db\bin\Debug\app.config
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.Db\bin\Debug\SandBox.Db.dll.config
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.Db\bin\Debug\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.Db\bin\Debug\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.Db\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.Db\obj\Debug\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.Db\obj\Debug\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.Db\bin\Debug\app.config
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.Db\bin\Debug\SandBox.Db.dll.config
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.Db\bin\Debug\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.Db\bin\Debug\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.Db\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.Db\obj\Debug\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.Db\obj\Debug\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.Db\bin\Debug\app.config
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.Db\bin\Debug\SandBox.Db.dll.config
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.Db\bin\Debug\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.Db\bin\Debug\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.Db\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.Db\obj\Debug\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.Db\obj\Debug\SandBox.Db.pdb
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.Db\bin\Debug\app.config
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.Db\bin\Debug\SandBox.Db.dll.config
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.Db\bin\Debug\SandBox.Db.dll
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.Db\bin\Debug\SandBox.Db.pdb
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.Db\obj\Debug\SandBox.Db.dll
+E:\src06.02.13\Новейший - копия\WebUi\src\SandBox.Db\obj\Debug\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.Db\bin\Debug\app.config
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.Db\bin\Debug\SandBox.Db.dll.config
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.Db\bin\Debug\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.Db\bin\Debug\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.Db\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.Db\obj\Debug\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.Db\obj\Debug\SandBox.Db.pdb
+D:\work\votchina\web\SandBox.Db\bin\Debug\app.config
+D:\work\votchina\web\SandBox.Db\bin\Debug\SandBox.Db.dll.config
+D:\work\votchina\web\SandBox.Db\bin\Debug\SandBox.Db.dll
+D:\work\votchina\web\SandBox.Db\bin\Debug\SandBox.Db.pdb
+D:\work\votchina\web\SandBox.Db\obj\Debug\ResolveAssemblyReference.cache
+D:\work\votchina\web\SandBox.Db\obj\Debug\SandBox.Db.dll
+D:\work\votchina\web\SandBox.Db\obj\Debug\SandBox.Db.pdb
+D:\work\git\votchina\web\SandBox.Db\bin\Debug\app.config
+D:\work\git\votchina\web\SandBox.Db\bin\Debug\SandBox.Db.dll.config
+D:\work\git\votchina\web\SandBox.Db\bin\Debug\SandBox.Db.dll
+D:\work\git\votchina\web\SandBox.Db\bin\Debug\SandBox.Db.pdb
+D:\work\git\votchina\web\SandBox.Db\obj\Debug\ResolveAssemblyReference.cache
+D:\work\git\votchina\web\SandBox.Db\obj\Debug\SandBox.Db.dll
+D:\work\git\votchina\web\SandBox.Db\obj\Debug\SandBox.Db.pdb
+D:\work\security\votchina\web\SandBox.Db\bin\Debug\app.config
+D:\work\security\votchina\web\SandBox.Db\bin\Debug\SandBox.Db.dll.config
+D:\work\security\votchina\web\SandBox.Db\bin\Debug\SandBox.Db.dll
+D:\work\security\votchina\web\SandBox.Db\bin\Debug\SandBox.Db.pdb
+D:\work\security\votchina\web\SandBox.Db\obj\Debug\ResolveAssemblyReference.cache
+D:\work\security\votchina\web\SandBox.Db\obj\Debug\SandBox.Db.dll
+D:\work\security\votchina\web\SandBox.Db\obj\Debug\SandBox.Db.pdb
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Db\bin\Debug\app.config
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Db\bin\Debug\SandBox.Db.dll.config
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Db\bin\Debug\SandBox.Db.dll
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Db\bin\Debug\SandBox.Db.pdb
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Db\obj\Debug\ResolveAssemblyReference.cache
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Db\obj\Debug\SandBox.Db.dll
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.Db\obj\Debug\SandBox.Db.pdb

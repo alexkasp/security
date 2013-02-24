@@ -1,0 +1,236 @@
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.TestConnection\bin\Debug\app.config
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe.config
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.pdb
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.TestConnection\bin\Debug\SandBox.Connection.dll
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.TestConnection\bin\Debug\SandBox.Data.dll
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.TestConnection\bin\Debug\SandBox.Db.dll
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.TestConnection\bin\Debug\SandBox.Connection.pdb
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.TestConnection\bin\Debug\SandBox.Data.pdb
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.TestConnection\bin\Debug\SandBox.Db.pdb
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.TestConnection\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.MainForm.resources
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.Properties.Resources.resources
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.CommandForm.resources
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.TestConnection\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.TestConnection\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.exe
+C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\sandBoxDE\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.pdb
+C:\Users\dru\documents\visual studio 2010\Projects\sandBoxDE\SandBox.TestConnection\bin\Debug\app.config
+C:\Users\dru\documents\visual studio 2010\Projects\sandBoxDE\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe.config
+C:\Users\dru\documents\visual studio 2010\Projects\sandBoxDE\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe
+C:\Users\dru\documents\visual studio 2010\Projects\sandBoxDE\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.pdb
+C:\Users\dru\documents\visual studio 2010\Projects\sandBoxDE\SandBox.TestConnection\bin\Debug\SandBox.Connection.dll
+C:\Users\dru\documents\visual studio 2010\Projects\sandBoxDE\SandBox.TestConnection\bin\Debug\SandBox.Data.dll
+C:\Users\dru\documents\visual studio 2010\Projects\sandBoxDE\SandBox.TestConnection\bin\Debug\SandBox.Db.dll
+C:\Users\dru\documents\visual studio 2010\Projects\sandBoxDE\SandBox.TestConnection\bin\Debug\SandBox.Connection.pdb
+C:\Users\dru\documents\visual studio 2010\Projects\sandBoxDE\SandBox.TestConnection\bin\Debug\SandBox.Data.pdb
+C:\Users\dru\documents\visual studio 2010\Projects\sandBoxDE\SandBox.TestConnection\bin\Debug\SandBox.Db.pdb
+C:\Users\dru\documents\visual studio 2010\Projects\sandBoxDE\SandBox.TestConnection\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\dru\documents\visual studio 2010\Projects\sandBoxDE\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.MainForm.resources
+C:\Users\dru\documents\visual studio 2010\Projects\sandBoxDE\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.Properties.Resources.resources
+C:\Users\dru\documents\visual studio 2010\Projects\sandBoxDE\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.CommandForm.resources
+C:\Users\dru\documents\visual studio 2010\Projects\sandBoxDE\SandBox.TestConnection\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\dru\documents\visual studio 2010\Projects\sandBoxDE\SandBox.TestConnection\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\dru\documents\visual studio 2010\Projects\sandBoxDE\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.exe
+C:\Users\dru\documents\visual studio 2010\Projects\sandBoxDE\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.pdb
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.TestConnection\bin\Debug\app.config
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe.config
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.pdb
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Connection.dll
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Data.dll
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Connection.pdb
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Data.pdb
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.TestConnection\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.MainForm.resources
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.Properties.Resources.resources
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.CommandForm.resources
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.TestConnection\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.TestConnection\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.exe
+C:\Users\Панда\Desktop\Александр\ке\WebUi\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.pdb
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.TestConnection\bin\Debug\app.config
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe.config
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.pdb
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Connection.dll
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Data.dll
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Connection.pdb
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Data.pdb
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.TestConnection\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.MainForm.resources
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.Properties.Resources.resources
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.CommandForm.resources
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.TestConnection\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.TestConnection\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.exe
+C:\Users\Панда\Desktop\Александр\Новейший\WebUi\WebUi\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.pdb
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.TestConnection\bin\Debug\app.config
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe.config
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.pdb
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Connection.dll
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Data.dll
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Connection.pdb
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Data.pdb
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.TestConnection\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.MainForm.resources
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.Properties.Resources.resources
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.CommandForm.resources
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.TestConnection\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.TestConnection\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.exe
+C:\Users\Панда\Desktop\Александр\Новейший - копия\WebUi\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.pdb
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.TestConnection\bin\Debug\app.config
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe.config
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.pdb
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Connection.dll
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Data.dll
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Connection.pdb
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Data.pdb
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.TestConnection\bin\Debug\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.TestConnection\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.MainForm.resources
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.Properties.Resources.resources
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.CommandForm.resources
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.TestConnection\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.TestConnection\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.exe
+C:\Users\Панда\Desktop\Александр\16.01.13\Новейший - копия\WebUi\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.pdb
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\bin\Debug\app.config
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe.config
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.pdb
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\bin\Debug\SandBox.Connection.dll
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\bin\Debug\SandBox.Data.dll
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\bin\Debug\SandBox.Db.dll
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\bin\Debug\SandBox.Connection.pdb
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\bin\Debug\SandBox.Data.pdb
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\bin\Debug\SandBox.Db.pdb
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.MainForm.resources
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.Properties.Resources.resources
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.CommandForm.resources
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.exe
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.pdb
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.exe.licenses
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\bin\Debug\NLog.config
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\bin\Debug\SandBox.Log.dll
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\bin\Debug\NLog.dll
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\bin\Debug\SandBox.Log.pdb
+C:\Users\Панда\Desktop\Александр\06.02.13\src\SandBox.TestConnection\bin\Debug\NLog.xml
+D:\work\votchina\web\SandBox.TestConnection\bin\Debug\app.config
+D:\work\votchina\web\SandBox.TestConnection\bin\Debug\NLog.config
+D:\work\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe.config
+D:\work\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe
+D:\work\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.pdb
+D:\work\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe.CodeAnalysisLog.xml
+D:\work\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe.lastcodeanalysissucceeded
+D:\work\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Connection.dll
+D:\work\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Data.dll
+D:\work\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Db.dll
+D:\work\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Log.dll
+D:\work\votchina\web\SandBox.TestConnection\bin\Debug\NLog.dll
+D:\work\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Connection.pdb
+D:\work\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Data.pdb
+D:\work\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Db.pdb
+D:\work\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Log.pdb
+D:\work\votchina\web\SandBox.TestConnection\bin\Debug\NLog.xml
+D:\work\votchina\web\SandBox.TestConnection\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.MainForm.resources
+D:\work\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.Properties.Resources.resources
+D:\work\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.CommandForm.resources
+D:\work\votchina\web\SandBox.TestConnection\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\work\votchina\web\SandBox.TestConnection\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\work\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.exe.licenses
+D:\work\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.exe
+D:\work\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.pdb
+D:\work\git\votchina\web\SandBox.TestConnection\bin\Debug\app.config
+D:\work\git\votchina\web\SandBox.TestConnection\bin\Debug\NLog.config
+D:\work\git\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe.config
+D:\work\git\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe
+D:\work\git\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.pdb
+D:\work\git\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe.CodeAnalysisLog.xml
+D:\work\git\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe.lastcodeanalysissucceeded
+D:\work\git\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Connection.dll
+D:\work\git\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Data.dll
+D:\work\git\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Db.dll
+D:\work\git\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Log.dll
+D:\work\git\votchina\web\SandBox.TestConnection\bin\Debug\NLog.dll
+D:\work\git\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Connection.pdb
+D:\work\git\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Data.pdb
+D:\work\git\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Db.pdb
+D:\work\git\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Log.pdb
+D:\work\git\votchina\web\SandBox.TestConnection\bin\Debug\NLog.xml
+D:\work\git\votchina\web\SandBox.TestConnection\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\git\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.MainForm.resources
+D:\work\git\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.Properties.Resources.resources
+D:\work\git\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.CommandForm.resources
+D:\work\git\votchina\web\SandBox.TestConnection\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\work\git\votchina\web\SandBox.TestConnection\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\work\git\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.exe.licenses
+D:\work\git\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.exe
+D:\work\git\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.pdb
+D:\work\security\votchina\web\SandBox.TestConnection\bin\Debug\app.config
+D:\work\security\votchina\web\SandBox.TestConnection\bin\Debug\NLog.config
+D:\work\security\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe.config
+D:\work\security\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe
+D:\work\security\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.pdb
+D:\work\security\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe.CodeAnalysisLog.xml
+D:\work\security\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe.lastcodeanalysissucceeded
+D:\work\security\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Connection.dll
+D:\work\security\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Data.dll
+D:\work\security\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Db.dll
+D:\work\security\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Log.dll
+D:\work\security\votchina\web\SandBox.TestConnection\bin\Debug\NLog.dll
+D:\work\security\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Connection.pdb
+D:\work\security\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Data.pdb
+D:\work\security\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Db.pdb
+D:\work\security\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Log.pdb
+D:\work\security\votchina\web\SandBox.TestConnection\bin\Debug\NLog.xml
+D:\work\security\votchina\web\SandBox.TestConnection\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\security\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.MainForm.resources
+D:\work\security\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.Properties.Resources.resources
+D:\work\security\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.CommandForm.resources
+D:\work\security\votchina\web\SandBox.TestConnection\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\work\security\votchina\web\SandBox.TestConnection\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\work\security\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.exe.licenses
+D:\work\security\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.exe
+D:\work\security\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.pdb
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\bin\Debug\app.config
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\bin\Debug\NLog.config
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe.config
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.pdb
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe.CodeAnalysisLog.xml
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.TestConnection.exe.lastcodeanalysissucceeded
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Connection.dll
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Data.dll
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Db.dll
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Log.dll
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\bin\Debug\NLog.dll
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Connection.pdb
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Data.pdb
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Db.pdb
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\bin\Debug\SandBox.Log.pdb
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\bin\Debug\NLog.xml
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.MainForm.resources
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.Properties.Resources.resources
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.CommandForm.resources
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.exe.licenses
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.exe
+D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.TestConnection\obj\x86\Debug\SandBox.TestConnection.pdb

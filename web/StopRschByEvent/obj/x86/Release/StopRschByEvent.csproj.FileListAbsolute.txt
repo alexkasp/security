@@ -1,0 +1,14 @@
+C:\Users\Панда\Desktop\Александр\06.02.13\src\StopRschByEvent\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Панда\Desktop\Александр\06.02.13\src\StopRschByEvent\obj\x86\Release\StopRschByEvent.Form1.resources
+C:\Users\Панда\Desktop\Александр\06.02.13\src\StopRschByEvent\obj\x86\Release\StopRschByEvent.Properties.Resources.resources
+C:\Users\Панда\Desktop\Александр\06.02.13\src\StopRschByEvent\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Users\Панда\Desktop\Александр\06.02.13\src\StopRschByEvent\obj\x86\Release\GenerateResource.write.1.tlog
+E:\110213\src\StopRschByEvent\obj\x86\Release\StopRschByEvent.csprojResolveAssemblyReference.cache
+E:\110213\src\StopRschByEvent\obj\x86\Release\StopRschByEvent.Form1.resources
+E:\110213\src\StopRschByEvent\obj\x86\Release\StopRschByEvent.Properties.Resources.resources
+E:\110213\src\StopRschByEvent\obj\x86\Release\StopRschByEvent.csproj.GenerateResource.Cache
+D:\Поработать\Армада\ОКР\web\src\StopRschByEvent\obj\x86\Release\ResolveAssemblyReference.cache
+D:\Поработать\Армада\ОКР\web\src\StopRschByEvent\obj\x86\Release\StopRschByEvent.Form1.resources
+D:\Поработать\Армада\ОКР\web\src\StopRschByEvent\obj\x86\Release\StopRschByEvent.Properties.Resources.resources
+D:\Поработать\Армада\ОКР\web\src\StopRschByEvent\obj\x86\Release\GenerateResource.read.1.tlog
+D:\Поработать\Армада\ОКР\web\src\StopRschByEvent\obj\x86\Release\GenerateResource.write.1.tlog
