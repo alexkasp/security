@@ -410,10 +410,22 @@ namespace SandBox.WebUi.Pages.Information
                             e.Image.ToolTip = "Останавливается";
                             break;
                         }
+                    case (Int32)VmManager.State.UNAVAILABLE:
+                        {
+                            e.Image.Url = "../../Content/Images/Icons/process.gif";
+                            e.Image.ToolTip = "Состояние обновляется";
+                            break;
+                        }
                     case (Int32)VmManager.State.UPDATING:
                         {
                             e.Image.Url = "../../Content/Images/Icons/process.gif";
                             e.Image.ToolTip = "Состояние обновляется";
+                            break;
+                        }
+                    case (Int32)VmManager.State.RESEARCHING:
+                        {
+                            e.Image.Url = "../../Content/Images/Icons/stop.png";
+                            e.Image.ToolTip = "Остановить";
                             break;
                         }
                 }
