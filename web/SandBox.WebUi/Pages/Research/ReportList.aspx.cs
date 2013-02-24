@@ -84,6 +84,7 @@ namespace SandBox.WebUi.Pages.Research
             }
         }
 
+<<<<<<< .mine
         public static void AskPCAPFile(Int32 researchId)
         {
             var research = ResearchManager.GetResearch(researchId);
@@ -104,6 +105,28 @@ namespace SandBox.WebUi.Pages.Research
             ResearchManager.UpdateTrafficInfo(research.Id, TrafficFileReady.EXECUTING, filename);
         }
 
+=======
+       public static void AskPCAPFile(Int32 researchId)
+        {
+            var research = ResearchManager.GetResearch(researchId);
+            var researchVmData = ResearchManager.GetResearchVmData(research.ResearchVmData);
+            if (researchVmData == null) return;
+
+            String ip = researchVmData.VmEnvIp;
+            String beginTime = research.StartedDate.HasValue ? research.StartedDate.Value.ToString("yyyy-MM-dd HH':'mm':'ss") : DateTime.Now.ToString("yyyy-MM-dd HH':'mm':'ss");
+            String endTime = research.StoppedDate.HasValue ? research.StoppedDate.Value.ToString("yyyy-MM-dd HH':'mm':'ss") : DateTime.Now.ToString("yyyy-MM-dd HH':'mm':'ss");
+
+            Packet packet = new Packet { Type = PacketType.CMD_LOAD_TRAFFIC, Direction = PacketDirection.REQUEST };
+            packet.AddParameter(Encoding.UTF8.GetBytes(ip));
+            packet.AddParameter(Encoding.UTF8.GetBytes(beginTime));
+            packet.AddParameter(Encoding.UTF8.GetBytes(endTime));
+            SendPacket(packet);
+
+            String filename = ip + beginTime + ".pcap";
+            ResearchManager.UpdateTrafficInfo(research.Id, TrafficFileReady.EXECUTING, filename);
+        }
+
+>>>>>>> .theirs
         protected void CBPagingSize_SelectedIndexChanged(object sender, EventArgs e)
         {
             var newPageSize = (Int32)CBPagingSize.SelectedItem.Value;

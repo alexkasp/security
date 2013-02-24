@@ -41,9 +41,19 @@ namespace SandBox.WebUi
                 case PacketType.ANS_VM_COMPLETE: OnReceiveVmComplete(packet.GetParameters()); break;
                 case PacketType.ANS_LOAD_TRAFFIC: OnReceiveLoadTraffic(packet.GetParameters()); break;
                 case PacketType.ANS_VM_NEWCREATE: OnReceiveVmCreateEvent(packet.GetParameters()); break;
+                case PacketType.ANS_VM_STOPED_BY_EVENT: OnStopByEvent(packet.GetParameters()); break;
             }
         }
 
+        private static void OnStopByEvent(IList<byte[]> parameters)
+        {
+            MLogger.LogTo(Level.TRACE, false, "[ANS_VM_STOP_BY_EVENT] received");
+            Int32 rschId = Convert.ToInt32(parameters[0][0]);
+
+            Research rsh = ResearchManager.GetResearch(rschId);
+            Resources.StopVm(rsh.VmId);
+
+        }
         private static void OnReceiveVmStart(IList<byte[]> parameters)
         {
             try
@@ -181,7 +191,7 @@ namespace SandBox.WebUi
                 Research r = ResearchManager.GetResearchByVmName(vm.Name);
                 if (r != null)
                 {
-                    Current.StartResearch(String.Format("{0}", r.Id));
+                   Current.StartResearch(String.Format("{0}", r.Id));
                 }
 
             }

@@ -15,6 +15,7 @@ body {
 	background-position: right top;
 	height: 100%;
 	position: absolute;
+	min-width: 1280px;
 }
 #topm {
 	height: 15px;

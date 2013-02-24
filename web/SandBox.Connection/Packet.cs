@@ -52,7 +52,8 @@ namespace SandBox.Connection
         ANS_VM_READY       = 0xE7,   // Отчет о готовности ИС к работе
         ANS_VM_COMPLETE    = 0xE8,   // Отчет о завершении работы ИС
         ANS_LOAD_TRAFFIC   = 0x14,    // Отчет о готовности к загрузке траффика
-        ANS_VM_NEWCREATE = 220 //Отчёт о создании виртуалки
+        ANS_VM_NEWCREATE = 220, //Отчёт о создании виртуалки
+        ANS_VM_STOPED_BY_EVENT = 221//Виртуалка остановлена по событию
     }
 
     public enum PacketDirection : byte

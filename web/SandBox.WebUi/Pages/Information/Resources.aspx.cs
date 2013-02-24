@@ -24,7 +24,7 @@ namespace SandBox.WebUi.Pages.Information
                 gridViewMachines.KeyFieldName = "Id";
                 gridViewMachines.Visible = false;
                 labelNoItems.Text = "";
-                linkRegisterNewVm.Visible = false;
+                btnAddLIR.Visible = false;
 
                 UpdateTableView();
                 DbManager.OnTableUpdated += VmManager_OnTableUpdated;
@@ -37,7 +37,7 @@ namespace SandBox.WebUi.Pages.Information
 
                 if (IsUserInRole("Administrator"))
                 {
-                    linkRegisterNewVm.Visible = true;
+                    btnAddLIR.Visible = true;
                 }
             }
 
@@ -100,6 +100,10 @@ namespace SandBox.WebUi.Pages.Information
                 gridViewMachines.Visible = false;
                 labelNoItems.Text = "У вас нет ВЛИР, доступных для использования";
             }
+            gridResourceViewPager.Visible = gridViewMachines.Visible;
+            gridResourceViewPager.ItemCount = gridViewMachines.VisibleRowCount;
+            gridResourceViewPager.ItemsPerPage = gridViewMachines.SettingsPager.PageSize;
+            gridResourceViewPager.PageIndex = gridViewMachines.PageIndex;
         }
 
         protected void UpdateTimerTick(object sender, EventArgs e)
@@ -205,7 +209,8 @@ namespace SandBox.WebUi.Pages.Information
             Int32 vmId = (Int32)e.KeyValue;
             Vm vm = VmManager.GetVm(vmId);
             var rsch = ResearchManager.GetRunnigResearchByVmID(vmId);
-
+            btnStatus.Image.Url = "../../Content/Images/Icons/run.png";
+            btnStatus.Image.ToolTip = "Запустить";
             switch (vm.State)
             {
                 case (Int32)VmManager.State.ERROR:
@@ -215,6 +220,8 @@ namespace SandBox.WebUi.Pages.Information
                     }
                 case (Int32)VmManager.State.STARTED:
                     {
+                        btnStatus.Image.Url = "../../Content/Images/Icons/stop.png";
+                        btnStatus.Image.ToolTip = "Остановить";
                         e.Row.BackColor = Color.FromArgb(0xDB, 0xFA, 0xA5);
                         if (linkSession != null && linkMlwr != null)
                         {
@@ -232,6 +239,8 @@ namespace SandBox.WebUi.Pages.Information
                     }
                 case (Int32)VmManager.State.STARTING:
                     {
+                        btnStatus.Image.Url = "../../Content/Images/Icons/process.gif";
+                        btnStatus.Image.ToolTip = "Запускается";
                         e.Row.BackColor = Color.FromArgb(0xE3, 0xE3, 0xDC);
                         break;
                     }
@@ -242,11 +251,15 @@ namespace SandBox.WebUi.Pages.Information
                     }
                 case (Int32)VmManager.State.STOPPING:
                     {
+                        btnStatus.Image.Url = "../../Content/Images/Icons/process.gif";
+                        btnStatus.Image.ToolTip = "Останавливается";
                         e.Row.BackColor = Color.FromArgb(0xE3, 0xE3, 0xDC);
                         break;
                     }
                 case (Int32)VmManager.State.UPDATING:
                     {
+                        btnStatus.Image.Url = "../../Content/Images/Icons/process.gif";
+                        btnStatus.Image.ToolTip = "Состояние обновляется";
                         e.Row.BackColor = Color.FromArgb(0xE3, 0xE3, 0xDC);
                         break;
                     }
@@ -258,22 +271,36 @@ namespace SandBox.WebUi.Pages.Information
             Int32 id = Convert.ToInt32(gridViewMachines.GetRowValues(e.VisibleIndex, "Id"));
             switch (e.ButtonID)
             {
-                case "runButton":
-                    Debug.Print("run: " + id);
-                    StartVm(id);
+                case "btnStatus":
+                    Vm vm = VmManager.GetVm(id);
+                    switch (vm.State)
+                    {
+                        case (Int32)VmManager.State.ERROR:
+                            {
+                                Debug.Print("run: " + id);
+                                StartVm(id);
+                                break;
+                            }
+                        case (Int32)VmManager.State.STARTED:
+                            {
+                                Debug.Print("stop: " + id);
+                                StopVm(id);
+                                break;
+                            }
+                        case (Int32)VmManager.State.STOPPED:
+                            {
+                                Debug.Print("run: " + id);
+                                StartVm(id);
+                                break;
+                            }
+                    }
                     break;
-                case "stopButton":
-                    Debug.Print("stop: " + id);
-                    StopVm(id);
-                    break;
-                case "deleteButton":
+                case "btnDelete":
                     Debug.Print("delete: " + id);
                     DeleteVm(id);
                     break;
-                case "editButton":
-                    Debug.Print("edit: " + id);
-                    break;
             }
+
         }
 
         protected void Timer1_Tick(object sender, EventArgs e)
@@ -289,6 +316,57 @@ namespace SandBox.WebUi.Pages.Information
         protected void Timer2_Tick(object sender, EventArgs e)
         {
             UpdateTableView();
+        }
+
+        protected void gridViewMachines_CustomCallback(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewCustomCallbackEventArgs e)
+        {
+            string[] Params = e.Parameters.Split(',');
+            Int32 id = Convert.ToInt32(Params[1]);
+            switch (Params[0])
+            {
+                case "btnStatus":
+                    Vm vm = VmManager.GetVm(id);
+                    switch (vm.State)
+                    {
+                        case (Int32)VmManager.State.ERROR:
+                            {
+                                Debug.Print("run: " + id);
+                                StartVm(id);
+                                break;
+                            }
+                        case (Int32)VmManager.State.STARTED:
+                            {
+                                Debug.Print("stop: " + id);
+                                StopVm(id);
+                                break;
+                            }
+                        case (Int32)VmManager.State.STOPPED:
+                            {
+                                Debug.Print("run: " + id);
+                                StartVm(id);
+                                break;
+                            }
+                    }
+                    break;
+                case "btnDelete":
+                    Debug.Print("delete: " + id);
+                    DeleteVm(id);
+                    break;
+            }
+
+
+        }
+
+        protected void gridResourceViewPager_PageIndexChanged(object sender, EventArgs e)
+        {
+            gridViewMachines.PageIndex = gridResourceViewPager.PageIndex;
+            gridViewMachines.DataBind();
+        }
+
+        protected void gridResourceViewPager_PageSizeChanged(object sender, EventArgs e)
+        {
+            gridViewMachines.SettingsPager.PageSize = gridResourceViewPager.ItemsPerPage;
+            gridViewMachines.DataBind();
         }
     }//end class
 }//end namespace
