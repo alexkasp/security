@@ -93,6 +93,12 @@ namespace SandBox.WebUi.Pages.Information
 
                 gridViewMachines.DataSource = vms;
                 gridViewMachines.DataBind();
+                gridResourceViewPager.Visible = gridViewMachines.Visible;
+                if (gridViewMachines.VisibleRowCount > 0) { gridResourceViewPager.ItemCount = gridViewMachines.VisibleRowCount; }
+                else { gridResourceViewPager.ItemCount = gridViewMachines.SettingsPager.PageSize; }
+                gridResourceViewPager.ItemsPerPage = gridViewMachines.SettingsPager.PageSize;
+                if (gridViewMachines.PageIndex > 0) { gridResourceViewPager.PageIndex = gridViewMachines.PageIndex; }
+                else gridResourceViewPager.PageIndex = 0;
             }
 
             if (count == 0)
@@ -100,10 +106,6 @@ namespace SandBox.WebUi.Pages.Information
                 gridViewMachines.Visible = false;
                 labelNoItems.Text = "У вас нет ВЛИР, доступных для использования";
             }
-            gridResourceViewPager.Visible = gridViewMachines.Visible;
-            gridResourceViewPager.ItemCount = gridViewMachines.VisibleRowCount;
-            gridResourceViewPager.ItemsPerPage = gridViewMachines.SettingsPager.PageSize;
-            gridResourceViewPager.PageIndex = gridViewMachines.PageIndex;
         }
 
         protected void UpdateTimerTick(object sender, EventArgs e)
@@ -209,8 +211,8 @@ namespace SandBox.WebUi.Pages.Information
             Int32 vmId = (Int32)e.KeyValue;
             Vm vm = VmManager.GetVm(vmId);
             var rsch = ResearchManager.GetRunnigResearchByVmID(vmId);
-            btnStatus.Image.Url = "../../Content/Images/Icons/run.png";
-            btnStatus.Image.ToolTip = "Запустить";
+//            btnStatus.Image.Url = "../../Content/Images/Icons/run.png";
+//            btnStatus.Image.ToolTip = "Запустить";
             switch (vm.State)
             {
                 case (Int32)VmManager.State.ERROR:
@@ -220,8 +222,8 @@ namespace SandBox.WebUi.Pages.Information
                     }
                 case (Int32)VmManager.State.STARTED:
                     {
-                        btnStatus.Image.Url = "../../Content/Images/Icons/stop.png";
-                        btnStatus.Image.ToolTip = "Остановить";
+//                        btnStatus.Image.Url = "../../Content/Images/Icons/stop.png";
+//                        btnStatus.Image.ToolTip = "Остановить";
                         e.Row.BackColor = Color.FromArgb(0xDB, 0xFA, 0xA5);
                         if (linkSession != null && linkMlwr != null)
                         {
@@ -239,8 +241,8 @@ namespace SandBox.WebUi.Pages.Information
                     }
                 case (Int32)VmManager.State.STARTING:
                     {
-                        btnStatus.Image.Url = "../../Content/Images/Icons/process.gif";
-                        btnStatus.Image.ToolTip = "Запускается";
+//                        btnStatus.Image.Url = "../../Content/Images/Icons/process.gif";
+//                        btnStatus.Image.ToolTip = "Запускается";
                         e.Row.BackColor = Color.FromArgb(0xE3, 0xE3, 0xDC);
                         break;
                     }
@@ -251,15 +253,15 @@ namespace SandBox.WebUi.Pages.Information
                     }
                 case (Int32)VmManager.State.STOPPING:
                     {
-                        btnStatus.Image.Url = "../../Content/Images/Icons/process.gif";
-                        btnStatus.Image.ToolTip = "Останавливается";
+//                        btnStatus.Image.Url = "../../Content/Images/Icons/process.gif";
+//                        btnStatus.Image.ToolTip = "Останавливается";
                         e.Row.BackColor = Color.FromArgb(0xE3, 0xE3, 0xDC);
                         break;
                     }
                 case (Int32)VmManager.State.UPDATING:
                     {
-                        btnStatus.Image.Url = "../../Content/Images/Icons/process.gif";
-                        btnStatus.Image.ToolTip = "Состояние обновляется";
+//                        btnStatus.Image.Url = "../../Content/Images/Icons/process.gif";
+//                        btnStatus.Image.ToolTip = "Состояние обновляется";
                         e.Row.BackColor = Color.FromArgb(0xE3, 0xE3, 0xDC);
                         break;
                     }
@@ -367,6 +369,67 @@ namespace SandBox.WebUi.Pages.Information
         {
             gridViewMachines.SettingsPager.PageSize = gridResourceViewPager.ItemsPerPage;
             gridViewMachines.DataBind();
+        }
+
+        protected void gridViewMachines_CustomButtonInitialize(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewCustomButtonEventArgs e)
+        {
+            if (e.VisibleIndex == -1) return;
+            if (e.ButtonID == "btnStatus")
+            {
+                Int32 id = Convert.ToInt32(gridViewMachines.GetRowValues(e.VisibleIndex, "Id"));
+                Vm vm = VmManager.GetVm(id);
+                switch (vm.State)
+                {
+                    case (Int32)VmManager.State.ERROR:
+                        {
+                            e.Image.Url = "../../Content/Images/Icons/run.png";
+                            e.Image.ToolTip = "Запустить";
+                            break;
+                        }
+                    case (Int32)VmManager.State.STARTED:
+                        {
+                            e.Image.Url = "../../Content/Images/Icons/stop.png";
+                            e.Image.ToolTip = "Остановить";
+                            break;
+                        }
+                    case (Int32)VmManager.State.STARTING:
+                        {
+                            e.Image.Url = "../../Content/Images/Icons/process.gif";
+                            e.Image.ToolTip = "Запускается";
+                            break;
+                        }
+                    case (Int32)VmManager.State.STOPPED:
+                        {
+                            e.Image.Url = "../../Content/Images/Icons/run.png";
+                            e.Image.ToolTip = "Запустить";
+                            break;
+                        }
+                    case (Int32)VmManager.State.STOPPING:
+                        {
+                            e.Image.Url = "../../Content/Images/Icons/process.gif";
+                            e.Image.ToolTip = "Останавливается";
+                            break;
+                        }
+                    case (Int32)VmManager.State.UNAVAILABLE:
+                        {
+                            e.Image.Url = "../../Content/Images/Icons/process.gif";
+                            e.Image.ToolTip = "Состояние обновляется";
+                            break;
+                        }
+                    case (Int32)VmManager.State.UPDATING:
+                        {
+                            e.Image.Url = "../../Content/Images/Icons/process.gif";
+                            e.Image.ToolTip = "Состояние обновляется";
+                            break;
+                        }
+                    case (Int32)VmManager.State.RESEARCHING:
+                        {
+                            e.Image.Url = "../../Content/Images/Icons/stop.png";
+                            e.Image.ToolTip = "Остановить";
+                            break;
+                        }
+                }
+            }
         }
     }//end class
 }//end namespace
