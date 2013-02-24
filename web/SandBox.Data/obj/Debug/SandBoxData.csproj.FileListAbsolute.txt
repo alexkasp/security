@@ -1,5 +1,0 @@
-c:\documents and settings\andnov\мои документы\visual studio 2010\Projects\sandBoxTest\SandBoxData\obj\Debug\ResolveAssemblyReference.cache
-c:\documents and settings\andnov\мои документы\visual studio 2010\Projects\sandBoxTest\SandBoxData\bin\Debug\SandBox.Data.dll
-c:\documents and settings\andnov\мои документы\visual studio 2010\Projects\sandBoxTest\SandBoxData\bin\Debug\SandBox.Data.pdb
-c:\documents and settings\andnov\мои документы\visual studio 2010\Projects\sandBoxTest\SandBoxData\obj\Debug\SandBox.Data.dll
-c:\documents and settings\andnov\мои документы\visual studio 2010\Projects\sandBoxTest\SandBoxData\obj\Debug\SandBox.Data.pdb

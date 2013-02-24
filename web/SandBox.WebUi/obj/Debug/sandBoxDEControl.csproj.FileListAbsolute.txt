@@ -1,8 +1,0 @@
-C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\SandBoxDE\sandBoxDEControl\bin\sandBoxDEControl.dll
-C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\SandBoxDE\sandBoxDEControl\bin\sandBoxDEControl.pdb
-C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\SandBoxDE\sandBoxDEControl\obj\Debug\ResolveAssemblyReference.cache
-C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\SandBoxDE\sandBoxDEControl\obj\Debug\sandBoxDEControl.dll.licenses
-C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\SandBoxDE\sandBoxDEControl\obj\Debug\sandBoxDEControl.dll
-C:\Documents and Settings\andnov\Мои документы\Visual Studio 2010\Projects\SandBoxDE\sandBoxDEControl\obj\Debug\sandBoxDEControl.pdb
-C:\Documents and Settings\andnov\мои документы\visual studio 2010\Projects\SandBoxDE\sandBoxDEControl\bin\sandBoxDb.dll
-C:\Documents and Settings\andnov\мои документы\visual studio 2010\Projects\SandBoxDE\sandBoxDEControl\bin\sandBoxDb.pdb
