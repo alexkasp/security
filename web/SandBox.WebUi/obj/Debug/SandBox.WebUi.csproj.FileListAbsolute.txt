@@ -160,4 +160,3 @@ D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.WebUi\obj\D
 D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.WebUi\obj\Debug\SandBoxWebUi.dll.licenses
 D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.WebUi\obj\Debug\SandBoxWebUi.dll
 D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.WebUi\obj\Debug\SandBoxWebUi.pdb
-D:\Поработать\Армада\ОКР\web\votchina\web\SandBox.WebUi\bin\SandboxTheme.dll

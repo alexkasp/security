@@ -2,11 +2,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 <link rel="stylesheet" type="text/css" href="../../Content/PageView.css"  />
 
-       <div id='page_header'>
+	    <div id="content-top">
+		    <div id="pagename">
            <dx:ASPxLabel ID="LHeader" runat="server" Theme="iOS">
-           </dx:ASPxLabel>
-       </div>
-
+           </dx:ASPxLabel></div>
+</div>
+    <div id="content-main">
        <table class='panel'>
 			<tbody>
                 <tr>
@@ -65,7 +66,7 @@
                               </tr>
                               <tr>
                                   <td colspan="2">
-                                      <asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows">
+                                      <asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows" ShowLines="True">
                                           <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
                                           <NodeStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" 
                                               HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
@@ -165,7 +166,7 @@
 		</table>
         
 <div class="page_table"> 
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <asp:UpdatePanel ID="UpdategridPanel" runat="server">
     <ContentTemplate>
     <dx:ASPxLabel ID="LPagingSize" runat="server" Text="Колличество строк на одной странице в таблице">
     </dx:ASPxLabel>
@@ -194,7 +195,7 @@
             EnableTheming="True" Theme="Default"  
             KeyFieldName="Id" Width="100%" 
         style="margin-top: 0px; margin-right: 9px;" 
-        onhtmlrowprepared="gridViewReports_HtmlRowPrepared" >
+        onhtmlrowprepared="gridViewReports_HtmlRowPrepared" EnableCallBacks="False" >
         <Columns>
             <dx:GridViewCommandColumn VisibleIndex="0">
             </dx:GridViewCommandColumn>
@@ -208,7 +209,7 @@
 
                 <EditFormSettings Visible="False" />
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn Caption="Время события" FieldName="timeOfEvent" 
+            <dx:GridViewDataTextColumn Caption="Время события" FieldName="timeofevent" 
                 VisibleIndex="3">
                 <PropertiesTextEdit>
                     <ValidationSettings ErrorText="Неверное значение">
@@ -216,7 +217,7 @@
                     </ValidationSettings>
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="RschId" VisibleIndex="2" 
+            <dx:GridViewDataTextColumn FieldName="rschId" VisibleIndex="2" 
                 Visible="False">
 <PropertiesTextEdit>
 <ValidationSettings ErrorText="Неверное значение">
@@ -265,7 +266,7 @@
 </ValidationSettings>
 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn Caption="Объект" FieldName="Who" VisibleIndex="9" 
+            <dx:GridViewDataTextColumn Caption="Объект" FieldName="who" VisibleIndex="9" 
                 Width="100px">
 <PropertiesTextEdit>
 <ValidationSettings ErrorText="Неверное значение">
@@ -274,7 +275,7 @@
 </PropertiesTextEdit>
                 <Settings HeaderFilterMode="CheckedList" />
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn Caption="Цель" FieldName="Dest" VisibleIndex="8">
+            <dx:GridViewDataTextColumn Caption="Цель" FieldName="dest" VisibleIndex="8">
                 <PropertiesTextEdit>
                     <ValidationSettings ErrorText="Неверное значение">
                         <RegularExpression ErrorText="Ошибка проверки регулярного выражения" />
@@ -324,5 +325,6 @@
     </ContentTemplate>
     </asp:UpdatePanel>
 &nbsp;</div>
+</div>
 
 </asp:Content>

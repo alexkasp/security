@@ -1,11 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.master" AutoEventWireup="true" CodeBehind="NewResearch.aspx.cs" Inherits="SandBox.WebUi.Pages.Research.NewResearch" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<link rel="stylesheet" type="text/css" href="../../Content/PageView.css"  />
 
-<div id='page_header'>
-    Добавление нового исследования
+	    <div id="content-top">
+		    <div id="pagename">Исследования</div>
 </div>
-
+   <div id="content-main" style="height:700px;">
 <table class='panel'>
 			<tbody>
                 <tr>
@@ -21,12 +20,7 @@
 
 
    
-<div style = "width:100%; min-height:3px;">
-   
-    
 <div style="position:relative; width:64%; float:right; margin-right:5px;">
- <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
-    <ContentTemplate>
 <div>
     <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Дополнительные параметры" 
         Theme="iOS">
@@ -66,12 +60,12 @@
                         Width="200px" AutoPostBack="True" ViewStateMode="Enabled">
                     </dx:ASPxComboBox>
                 </td>
-                <td style="width: 525px">
+                <td style="width: 262px">
                     <dx:ASPxTextBox ID="TBNetTaskValue" runat="server" Width="250px" 
                         style="left:210px;" Height="20px">
                     </dx:ASPxTextBox>
                 </td>
-                <td>
+                <td style="width: 80px">
                     <dx:ASPxButton ID="BAddNetTask" runat="server" Text="Вставить" 
                         onclick="BAddNetTask_Click">
                     </dx:ASPxButton> 
@@ -119,12 +113,12 @@
                         Width="200px">
                     </dx:ASPxComboBox>
                 </td>
-                <td style="width: 242px">
+                <td style="width: 262px">
                     <dx:ASPxTextBox ID="TBNFileTaskValue" runat="server" Width="250px" 
                         style="left:210px;" Height="20px">
                     </dx:ASPxTextBox>
                 </td>
-                <td>
+                <td style="width: 80px">
                     <dx:ASPxButton ID="BAddFileTask" runat="server" Text="Вставить" 
                         onclick="BAddFileTask_Click">
                     </dx:ASPxButton> 
@@ -175,12 +169,12 @@
                         Width="200px">
                     </dx:ASPxComboBox>
                 </td>
-                <td style="width: 244px">
+                <td style="width: 262px">
                     <dx:ASPxTextBox ID="TBNRegTaskValue" runat="server" Width="250px" 
                         style="left:210px;" Height="20px">
                     </dx:ASPxTextBox>
                 </td>
-                <td>
+                <td style="width: 80px">
                     <dx:ASPxButton ID="BAddRegTask" runat="server" Text="Вставить" 
                         onclick="BAddRegTask_Click">
                     </dx:ASPxButton> 
@@ -231,12 +225,12 @@
                         Width="200px">
                     </dx:ASPxComboBox>
                 </td>
-                <td style="width: 249px">
+                <td style="width: 262px">
                     <dx:ASPxTextBox ID="TBProcTaskValue" runat="server" Width="250px" 
                         style="left:210px;" Height="20px">
                     </dx:ASPxTextBox>
                 </td>
-                <td>
+                <td style="width: 80px">
                     <dx:ASPxButton ID="BAddProcTask" runat="server" Text="Вставить" 
                         onclick="BAddProcTask_Click">
                     </dx:ASPxButton> 
@@ -271,22 +265,17 @@
 <RegularExpression ErrorText="Ошибка проверки регулярного выражения"></RegularExpression>
 </ValidationSettings>
     </dx:ASPxComboBox>
-    <dx:ASPxLabel ID="ASPxLabel8" runat="server" Text="Подетка реестра">
+    <dx:ASPxLabel ID="ASPxLabel8" runat="server" Text="Подветка реестра">
     </dx:ASPxLabel>
     <dx:ASPxTextBox ID="ASPxTextBox3" runat="server" Width="50%">
     </dx:ASPxTextBox>
     <dx:ASPxCheckBox ID="ASPxCheckBox1" runat="server" Text="Включить монитор процессов">
     </dx:ASPxCheckBox>
-    </ContentTemplate>
-    </asp:UpdatePanel>
 </div>
 <div style="position:relative; width:25%; float:left; margin-right: 0px; left: 0px;">
     <dx:ASPxLabel ID="ASPxLabel10" runat="server" Text="Основные параметры" 
         Theme="iOS">
     </dx:ASPxLabel>
-    <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
-    <ContentTemplate>
-
     
 <table class='form'>
 			<tbody>
@@ -543,15 +532,8 @@
             </tbody>
             <%--</caption>--%>
 </table>  
-</ContentTemplate>
-    </asp:UpdatePanel> 
 </div>  
 
     
-    </div>
-    <div style="min-height:5px;">
-    <p>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
-    </p>
     </div>
 </asp:Content>
