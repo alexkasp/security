@@ -212,8 +212,8 @@ namespace SandBox.WebUi.Pages.Research
             //    TaskManager.AddTask(researchId, TaskManager.GetTaskTypeByDescription(ASPxComboBox2.SelectedItem.Text), ASPxTextBox1.Text);
             try
             {
-                
-                TaskManager.AddCommand(EnvId, tbSetCommand.Text, tbSetCommandParams.Text, Int32.Parse(startEmulationTime.Text));
+                MLogger.LogTo(Level.TRACE, false, "Add Command: " + tbSetCommand.Text+ tbSetCommandParams.Text);
+                TaskManager.AddCommand(researchId, tbSetCommand.Text, tbSetCommandParams.Text, Int32.Parse(startEmulationTime.Text));
             }
             catch (Exception e)
             {

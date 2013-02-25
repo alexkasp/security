@@ -7,9 +7,17 @@
 		    <div id="toolbuttons">
             <table>
                 <tr>
+                 <td>
+                        <dx:ASPxButton ID="btnAddHardware" AutoPostBack="False" runat="server" 
+                            Text="Добавить ЛИР"  Visible="False">
+                            <ClientSideEvents Click="function(s, e) {
+	document.location.href = '/Pages/Information/CreateNewVlir.aspx';
+}" />
+                        </dx:ASPxButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
                     <td>
                         <dx:ASPxButton ID="btnAddLIR" AutoPostBack="False" runat="server" 
-                            Text="Добавить ЛИР"  Visible="False">
+                            Text="Добавить ВЛИР"  Visible="False">
                             <ClientSideEvents Click="function(s, e) {
 	document.location.href = '/Pages/Information/CreateEtalonMachine.aspx';
 }" />
@@ -67,6 +75,9 @@
                 Caption="Статус">
                 <CustomButtons>
                     <dx:GridViewCommandColumnCustomButton ID="btnStatus" Image-Url="../../Content/Images/Icons/run.png" Image-ToolTip="Запустить" Image-AlternateText="Запустить">
+                        <Image AlternateText="Запустить" ToolTip="Запустить" 
+                            Url="../../Content/Images/Icons/run.png">
+                        </Image>
                     </dx:GridViewCommandColumnCustomButton>
                 </CustomButtons>
                 <CellStyle HorizontalAlign="Center">

@@ -62,24 +62,10 @@ namespace SandBox.WebUi.Pages.Research
             {
                 ReportsBuilder.RschPropsListBuilder(TreeView1, Rs.Id);
                 ASPxHyperLink5.NavigateUrl += ("?research=" + researchId);
-                //if (Rs.TrafficFileReady == (Int32)TrafficFileReady.NOACTION)
-                //{
-                //    var researchVmData = ResearchManager.GetResearchVmData(Rs.ResearchVmData);
-                //    if (researchVmData == null) return;
-
-                //    String ip = researchVmData.VmEnvIp;
-                //    String beginTime = Rs.StartedDate.HasValue ? Rs.StartedDate.Value.ToString("yyyy-MM-dd HH':'mm':'ss") : DateTime.Now.ToString("yyyy-MM-dd HH':'mm':'ss");
-                //    String endTime = Rs.StoppedDate.HasValue ? Rs.StoppedDate.Value.ToString("yyyy-MM-dd HH':'mm':'ss") : DateTime.Now.ToString("yyyy-MM-dd HH':'mm':'ss");
-
-                //    Packet packet = new Packet { Type = PacketType.CMD_LOAD_TRAFFIC, Direction = PacketDirection.REQUEST };
-                //    packet.AddParameter(Encoding.UTF8.GetBytes(ip));
-                //    packet.AddParameter(Encoding.UTF8.GetBytes(beginTime));
-                //    packet.AddParameter(Encoding.UTF8.GetBytes(endTime));
-                //    SendPacket(packet);
-
-                //    String filename = ip + beginTime + ".pcap";
-                //    ResearchManager.UpdateTrafficInfo(Rs.Id, TrafficFileReady.EXECUTING, filename);
-                //}
+                if (Rs.TrafficFileReady == (Int32)TrafficFileReady.NOACTION)
+                {
+                    AskPCAPFile(researchId);
+               }
                 
             }
         }

@@ -38,6 +38,7 @@ namespace SandBox.WebUi.Pages.Information
                 if (IsUserInRole("Administrator"))
                 {
                     btnAddLIR.Visible = true;
+                    btnAddHardware.Visible = true;
                 }
             }
 
@@ -244,6 +245,11 @@ namespace SandBox.WebUi.Pages.Information
 //                        btnStatus.Image.Url = "../../Content/Images/Icons/process.gif";
 //                        btnStatus.Image.ToolTip = "Запускается";
                         e.Row.BackColor = Color.FromArgb(0xE3, 0xE3, 0xDC);
+                        break;
+                    }
+                case (Int32)VmManager.State.RESEARCHING:
+                    {
+                        e.Row.BackColor = Color.FromArgb(100, 150, 200);
                         break;
                     }
                 case (Int32)VmManager.State.STOPPED:

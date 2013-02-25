@@ -16,7 +16,8 @@ namespace SandBox.Db
             STARTING = 5,
             UNAVAILABLE = 6,
             ERROR = 7,
-            RESEARCHING = 8
+            RESEARCHING = 8,
+            DELETED = 9
         }
 
         public static stats GetFullStats()
@@ -208,6 +209,7 @@ namespace SandBox.Db
                                 on v.Type equals vt.Type
                             join vst in db.VmSystems
                                 on v.System equals vst.System
+                            where v.EnvType != 0
                             select new { v.Id, v.Name, State = vs.Description, Type = vt.Description, System = vst.Description, v.EnvType, EnvState = v.EnvId == 0 ? "не готова" : "готова", EnvMac = v.EnvMac == "null" ? "не определен" : v.EnvMac, EnvIp = v.EnvIp == "null" ? "не определен" : v.EnvIp };
                 return items;
             }
@@ -220,7 +222,8 @@ namespace SandBox.Db
                                 on v.Type equals vt.Type
                             join vst in db.VmSystems
                                 on v.System equals vst.System
-                            where v.Type == 2
+                            where v.Type == 2 || v.Type == 3
+                            where v.EnvType != 0
                             select new { v.Id, v.Name, State = vs.Description, Type = vt.Description, System = vst.Description, v.EnvType, EnvState = v.EnvId == 0 ? "не готова" : "готова", EnvMac = v.EnvMac == "null" ? "не определен" : v.EnvMac, EnvIp = v.EnvIp == "null" ? "не определен" : v.EnvIp };
                 return items;
  
@@ -242,7 +245,8 @@ namespace SandBox.Db
                                       on v.Type equals vt.Type
                                   join vst in db.VmSystems
                                       on v.System equals vst.System
-                                  where v.Type == 1
+                                  where v.Type == 1 
+                               
                                   select new { v.Id, v.Name, State = vs.Description, Type = vt.Description, System = vst.Description, v.EnvType, EnvState = v.EnvId == 0 ? "не готова" : "готова", EnvMac = v.EnvMac == "null" ? "не определен" : v.EnvMac, EnvIp = v.EnvIp == "null" ? "не определен" : v.EnvIp };
             }
             var itemsForUser = from v in db.Vms
@@ -253,7 +257,7 @@ namespace SandBox.Db
                                join vst in db.VmSystems
                                    on v.System equals vst.System
                                where v.CreatedBy == userId
-                               where v.Type == 2
+                               where v.Type == 2 || v.Type == 3
                                select new { v.Id, v.Name, State = vs.Description, Type = vt.Description, System = vst.Description, v.EnvType, EnvState = v.EnvId == 0 ? "не готова" : "готова", EnvMac = v.EnvMac == "null" ? "не определен" : v.EnvMac, EnvIp = v.EnvIp == "null" ? "не определен" : v.EnvIp };
             return itemsForUser;
         }
@@ -278,6 +282,10 @@ namespace SandBox.Db
                 var names = from v in db.Vms
                             orderby v.Name
                             where v.State != Convert.ToInt32(VmManager.State.RESEARCHING)
+                            where v.State!= Convert.ToInt32(VmManager.State.DELETED)
+                            where v.State!=Convert.ToInt32(VmManager.State.ERROR)
+                            where v.State != Convert.ToInt32(VmManager.State.UNAVAILABLE)
+                            
                             select v.Name;
                 return names.ToList();
             }
@@ -502,7 +510,7 @@ namespace SandBox.Db
         //**********************************************************
         //* Добавление новой Vm
         //**********************************************************
-        public static void AddVm(String name, Int32 type, Int32 system, Int32 userId, Int32 envType, String description = "null")
+        public static void AddVm(String name, Int32 type, Int32 system, Int32 userId, Int32 envType, VmManager.State state = VmManager.State.UPDATING, String description = "null", string envMac = "null")
         {
             using (SandBoxDataContext db = new SandBoxDataContext())
             {
@@ -511,12 +519,12 @@ namespace SandBox.Db
                     Name = name,
                     Type = type,
                     System = system,
-                    State = 1,
+                    State = Convert.ToInt32(state),
                     CreatedBy = userId,
                     CreatedDate = DateTime.Now,
                     EnvId = 0,
                     EnvType = envType,
-                    EnvMac = "null",
+                    EnvMac = envMac,
                     EnvIp = "null",
                     Description = description
                 };
@@ -637,7 +645,7 @@ namespace SandBox.Db
             {
                 Vm vm = db.Vms.FirstOrDefault(x => x.Id == id);
                 if (vm == null) return;
-                db.Vms.DeleteOnSubmit(vm);
+                vm.State = Convert.ToInt32(VmManager.State.DELETED);
                 db.SubmitChanges();
             }
         }
