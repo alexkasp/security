@@ -36,6 +36,12 @@ namespace SandBox.WebUi.Pages.Research
                 // UpdateTableView();
                 gridViewResearches.DataBind();
             }
+            gridViewResearchesPager.Visible = gridViewResearches.Visible;
+            if (gridViewResearches.VisibleRowCount > 0) { gridViewResearchesPager.ItemCount = gridViewResearches.VisibleRowCount; }
+            else { gridViewResearchesPager.ItemCount = gridViewResearches.SettingsPager.PageSize; }
+            gridViewResearchesPager.ItemsPerPage = gridViewResearches.SettingsPager.PageSize;
+            if (gridViewResearches.PageIndex > 0) { gridViewResearchesPager.PageIndex = gridViewResearches.PageIndex; }
+            else gridViewResearchesPager.PageIndex = 0;
         }
 
         private void UpdateTableView()
@@ -57,6 +63,13 @@ namespace SandBox.WebUi.Pages.Research
                 gridViewResearches.Visible = false;
                 labelNoItems.Text = "У вас нет доступных исследований";
             }
+            gridViewResearchesPager.Visible = gridViewResearches.Visible;
+            if (gridViewResearches.VisibleRowCount > 0) { gridViewResearchesPager.ItemCount = gridViewResearches.VisibleRowCount; }
+            else { gridViewResearchesPager.ItemCount = gridViewResearches.SettingsPager.PageSize; }
+            gridViewResearchesPager.ItemsPerPage = gridViewResearches.SettingsPager.PageSize;
+            if (gridViewResearches.PageIndex > 0) { gridViewResearchesPager.PageIndex = gridViewResearches.PageIndex; }
+            else gridViewResearchesPager.PageIndex = 0;
+
         }
 
         protected void UpdateTimerTick(object sender, EventArgs e)
@@ -485,6 +498,13 @@ namespace SandBox.WebUi.Pages.Research
                 gridViewResearches.Visible = false;
                 labelNoItems.Text = "У вас нет доступных исследований";
             }
+            gridViewResearchesPager.Visible = gridViewResearches.Visible;
+            if (gridViewResearches.VisibleRowCount > 0) { gridViewResearchesPager.ItemCount = gridViewResearches.VisibleRowCount; }
+            else { gridViewResearchesPager.ItemCount = gridViewResearches.SettingsPager.PageSize; }
+            gridViewResearchesPager.ItemsPerPage = gridViewResearches.SettingsPager.PageSize;
+            if (gridViewResearches.PageIndex > 0) { gridViewResearchesPager.PageIndex = gridViewResearches.PageIndex; }
+            else gridViewResearchesPager.PageIndex = 0;
+
         }
         
 
@@ -594,6 +614,18 @@ namespace SandBox.WebUi.Pages.Research
         protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
         {
 
+        }
+
+        protected void gridViewResearchesPager_PageIndexChanged(object sender, EventArgs e)
+        {
+            gridViewResearches.PageIndex = gridViewResearchesPager.PageIndex;
+            gridViewResearches.DataBind();
+        }
+
+        protected void gridViewResearchesPager_PageSizeChanged(object sender, EventArgs e)
+        {
+            gridViewResearches.SettingsPager.PageSize = gridViewResearchesPager.ItemsPerPage;
+            gridViewResearches.DataBind();
         }
         
 

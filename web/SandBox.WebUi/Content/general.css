@@ -370,10 +370,9 @@ td.nvtxtr {
 	background-image: url(/Content/images/btnlogin.png);
 	background-repeat: repeat-x;
 	background-position: top;
-	border-width: 0px;
+	vertical-align: middle;
+	border: none;
 	height: 25px;
-	padding-left: 10px;
-	padding-right: 10px;
 	cursor: pointer;
 }
 
@@ -385,19 +384,18 @@ td.nvtxtr {
 	background-image: none;
 	border-width: 0px;
 	height: 25px;
-	padding-left: 10px;
-	padding-right: 10px;
 	cursor: pointer;
 }
 .buttonDisable {
 	font-family: "Trebuchet MS", Arial;
 	font-size: 14px;
-	color: #FFFFFF;
-	background-color: #2986a5;
+	border: 1px solid #dcdcdc;
+	color: #646464;
+	background-color: #F3F3F3;
 	background-image: none;
-	border-width: 0px;
 	height: 25px;
-	padding-left: 10px;
-	padding-right: 10px;
 	cursor: default;
+}
+#chartOSuse, #chartCountEv, #chartDanger{
+	height: 100px;
 }

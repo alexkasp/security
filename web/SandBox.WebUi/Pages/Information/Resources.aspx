@@ -30,7 +30,7 @@
                                         ItemsPerPage="100" 
                                         onpageindexchanged="gridResourceViewPager_PageIndexChanged" Visible="False" 
                                         onpagesizechanged="gridResourceViewPager_PageSizeChanged" 
-                                        ShowNumericButtons="False" RenderMode="Lightweight">
+                                        ShowNumericButtons="False" RenderMode="Lightweight" Theme="SandboxTheme">
                                         <Summary AllPagesText="{0}-{1} из {2}" Text="{0}-{1} из {2}" />
                                         <PageSizeItemSettings AllItemText="Все" Caption="" Visible="True">
                                         </PageSizeItemSettings>

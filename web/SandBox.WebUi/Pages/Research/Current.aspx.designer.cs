@@ -13,13 +13,13 @@ namespace SandBox.WebUi.Pages.Research {
     public partial class Current {
         
         /// <summary>
-        /// PopupUpdatePanel control.
+        /// PopuUpdatePanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel PopupUpdatePanel;
+        protected global::System.Web.UI.UpdatePanel PopuUpdatePanel;
         
         /// <summary>
         /// popup_delete control.
@@ -76,6 +76,15 @@ namespace SandBox.WebUi.Pages.Research {
         protected global::DevExpress.Web.ASPxEditors.ASPxButton btnDelete;
         
         /// <summary>
+        /// UpdateBtnPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdateBtnPanel;
+        
+        /// <summary>
         /// btnNew control.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,15 @@ namespace SandBox.WebUi.Pages.Research {
         protected global::DevExpress.Web.ASPxEditors.ASPxButton btnComp;
         
         /// <summary>
+        /// btnStop control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxEditors.ASPxButton btnStop;
+        
+        /// <summary>
         /// btnDel control.
         /// </summary>
         /// <remarks>
@@ -101,6 +119,24 @@ namespace SandBox.WebUi.Pages.Research {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxEditors.ASPxButton btnDel;
+        
+        /// <summary>
+        /// UpdatePagerPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePagerPanel;
+        
+        /// <summary>
+        /// gridViewResearchesPager control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxPager.ASPxPager gridViewResearchesPager;
         
         /// <summary>
         /// UpdatePanelResearches control.

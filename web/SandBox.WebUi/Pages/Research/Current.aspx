@@ -5,6 +5,13 @@
     <link rel="stylesheet" type="text/css" href="../../Content/PageView.css" />
     <script type="text/javascript">
 
+        function OnStopButtonPress(values) {
+            if (values.length == 0) return;
+            for (var i = 0; i < values.length; i++) {
+                PageMethods.StopResearch(values[i]);
+            }
+        }
+
         function TestStartEvent(value) {
             OnStartClick(value);
         }
@@ -37,7 +44,7 @@
             PageMethods.GetReport(key);
         }
     </script>
-    <asp:UpdatePanel ID="PopupUpdatePanel" runat="server" UpdateMode="Conditional">
+    <asp:UpdatePanel ID="PopuUpdatePanel" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <dx:ASPxPopupControl ID="popup_delete" ClientInstanceName="popup_delete" runat="server"
                 AllowDragging="false" AllowResize="false" ShowCloseButton="false" PopupHorizontalAlign="OutsideRight"
@@ -65,28 +72,105 @@
 	    <div id="content-top">
 		    <div id="pagename">Исследования</div>
 		    <div id="toolbuttons">
+                <asp:UpdatePanel ID="UpdateBtnPanel" runat="server" UpdateMode="Conditional">
+        <ContentTemplate>
+
             <table>
                 <tr>
-                    <td>
+                    <td width="170">
                         <dx:ASPxButton ID="btnNew" AutoPostBack="False" runat="server" 
-                            Text="Создать исследование" onclick="btnNew_Click"></dx:ASPxButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Text="Создать" onclick="btnNew_Click" CssClass="button" 
+                            EnableDefaultAppearance="False" EnableTheming="False" Width="150px">
+                            <PressedStyle CssClass="buttonHover">
+                            </PressedStyle>
+                            <HoverStyle CssClass="buttonHover">
+                            </HoverStyle>
+                            <DisabledStyle CssClass="buttonDisable">
+                            </DisabledStyle>
+                        </dx:ASPxButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </td>
-                    <td>
-                        <dx:ASPxButton ID="btnComp" AutoPostBack="False" runat="server" Text="Сравнить исследование"></dx:ASPxButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <td width="170">
+                        <dx:ASPxButton ID="btnComp" AutoPostBack="False" runat="server" 
+                            Text="Сравнить" ClientInstanceName="btnComp" ClientEnabled="False" 
+                            CssClass="button" EnableDefaultAppearance="False" EnableTheming="False" 
+                            Width="150px">
+                            <Image Url="~/Content/Images/Icons/btn_comp.png" 
+                                UrlDisabled="~/Content/Images/Icons/btn_compd.png">
+                            </Image>
+                            <PressedStyle CssClass="buttonHover">
+                            </PressedStyle>
+                            <HoverStyle CssClass="buttonHover">
+                            </HoverStyle>
+                            <FocusRectBorder BorderStyle="None" />
+                            <DisabledStyle CssClass="buttonDisable">
+                            </DisabledStyle>
+                        </dx:ASPxButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </td>
-                    <td>
+                    <td width="170">
+                        <dx:ASPxButton ID="btnStop" AutoPostBack="False" runat="server" 
+                            Text="Остановить" ClientInstanceName="btnStop" ClientEnabled="False" 
+                            CssClass="button" EnableDefaultAppearance="False" EnableTheming="False" 
+                            Width="150px">
+                            <ClientSideEvents Click="function(s, e) {
+	gridViewResearches.GetSelectedFieldValues('Id', OnStopButtonPress);
+    gridViewResearches.UnselectAllRowsOnPage();
+}" />
+                            <Image Url="~/Content/Images/Icons/btn_stop.png" 
+                                UrlDisabled="~/Content/Images/Icons/btn_stopd.png">
+                            </Image>
+                            <PressedStyle CssClass="buttonHover">
+                            </PressedStyle>
+                            <HoverStyle CssClass="buttonHover">
+                            </HoverStyle>
+                            <FocusRectBorder BorderStyle="None" />
+                            <DisabledStyle CssClass="buttonDisable">
+                            </DisabledStyle>
+                        </dx:ASPxButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td width="170">
                         <dx:ASPxButton ID="btnDel" AutoPostBack="False" runat="server" 
-                            Text="Удалить исследование">
+                            Text="Удалить" ClientInstanceName="btnDel" ClientEnabled="False" 
+                            CssClass="button" EnableDefaultAppearance="False" EnableTheming="False" 
+                            Width="150px">
                             <ClientSideEvents Click="function(s, e) {
 	if (confirm ('Удалить выбранные исследования?')) {
-    gridViewResearches.PerformCallback('DeleteSelected');}
+    gridViewResearches.PerformCallback('DeleteSelected');
+    gridViewResearches.UnselectAllRowsOnPage();
+}
 }" />
+                            <Image Url="~/Content/Images/Icons/btn_del.png" 
+                                UrlDisabled="~/Content/Images/Icons/btn_deld.png">
+                            </Image>
+                            <PressedStyle CssClass="buttonHover">
+                            </PressedStyle>
+                            <HoverStyle CssClass="buttonHover">
+                            </HoverStyle>
+                            <FocusRectBorder BorderStyle="None" />
+                            <DisabledStyle CssClass="buttonDisable">
+                            </DisabledStyle>
                         </dx:ASPxButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </td>
                 </tr>
             </table>
+                    </ContentTemplate>
+    </asp:UpdatePanel>
             </div>
-		    <div id="tablenavbuttons"><img src="../../Content/Images/btn_tablenav.jpg" /></div>
+		    <div id="tablenavbuttons">
+                            <asp:UpdatePanel ID="UpdatePagerPanel" runat="server" UpdateMode="Conditional">
+        <ContentTemplate>
+
+                                    <dx:ASPxPager ID="gridViewResearchesPager" runat="server" ItemCount="1000" 
+                                        ItemsPerPage="100" 
+                                        onpageindexchanged="gridViewResearchesPager_PageIndexChanged" Visible="False" 
+                                        onpagesizechanged="gridViewResearchesPager_PageSizeChanged" 
+                                        ShowNumericButtons="False" Theme="SandboxTheme">
+                                        <Summary AllPagesText="{0}-{1} из {2}" Text="{0}-{1} из {2}" />
+                                        <PageSizeItemSettings AllItemText="Все" Caption="" Visible="True">
+                                        </PageSizeItemSettings>
+        </dx:ASPxPager>
+                    </ContentTemplate>
+    </asp:UpdatePanel>
+            </div>
 		</div>
     <div id="content-main">
         <asp:UpdatePanel ID="UpdatePanelResearches" runat="server" UpdateMode="Conditional">
@@ -100,9 +184,28 @@
                     OnHtmlRowPrepared="GridViewResearchesHtmlRowPrepared" 
                     ClientInstanceName="gridViewResearches" 
                     Theme="SandboxTheme" oncustomcallback="gridViewResearches_CustomCallback" 
-                    ondatabinding="gridViewResearches_DataSelect" >
+                    ondatabinding="gridViewResearches_DataSelect" EnableCallBacks="False" >
                     <ClientSideEvents RowClick="function(s, e) {
 	s.ExpandDetailRow(e.visibleIndex);
+}" SelectionChanged="function(s, e) {
+    if (s.GetSelectedRowCount()&lt;=0)
+	{
+		btnComp.SetEnabled(false);
+		btnStop.SetEnabled(false);
+		btnDel.SetEnabled(false);
+	}
+	else if (s.GetSelectedRowCount()==2)
+	{
+		btnComp.SetEnabled(true);
+		btnStop.SetEnabled(true);
+		btnDel.SetEnabled(true);
+	}
+	else
+	{
+		btnComp.SetEnabled(false);
+		btnStop.SetEnabled(true);
+		btnDel.SetEnabled(true);
+	}
 }" />
                     <Columns>
                         <dx:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0" 
@@ -217,7 +320,7 @@
                             </CellStyle>
                         </dx:GridViewDataTextColumn>
                         <dx:GridViewDataTextColumn Caption="Времени осталось" FieldName="TimeLeft" 
-                            ShowInCustomizationForm="True" Visible="False" VisibleIndex="13">
+                            Visible="False" VisibleIndex="13">
                             <PropertiesTextEdit>
                                 <ValidationSettings ErrorText="Неверное значение">
                                     <RegularExpression ErrorText="Ошибка проверки регулярного выражения" />
@@ -227,7 +330,7 @@
                             <CellStyle HorizontalAlign="Left">
                             </CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Монитор" ShowInCustomizationForm="True" 
+                        <dx:GridViewDataTextColumn Caption="Монитор" 
                             Visible="False" VisibleIndex="15">
                             <PropertiesTextEdit>
                                 <ValidationSettings ErrorText="Неверное значение">
@@ -278,12 +381,12 @@
                         ColumnResizeMode="NextColumn" ConfirmDelete="True" 
                         EnableCustomizationWindow="True" EnableRowHotTrack="True" 
                         HeaderFilterMaxRowCount="10" />
-                    <SettingsPager>
+                    <SettingsPager Visible="False">
                         <PageSizeItemSettings Items="10, 20, 50, 100" ShowAllItem="True">
                         </PageSizeItemSettings>
                     </SettingsPager>
                     <Settings GridLines="Horizontal" ShowHeaderFilterButton="True" 
-                        EnableFilterControlPopupMenuScrolling="True" ShowFilterBar="Visible" 
+                        EnableFilterControlPopupMenuScrolling="True" 
                         ShowHeaderFilterBlankItems="False" />
                     <SettingsLoadingPanel Text="Загрузка&amp;hellip;" Mode="Disabled" />
                     <SettingsDetail ShowDetailRow="True" AllowOnlyOneMasterRowExpanded="True" 

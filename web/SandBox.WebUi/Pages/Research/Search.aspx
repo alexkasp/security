@@ -149,7 +149,7 @@
                                         ItemsPerPage="100" 
                                         onpageindexchanged="gridSearchViewPager_PageIndexChanged" Visible="False" 
                                         onpagesizechanged="gridSearchViewPager_PageSizeChanged" 
-                                        ShowNumericButtons="False" RenderMode="Lightweight">
+                                        ShowNumericButtons="False" Theme="SandboxTheme">
                                         <Summary AllPagesText="{0}-{1} из {2}" Text="{0}-{1} из {2}" />
                                         <PageSizeItemSettings AllItemText="Все" Caption="" Visible="True">
                                         </PageSizeItemSettings>
