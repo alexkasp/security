@@ -164,8 +164,8 @@ namespace SandBox.WebUi.Pages.Research
             int sign = ASPxComboBox1.Text == "Критически важное" ? 0 : 1;
             string module = (string)this.gridViewReports.GetRowValues(this.gridViewReports.FocusedRowIndex, "ModuleId");
             string evnt = (string)this.gridViewReports.GetRowValues(this.gridViewReports.FocusedRowIndex, "EventCode");
-            string dest = (string)this.gridViewReports.GetRowValues(this.gridViewReports.FocusedRowIndex, "Dest");
-            string who = (string)this.gridViewReports.GetRowValues(this.gridViewReports.FocusedRowIndex, "Who");
+            string dest = (string)this.gridViewReports.GetRowValues(this.gridViewReports.FocusedRowIndex, "dest");
+            string who = (string)this.gridViewReports.GetRowValues(this.gridViewReports.FocusedRowIndex, "who");
             int moduleCode = ResearchManager.GetModuleIdByDescr(module);
             int eventCode = ResearchManager.GetEventIdByDescr(evnt);
             ReportManager.InsertRowDirectoriesOfEvents(sign, moduleCode, eventCode, dest,who);
