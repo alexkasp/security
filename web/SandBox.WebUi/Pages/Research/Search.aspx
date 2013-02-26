@@ -162,7 +162,12 @@
                     DataSourceID="LinqServerModeDataSource1" 
                     ClientInstanceName="gridSearchView" 
                     oncustomcallback="gridSearchView_CustomCallback" ClientVisible="False" 
-                    EnableCallBacks="False" >
+                    EnableCallBacks="False" oncustomcolumndisplaytext="gridSearchView_CustomColumnDisplayText" 
+                                        onhtmlrowprepared="gridSearchView_HtmlRowPrepared" >
+                    <GroupSummary>
+                        <dx:ASPxSummaryItem DisplayFormat="Событий: {1}" FieldName="Id" 
+                            SummaryType="Count" />
+                    </GroupSummary>
                     <Columns>
                         <dx:GridViewDataTextColumn FieldName="Id"  VisibleIndex="0" 
                 ReadOnly="True" Caption="№">
@@ -183,6 +188,12 @@
                         <dx:GridViewDataTextColumn FieldName="rschId" 
                 VisibleIndex="11" GroupIndex="0" SortIndex="0" SortOrder="Ascending" 
                             Caption="Исследование">
+                            <GroupRowTemplate>
+                                <dx:ASPxLabel ID="ReportLabel" runat="server" Text='<%# GetLabelText(Container)%>'>
+                                </dx:ASPxLabel>
+                                <dx:ASPxHyperLink ID="ReportLink" runat="server" NavigateUrl="/Pages/Research/ReportList.aspx?researchId=" Target="_self" Text="Подробный отчет" OnInit="ReportLink_Init">
+                                </dx:ASPxHyperLink>
+                            </GroupRowTemplate>
                         </dx:GridViewDataTextColumn>
                         <dx:GridViewDataTextColumn FieldName="pid1" 
                 VisibleIndex="3">
@@ -203,6 +214,7 @@
                         EnableCustomizationWindow="True" EnableRowHotTrack="True" />
                     <SettingsPager PageSize="50" Visible="False">
                     </SettingsPager>
+                    <Settings ShowGroupedColumns="True" />
                     <SettingsLoadingPanel Text="Загрузка&amp;hellip;">
                     </SettingsLoadingPanel>
                 </dx:ASPxGridView>

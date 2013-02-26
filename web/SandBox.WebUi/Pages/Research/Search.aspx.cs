@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DevExpress.Web.ASPxGridView;
+using DevExpress.Web.ASPxEditors;
 
 namespace SandBox.WebUi.Pages.Research
 {
@@ -49,6 +50,38 @@ namespace SandBox.WebUi.Pages.Research
         {
             gridSearchView.SettingsPager.PageSize = gridSearchViewPager.ItemsPerPage;
             gridSearchView.DataBind();
+        }
+
+        protected void gridSearchView_CustomColumnDisplayText(object sender, ASPxGridViewColumnDisplayTextEventArgs e)
+        {
+            if (e.Column.FieldName != "who" && e.Column.FieldName != "dest") return;
+            string searchText = SearchTextBox.Text;
+            string highlightedText = e.Value.ToString();
+
+            if (!highlightedText.Contains(searchText) || searchText == null || searchText == string.Empty)
+                return;
+            e.DisplayText = highlightedText.Replace(searchText, "<span class='highlight'>" + searchText + "</span>");
+
+        }
+
+        protected void ReportLink_Init(object sender, EventArgs e)
+        {
+            var link = (ASPxHyperLink)sender;
+            var templateContainer = (GridViewGroupRowTemplateContainer)link.NamingContainer;
+            link.ID = string.Format("ReportLink{0}", templateContainer.VisibleIndex);
+        }
+
+        protected void gridSearchView_HtmlRowPrepared(object sender, ASPxGridViewTableRowEventArgs e)
+        {
+            if (e.RowType == GridViewRowType.Group)
+            {
+                var link = (ASPxHyperLink)gridSearchView.FindGroupRowTemplateControl(e.VisibleIndex, string.Format("ReportLink{0}", e.VisibleIndex));
+                if (link != null) link.NavigateUrl = "/Pages/Research/ReportList.aspx?researchId=" + e.GetValue("rschId").ToString();
+            }
+        }
+        protected virtual string GetLabelText(GridViewGroupRowTemplateContainer container)
+        {
+            return "Исследоваине № ("+container.GroupText+") ";
         }
     }
 }

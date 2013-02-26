@@ -1,6 +1,6 @@
 body {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
+	font-family: "Trebuchet MS", Arial;
+	font-size: 12px;
 	background-image: url(/Content/images/bg.png);
 	background-repeat: repeat-y;
 	background-position: right;
@@ -398,4 +398,109 @@ td.nvtxtr {
 }
 #chartOSuse, #chartCountEv, #chartDanger{
 	height: 100px;
+}
+
+.highlight {
+          background-color:#ffff66;
+}
+.accordion {  
+	width: 100%;  
+}  
+  
+.accordionHeader, .accordionHeaderSelected {
+	border: 1px solid #c8c8c8;
+	color: #474747;
+	background-color: #ffffff;
+	background-image: url(/Content/images/acchdrbg.png);
+	font-family: "Trebuchet MS",Arial;
+	font-size: 14px;
+	font-weight: bold;
+	cursor: pointer;
+	height:44px;
+	background-repeat: repeat-x;
+	background-position: bottom;
+}  
+  
+.accordionHeader .acchdr{
+	background-image: url(/Content/images/acchdrcl.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	float:left;
+	padding-top: 5px;
+	padding-left: 40px;
+	margin-top: 10px;
+	margin-left: 15px;
+}  
+
+.accordionHeaderSelected .acchdr{
+	background-image: url(/Content/images/acchdrop.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	float:left;
+	padding-top: 5px;
+	padding-left: 40px;
+	margin-top: 10px;
+	margin-left: 15px;
+}  
+
+#accfs {
+	width: 10px;
+	height:100%;
+	background-color:#4a8699;
+	float:left;
+}
+
+#accrg {
+	width: 10px;
+	height:100%;
+	background-color:#2b5360;
+	float:left;
+}
+
+#accpr {
+	width: 10px;
+	height:100%;
+	background-color:#9cb1b8;
+	float:left;
+}
+
+#accnt {
+	width: 10px;
+	height:100%;
+	background-color:#12323b;
+	float:left;
+}
+
+.accordionContent {  
+	background-color: #FFFFFF;  
+	border: none;  
+	padding-bottom:10px;
+}
+.addparams {
+	width: 100%;
+	color:#FFFFFF;
+	background-color: #588fa3;
+	font-family: "Trebuchet MS", Arial;
+	font-size: 14px;
+	text-transform: uppercase;
+	height: 25px;
+	text-indent:20px;
+	padding-top:7px;
+}
+
+.mainparams {
+	width: 100%;
+	color:#FFFFFF;
+	background-color: #474747;
+	font-family: "Trebuchet MS", Arial;
+	font-size: 14px;
+	text-transform: uppercase;
+	height: 25px;
+	text-indent:20px;
+	padding-top:7px;
+}
+
+#mainprmcont {
+	background-color: #f3f3f3;
+	padding: 20px;
 }

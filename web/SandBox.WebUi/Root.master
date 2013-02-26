@@ -18,8 +18,8 @@
 <body runat="server" id="Body">
     <div class="wrapper_full">
         <form id="form1" runat="server">
-    <asp:ScriptManager ID="AjaxScriptManager" runat="server"> </asp:ScriptManager>
-
+    <ajaxToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+    </ajaxToolkit:ToolkitScriptManager>
                     <div id="header">
                     <div id="header-sh">
 
