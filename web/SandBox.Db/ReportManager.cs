@@ -13,7 +13,7 @@ namespace SandBox.Db
             using (var db = new SandBoxDataContext())
             {
                 Dictionary<string, int> res = new Dictionary<string, int>();
-                var mlwr = from m in db.vpotoos
+                var mlwr = from m in db.vpotop5s
                            select m;
                 foreach (var m in mlwr)
                 {
@@ -27,8 +27,8 @@ namespace SandBox.Db
                         res.Add(m.name, m.danger ?? 0);
                     }
                 }
-                res.OrderByDescending(x => x.Value);
-                return res;
+                var test = res.OrderByDescending(x=>x.Value);
+                return test.ToDictionary(x => x.Key, x => x.Value);
             }
         }
         public static long GetFsEventsCountForRsch(int rschId)

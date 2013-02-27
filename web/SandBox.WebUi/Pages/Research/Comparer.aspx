@@ -19,7 +19,8 @@
     </dx:ASPxButton>
     <br />
     <dx:ASPxTreeList ID="ASPxTreeList1" runat="server" 
-        EnableTheming="True" Theme="Default" Width="600px">
+        EnableTheming="True" Theme="Default" Width="600px" 
+        onhtmldatacellprepared="ASPxTreeList1_HtmlDataCellPrepared">
         <Settings GridLines="Both" />
 <SettingsCustomizationWindow Caption="Выбор колонок"></SettingsCustomizationWindow>
 

@@ -31,6 +31,15 @@ namespace SandBox.WebUi.Pages.Research {
         protected global::System.Web.UI.WebControls.TreeView TreeView1;
         
         /// <summary>
+        /// lEtalonEx элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxEditors.ASPxLabel lEtalonEx;
+        
+        /// <summary>
         /// ASPxComboBox1 элемент управления.
         /// </summary>
         /// <remarks>

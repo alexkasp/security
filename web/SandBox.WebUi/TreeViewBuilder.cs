@@ -171,7 +171,7 @@ namespace SandBox.WebUi
                 item.IsInTree = true;
                 return;
             }
-            if (a.ChildNodes != null) //дочерние элементы есть
+            if (a.ChildNodes.Count!=null)//a.ChildNodes != null) //дочерние элементы есть
             {
                 foreach (TreeNode childNode in a.ChildNodes) //не зацикливаеться ли от родителя к 1 ребенку и обратно?
                 {

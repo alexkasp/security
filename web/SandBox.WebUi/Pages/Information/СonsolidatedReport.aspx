@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.master" AutoEventWireup="true" CodeBehind="СonsolidatedReport.aspx.cs" Inherits="SandBox.WebUi.Pages.Information.СonsolidatedReport" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<div style="padding:5px;">
-
+	    <div id="content-top">
+		    <div id="pagename">Сводный отчет</div>
+         </div>
+  <div id="content-main">
     <dx:ASPxLabel ID="LUsageOfDifferentTypesOfLIR" runat="server" 
         Text="Статистика по использованию различных типов ЛИР" Theme="iOS">
     </dx:ASPxLabel>
@@ -88,13 +90,14 @@
     </dx:ASPxLabel>
     <br />
     <dx:WebChartControl ID="WCCUsageOSForResearch" runat="server" Height="400px" 
-        Width="800px" LoadingPanelText="Загрузка&amp;hellip;">
+        Width="800px" LoadingPanelText="Загрузка&amp;hellip;" BackColor="#FFFFFF" 
+        PaletteBaseColorNumber="1">
         <diagramserializable>
             <dx:XYDiagram>
                 <axisx visibleinpanesserializable="-1">
                     <range sidemarginsenabled="True" />
                 </axisx>
-                <axisy gridspacingauto="False" visibleinpanesserializable="-1">
+                <axisy visibleinpanesserializable="-1">
                     <range sidemarginsenabled="True" />
                 </axisy>
             </dx:XYDiagram>
@@ -107,29 +110,6 @@
         <legend visible="False"></legend>
         <seriesserializable>
             <dx:Series Name="Ряд 1">
-                <viewserializable>
-                    <dx:SideBySideBarSeriesView>
-                    </dx:SideBySideBarSeriesView>
-                </viewserializable>
-                <labelserializable>
-                    <dx:SideBySideBarSeriesLabel LineVisible="True">
-                        <fillstyle>
-                            <optionsserializable>
-                                <dx:SolidFillOptions />
-                            </optionsserializable>
-                        </fillstyle>
-                        <pointoptionsserializable>
-                            <dx:PointOptions>
-                            </dx:PointOptions>
-                        </pointoptionsserializable>
-                    </dx:SideBySideBarSeriesLabel>
-                </labelserializable>
-                <legendpointoptionsserializable>
-                    <dx:PointOptions>
-                    </dx:PointOptions>
-                </legendpointoptionsserializable>
-            </dx:Series>
-            <dx:Series Name="Ряд 2">
                 <viewserializable>
                     <dx:SideBySideBarSeriesView>
                     </dx:SideBySideBarSeriesView>
@@ -190,14 +170,15 @@
     </dx:ASPxLabel>
     <br />
     <dx:WebChartControl ID="WCCUsageOSForResearch0" runat="server" Height="400px" 
-        Width="800px" LoadingPanelText="Загрузка&amp;hellip;">
+        Width="800px" LoadingPanelText="Загрузка&amp;hellip;" 
+        PaletteBaseColorNumber="1">
         <diagramserializable>
             <dx:XYDiagram>
                 <axisx visibleinpanesserializable="-1">
                     <range sidemarginsenabled="True" />
                 </axisx>
-                <axisy gridspacingauto="False" visibleinpanesserializable="-1">
-                    <range sidemarginsenabled="True" />
+                <axisy visibleinpanesserializable="-1">
+                    <label><resolveoverlappingoptions allowrotate="False" /></label><range sidemarginsenabled="True" />
                 </axisy>
             </dx:XYDiagram>
         </diagramserializable>
@@ -209,29 +190,6 @@
         <legend visible="False"></legend>
         <seriesserializable>
             <dx:Series Name="Ряд 1">
-                <viewserializable>
-                    <dx:SideBySideBarSeriesView>
-                    </dx:SideBySideBarSeriesView>
-                </viewserializable>
-                <labelserializable>
-                    <dx:SideBySideBarSeriesLabel LineVisible="True">
-                        <fillstyle>
-                            <optionsserializable>
-                                <dx:SolidFillOptions />
-                            </optionsserializable>
-                        </fillstyle>
-                        <pointoptionsserializable>
-                            <dx:PointOptions>
-                            </dx:PointOptions>
-                        </pointoptionsserializable>
-                    </dx:SideBySideBarSeriesLabel>
-                </labelserializable>
-                <legendpointoptionsserializable>
-                    <dx:PointOptions>
-                    </dx:PointOptions>
-                </legendpointoptionsserializable>
-            </dx:Series>
-            <dx:Series Name="Ряд 2">
                 <viewserializable>
                     <dx:SideBySideBarSeriesView>
                     </dx:SideBySideBarSeriesView>

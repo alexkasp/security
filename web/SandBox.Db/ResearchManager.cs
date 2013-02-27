@@ -29,6 +29,23 @@ namespace SandBox.Db
     public class ResearchManager : DbManager
     {
 
+        public static Research GetEtalonRsch(int rschId)
+        {
+            try
+            {
+                var db = new SandBoxDataContext();
+                var rsch = db.Researches.FirstOrDefault<Research>(x => x.Id == rschId);
+                var rschVm = db.Vms.FirstOrDefault<Vm>(x => x.Id == rsch.VmId);
+                var etalons = VmManager.GetAllEtalonVmst();
+                var etalonWithSameOs = etalons.FirstOrDefault<Vm>(x => x.VmSystems == rschVm.VmSystems);
+                return db.Researches.FirstOrDefault<Research>(x => x.VmId == etalonWithSameOs.Id);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         public static void InsertToStopRschSatus(int rschId, string value)
         {
             var db = new SandBoxDataContext();
@@ -513,26 +530,21 @@ namespace SandBox.Db
         {
             var db = new SandBoxDataContext();
             Dictionary<string, int> res = new Dictionary<string, int>();
-            var researches = from rs in db.Researches
+            var researches = from rs in db.ResearchesTableViews
                              select rs;
             foreach (var r in researches)
             {
-                var vm = VmManager.GetVm(r.VmId);
-                if (vm != null)
-                {
-                    var system = db.VmSystems.FirstOrDefault<VmSystem>(x => x.System == vm.System);
-                    if (system != null)
+                if (r.VmSystem != null)
                     {
-                        if (res.Keys.Contains(system.Description))
+                        if (res.Keys.Contains(r.VmSystem))
                         {
-                            res[system.Description]++;
+                            res[r.VmSystem]++;
                         }
                         else
                         {
-                            res.Add(system.Description, 1);
+                            res.Add(r.VmSystem, 1);
                         }
                     }
-                }
  
             }
             return res;
@@ -556,37 +568,29 @@ namespace SandBox.Db
         {
             var db = new SandBoxDataContext();
             Dictionary<string, int> res = new Dictionary<string, int>();
-            var researches = from rs in db.Researches
+            var researches = from rs in db.ResearchesTableViews
                              select rs;
             foreach (var r in researches)
             {
-                var vm = VmManager.GetVm(r.VmId);
-                if (vm != null)
-                {
-                    var system = db.VmSystems.FirstOrDefault<VmSystem>(x => x.System == vm.System);
-                    if (system != null)
+                    if (r.VmSystem != null)
                     {
                         int toAdd = 0;
-                        var evnts = from ev in db.events
-                                    where ev.rschId == r.Id
+                        var evnts = from ev in db.EventsChartCounts
+                                    where ev.Id == r.Id
                                     select ev;
                         foreach (var ev in evnts)
                         {
-                            if (ReportManager.GetEvtSignif(ev) == 0 || ReportManager.GetEvtSignif(ev) == 1)
-                            {
-                                toAdd++;
-                            }
+                                toAdd+=(int)ev.Count;
                         }
-                        if (res.Keys.Contains(system.Description))
+                        if (res.Keys.Contains(r.VmSystem))
                         {
-                            res[system.Description]+=toAdd;
+                            res[r.VmSystem] += toAdd;
                         }
                         else
                         {
-                            res.Add(system.Description, toAdd);
+                            res.Add(r.VmSystem, toAdd);
                         }
                     }
-                }
             }
             return res;
         }

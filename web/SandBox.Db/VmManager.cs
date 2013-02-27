@@ -20,6 +20,43 @@ namespace SandBox.Db
             DELETED = 9
         }
 
+        public static Dictionary<string, List<int>> GetOsChart()
+        {
+            Dictionary<string, List<int>> res = new Dictionary<string, List<int>>();
+            var db = new SandBoxDataContext();
+            var preRes = from t in db.vpotoos
+                         join vd in db.ResearchesVmDatas on t.name equals vd.VmName
+                         join os in db.VmSystems on vd.VmSystem equals os.System
+                         select new { Name = t.name, OS = os.ShortDest };
+            var preRes2 = from t in db.vpotoos
+                          select t;
+            foreach (var test in preRes)
+            {
+                string name = test.GetType().GetProperty("Name").GetValue(test, null) as string;
+                string os = test.GetType().GetProperty("OS").GetValue(test, null) as string;
+                if (name != null && os != null)
+                {
+                    foreach (var t in preRes2)
+                    {
+                        if (t.name == name)
+                        {
+                            if (res.ContainsKey(os))
+                            {
+                                res[os][0]++;
+                                res[os][1] += t.danger ?? 0;
+                            }
+                            else
+                            {
+                                res.Add(os, new List<int> { 1, t.danger??0 });
+                            }
+                        }
+                    }
+                }
+            }
+            var test2 = res.OrderByDescending(x => x.Value[1]);
+            return test2.ToDictionary(x => x.Key, x => x.Value);
+        }
+
         public static stats GetFullStats()
         {
             var db = new SandBoxDataContext();
@@ -367,6 +404,14 @@ namespace SandBox.Db
                         where v.Type == 1
                         select new { Etalon = v.Name + ", " + vst.Description };
             return items.Select(vr => vr.Etalon).ToList();
+        }
+
+        public static IQueryable<Vm> GetAllEtalonVmst()
+        {
+            var db = new SandBoxDataContext();
+            return from v in db.Vms
+                   where v.Type == 1
+                   select v;
         }
 
         //**********************************************************

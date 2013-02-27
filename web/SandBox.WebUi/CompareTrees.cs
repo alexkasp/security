@@ -18,15 +18,18 @@ namespace SandBox.WebUi
         string taskParams = "Test\\Вася";
         private void FillRootDict()
         {
-            RootElementsCodes.Add(0, "HKEY_CLASSES_ROOT");
-            RootElementsCodes.Add(1, "HKEY_CURRENT_USER");
-            RootElementsCodes.Add(2, "HKEY_LOCAL_MACHINE");
-            RootElementsCodes.Add(3, "HKEY_USERS");
-            RootElementsCodes.Add(4, "HKEY_CURRENT_CONFIG");
+
+            RootElementsCodes.Add(1, "HKEY_CLASSES_ROOT");
+            RootElementsCodes.Add(2, "HKEY_CURRENT_USER");
+            RootElementsCodes.Add(3, "HKEY_LOCAL_MACHINE");
+            RootElementsCodes.Add(4, "HKEY_USERS");
+            RootElementsCodes.Add(5, "HKEY_CURRENT_CONFIG");
         }
+        public Dictionary<Research, List<string>> _rschFullPathesDict = new Dictionary<Research, List<string>>();
         TreeNode _LRschNode = new TreeNode();
         TreeNode _LRschToCompareNode = new TreeNode();
         //TreeNode _rootRschToCompareNode = new TreeNode();
+
         public TreeView GetRschTree(int rschId, int rschToCompareId, string splitter = "\\")
         {
             FillRootDict();
@@ -37,15 +40,24 @@ namespace SandBox.WebUi
             string rschConvertedTask = GetConvertedTask(rschTask);
             string rschToCompareConvertedTask = GetConvertedTask(rschToCompareTask);
             TreeNode rschRootNode = GetRschRootNode(rschId, rschList, rschConvertedTask);
-            //_rootRschNode = rschRootNode;
+
             TreeNode rschToCompareRootNode = GetRschRootNode(rschToCompareId,rschToCompareList, rschToCompareConvertedTask);
-            //_rootRschToCompareNode = rschToCompareRootNode;
+
             List<string> CommonElementsList = GetCommonElements(rschList, rschToCompareList);
             List<string> OnlyInRschList = NotCommonInList(rschList, CommonElementsList);
             List<string> OnlyInRschToCompareList = NotCommonInList(rschToCompareList, CommonElementsList);
             List<PrtAndCld> pAndCList = GetPrntAndChld(CommonElementsList, OnlyInRschToCompareList, rschRootNode, rschToCompareRootNode);
-            //List<TreeNode> LinkedNodes = new List<TreeNode>();
-            //List<TreeNode> NotLinkedNodes = new List<TreeNode>();
+
+            try
+            {
+                //_rschFullPathesDict.Add(ResearchManager.GetResearch(rschId), rschList);
+                //_rschFullPathesDict.Add(ResearchManager.GetResearch(rschToCompareId), rschToCompareList);
+            }
+            catch
+            {
+                //todo: убрать слепой catch
+            }
+
             foreach (var item in pAndCList)
             {
                 TreeNode rschItem = GetTreeNodeByFullPath(item.P, rschRootNode);
@@ -73,6 +85,66 @@ namespace SandBox.WebUi
             //List<TreeNode> additional = GetUnRots
             TreeView res = new TreeView();
             res.Nodes.Add(rschRootNode);
+            return res;
+        }
+
+        public void AddRschToTreeView(TreeView destTreeView, Research sourseRsch)
+        {
+            FillRootDict();
+
+            List<string> destList = new List<string>();
+            List<string> sourseRschList = new List<string>();
+
+            List<TreeNode> destListNodes = new List<TreeNode>();
+            GetNodesList(destTreeView.Nodes[0], destListNodes);
+            foreach (TreeNode tn in destListNodes)
+            {
+                string path = String.Empty;
+                GetFullPathForNode(tn, ref path, true);
+                destList.Add(path);
+            }
+
+            Task sourseRschTask = TaskManager.GetRegTasksForRsch(sourseRsch.Id);
+            string rschConvertedTask = GetConvertedTask(sourseRschTask);
+            TreeNode sourseRschRootNode = GetRschRootNode(sourseRsch.Id, sourseRschList, rschConvertedTask);
+
+            
+            //_rootRschToCompareNode = rschToCompareRootNode;
+            List<string> CommonElementsList = GetCommonElements(destList, sourseRschList);
+            List<string> OnlyInDestRschList = NotCommonInList(destList, CommonElementsList);
+            List<string> OnlyInSourseRschList = NotCommonInList(sourseRschList, CommonElementsList);
+            List<PrtAndCld> pAndCList = GetPrntAndChld(CommonElementsList, OnlyInSourseRschList, destTreeView.Nodes[0], sourseRschRootNode);
+            
+            foreach (var item in pAndCList)
+            {
+                TreeNode rschItem = GetTreeNodeByFullPath(item.P, destTreeView.Nodes[0]);
+                TreeNode rschToCompareItem = GetTreeNodeByFullPath(item.C, sourseRschRootNode);
+                rschItem.ChildNodes.Add(rschToCompareItem);
+                List<TreeNode> tll = new List<TreeNode>();
+                GetNodesList(rschToCompareItem, tll);
+            }
+            List<TreeNode> CommonInRsch = GetCommonInNode(CommonElementsList, destTreeView.Nodes[0]);
+            List<TreeNode> OnliInRsch = GetCommonInNode(OnlyInDestRschList, destTreeView.Nodes[0]);
+
+            //NotLinkedNodes = GetNotLinkedNodes(LinkedNodes, rschToCompareRootNode);
+
+            //List<string> nlp = GetNotLinkedPathes(CommonElementsList, OnlyInRschToCompareList);
+            //List<TreeNode> additional = GetUnRots
+            //
+
+        }
+
+        public Dictionary<Research, List<string>> GetRrschsRegPaths(List<Research> rschs)
+        {
+            Dictionary<Research, List<string>> res = new Dictionary<Research, List<string>>();
+            foreach (var rsch in rschs)
+            {
+                List<string> rschList = new List<string>();
+                Task rschTask = TaskManager.GetRegTasksForRsch(rsch.Id);
+                string rschConvertedTask = GetConvertedTask(rschTask);
+                TreeNode rschRootNode = GetRschRootNode(rsch.Id, rschList, rschConvertedTask);
+                if (!res.ContainsKey(rsch)) res.Add(rsch, rschList);
+            }
             return res;
         }
 
@@ -265,7 +337,15 @@ namespace SandBox.WebUi
                 GetFullPathForNode(tn, ref path, true);
                 pathList.Add(path);
             }
-            return rootNodeForRsch;
+            try
+            {
+                _rschFullPathesDict.Add(ResearchManager.GetResearch(rschId), pathList);
+            }
+            catch
+            {
+                //убрать слепой catch
+            }
+                return rootNodeForRsch;
             #endregion
         }
 
@@ -282,7 +362,7 @@ namespace SandBox.WebUi
             }
         }
 
-        private void GetFullPathForNode(TreeNode treeNode, ref string path, bool isFirst = false)
+        public void GetFullPathForNode(TreeNode treeNode, ref string path, bool isFirst = false)
         {
             if (!isFirst)
                 path = treeNode.Text + "\\" + path;
@@ -365,16 +445,17 @@ namespace SandBox.WebUi
             return tn;
         }
 
-        private void GetNodesList(TreeNode tn, List<TreeNode> tnList)
+        public void GetNodesList(TreeNode tn, List<TreeNode> tnList)
         {
             if (!tnList.Contains(tn))
             {
                 tnList.Add(tn);
-                if (tn.ChildNodes != null) //дочерние элементы есть
+                if (tn.ChildNodes.Count!=0)// != null) //дочерние элементы есть
                 {
                     foreach (TreeNode childNode in tn.ChildNodes) //не зацикливаеться ли от родителя к 1 ребенку и обратно?
                     {
                         tn = childNode; //посетить ребенка
+                        if (!tnList.Contains(tn))
                         GetNodesList(tn, tnList);
                     }
                 }

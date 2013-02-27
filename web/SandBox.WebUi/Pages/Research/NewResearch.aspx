@@ -19,7 +19,7 @@
 </table>
 
 
-<div style="float:left; width:620px;">
+<div style="float:left; width:35%;">
     <div class="mainparams">Основные параметры исследования</div>
 <div id="mainprmcont">
 <table class='form'>
@@ -27,7 +27,7 @@
                 <tr>
                   <td style="width: 150px"><div class="table_text">Наименование исследования:</div></td>
                   <td>
-                       <dx:ASPxTextBox ID="tbLir" runat="server" Width="200px">
+                       <dx:ASPxTextBox ID="tbLir" runat="server" Width="200px" ValidationSettings-ErrorTextPosition="Bottom">
                          <ValidationSettings ValidationGroup="AddResearchValidationGroup">
 	                      <RequiredField ErrorText=" " IsRequired="true" />
 	                     </ValidationSettings>
@@ -41,7 +41,8 @@
                   <td>
                        <dx:ASPxComboBox ID="cbMachine" runat="server" Width="200px" 
                            LoadingPanelText="Загрузка&amp;hellip;">
-                        <ValidationSettings ValidationGroup="AddResearchValidationGroup">
+                        <ValidationSettings ValidationGroup="AddResearchValidationGroup" 
+                               ErrorTextPosition="Bottom">
 	                      <RequiredField ErrorText=" " IsRequired="true" />
 	                    </ValidationSettings>
                        </dx:ASPxComboBox>
@@ -64,7 +65,8 @@
                   <td>
                        <dx:ASPxComboBox ID="cbMalware" runat="server" Width="200px" 
                            LoadingPanelText="Загрузка&amp;hellip;">
-                       <ValidationSettings ValidationGroup="AddResearchValidationGroup">
+                       <ValidationSettings ValidationGroup="AddResearchValidationGroup" 
+                               ErrorTextPosition="Bottom">
 	                      <RequiredField ErrorText=" " IsRequired="true" />
 	                    </ValidationSettings>
                        </dx:ASPxComboBox>
@@ -75,7 +77,7 @@
                   <td>
                         <dx:ASPxSpinEdit ID="spinTime" runat="server" Height="21px" Number="0" 
                             Width="200px" MinValue = "1" MaxValue = "120">
-<ValidationSettings ErrorText="Неверное значение">
+<ValidationSettings ErrorText="Неверное значение" ErrorTextPosition="Bottom">
 <RegularExpression ErrorText="Ошибка проверки регулярного выражения"></RegularExpression>
 </ValidationSettings>
                         </dx:ASPxSpinEdit>
@@ -150,7 +152,7 @@
                             <dx:ListEditItem Text="Реестр" Value="Реестр" />
                             <dx:ListEditItem Text="Процессы" Value="Процессы" />
                         </Items>
-                        <ValidationSettings ErrorText="Неверное значение">
+                        <ValidationSettings ErrorText="Неверное значение" ErrorTextPosition="Bottom">
                             <RegularExpression ErrorText="Ошибка проверки регулярного выражения" />
                         </ValidationSettings>
                     </dx:ASPxComboBox>
@@ -205,7 +207,7 @@
 </table>  
 </div>
 </div>     
-<div style="float: left; padding-left: 30px;">
+<div style="float: left; padding-left: 30px; width:60%;">
     <div class="addparams">Дополнительные параметры исследования</div>
     <ajaxToolkit:Accordion ID="Accordion1" runat="server" HeaderCssClass="accordionHeader" HeaderSelectedCssClass="accordionHeaderSelected" ContentCssClass="accordionContent" CssClass="accordion" FadeTransitions="False">
     <Panes>  

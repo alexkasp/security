@@ -16,6 +16,16 @@ namespace SandBox.WebUi {
         string[] _vpoTopNames = new string[] { "", "", "", "", "" };
         int[] _vpoTopValues = new int[] { 0, 0, 0, 0, 0 };
 
+        private Dictionary<string, List<int>> _osTopDict = new Dictionary<string, List<int>>();
+
+        string[] _osTopNames = new string[] { "", "", "", "", "" };
+        int[] _osRschTopValues = new int[] { 0, 0, 0, 0, 0 };
+        int[] _osBadEventsRschTopValues = new int[] { 0, 0, 0, 0, 0 };
+
+        public string GetOs(int i)
+        {
+            return _osTopNames[i];
+        }
         protected void Page_Load(object sender, EventArgs e)
         {     
             if (!Page.User.Identity.IsAuthenticated)
@@ -55,10 +65,21 @@ namespace SandBox.WebUi {
                 _vpoTopValues[i] = v.Value;
                 i++;
             }
-            //string someScript = "";
+            _osTopDict = VmManager.GetOsChart();
+            i = 0;
+            foreach (var v in _osTopDict)
+            {
+                if (i == 5) break;
+                _osTopNames[i] = v.Key;
+                _osBadEventsRschTopValues[i] = v.Value[1];
+                _osRschTopValues[i] = v.Value[0];
+                i++;
+            }
+             //string someScript = "";
             string someScript2 = "";
-            //someScript = "<SCRIPT TYPE=\"text/javascript\">$(document).ready(function () { var r2 = new Raphael(\"chartOSuse\"); r2.hbarchart(0, 0, 130, 90, [[155, 55, 55, 32, 5]],{\"gutter\":\"30%\",\"colors\":[\"#ffffff\"],\"rtl\":true}).label([]);});  </SCRIPT>";
-            someScript2 = " <SCRIPT TYPE=\"text/javascript\">$(document).ready(function () { var r =  new Raphael(\"chartCountEv\"); r.hbarchart(0, 0, 147, 90, [[155, 55, 55, 32, 5]],{\"gutter\":\"30%\",\"colors\":[\"#ffffff\"]}).label([]);var r2 = new Raphael(\"chartOSuse\"); r2.hbarchart(0, 0, 130, 90, [[35, 85, 15, 2, 51]],{\"gutter\":\"30%\",\"colors\":[\"#ffffff\"],\"rtl\":true}).label([]);});var r3 = new Raphael(\"chartDanger\"); r3.hbarchart(0, 0, 152, 90, [[" + _vpoTopValues[0] + ", " + _vpoTopValues[1] + "," + _vpoTopValues[2] + ", " + _vpoTopValues[3] + ", " + _vpoTopValues[4] + "]], { \"gutter\": \"30%\", \"colors\": [\"#ffffff\"] }).label([\"" + _vpoTopNames[0] + "\", \"" + _vpoTopNames[1] + "\", \"" + _vpoTopNames[2] + "\", \"" + _vpoTopNames[3] + "\", \"" + _vpoTopNames[4] + "\"]);</SCRIPT>";
+            string someScript = "";
+            //someScript = "<SCRIPT TYPE=\"text/javascript\">$(document).ready(function () { var r2 = new Raphael(\"chartOSuse\"); r2.hbarchart(0, 0, 130, 90, [[" + _osRschTopValues[0] + ", " + _osRschTopValues[1] + ", " + _osRschTopValues[2] + ", " + _osRschTopValues[3] + ", " + _osRschTopValues[4] + "]],{\"gutter\":\"30%\",\"colors\":[\"#ffffff\"],\"rtl\":true}).label([]);});  </SCRIPT>";
+            someScript2 = " <SCRIPT TYPE=\"text/javascript\">$(document).ready(function () { var r =  new Raphael(\"chartCountEv\"); r.hbarchart(0, 0, 147, 90, [[" + _osBadEventsRschTopValues[0] + ", " + _osBadEventsRschTopValues[1] + ", " + _osBadEventsRschTopValues[2] + ", " + _osBadEventsRschTopValues[3] + ", " + _osBadEventsRschTopValues[4] + "]],{\"gutter\":\"30%\",\"colors\":[\"#ffffff\"]}).label([]);var r2 = new Raphael(\"chartOSuse\"); r2.hbarchart(0, 0, 130, 90, [[" + _osRschTopValues[0] + ", " + _osRschTopValues[1] + ", " + _osRschTopValues[2] + ", " + _osRschTopValues[3] + ", " + _osRschTopValues[4] + "]],{\"gutter\":\"30%\",\"colors\":[\"#ffffff\"],\"rtl\":true}).label([]);});var r3 = new Raphael(\"chartDanger\"); r3.hbarchart(0, 0, 152, 90, [[" + _vpoTopValues[0] + ", " + _vpoTopValues[1] + "," + _vpoTopValues[2] + ", " + _vpoTopValues[3] + ", " + _vpoTopValues[4] + "]], { \"gutter\": \"30%\", \"colors\": [\"#ffffff\"] }).label([\"" + _vpoTopNames[0] + "\", \"" + _vpoTopNames[1] + "\", \"" + _vpoTopNames[2] + "\", \"" + _vpoTopNames[3] + "\", \"" + _vpoTopNames[4] + "\"]);</SCRIPT>";
             //Page.ClientScript.RegisterStartupScript(this.GetType(), "onload", someScript);
             Page.ClientScript.RegisterStartupScript(this.GetType(), "onload", someScript2);
         }

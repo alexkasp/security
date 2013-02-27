@@ -10,13 +10,18 @@ using SandBox.Log;
 using SandBox.WebUi.Base;
 using System.Web.UI.WebControls;
 using DevExpress.Web.ASPxTreeList;
+using System.Drawing;
+using System.Collections.Generic;
 
 namespace SandBox.WebUi.Pages.Research
 {
     public partial class Comparer : BaseMainPage
     {
         int i = 0;
-        public Db.Research Rs;
+        public Db.Research Rs, EtalonRs;
+        public Db.Research etalonRsch = null;
+        CompareTrees ct = new CompareTrees();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             base.Page_Load(sender, e);
@@ -24,19 +29,17 @@ namespace SandBox.WebUi.Pages.Research
             PageMenu = "~/App_Data/SideMenu/Research/ResearchMenu.xml";
             Int32 researchId = Convert.ToInt32(Request.QueryString["research"]);
             Rs = ResearchManager.GetResearch(researchId);
-            if (TreeView1.Nodes.Count > 0)
-            {
-                ASPxTreeList1.Columns.Clear();
-                ASPxTreeList1.ClearNodes();
-                ASPxTreeList1.Columns.Add(new DevExpress.Web.ASPxTreeList.TreeListDataColumn("KeyName", "Имя ключя"));
-                ASPxTreeList1.Columns.Add(new DevExpress.Web.ASPxTreeList.TreeListDataColumn("IsNodeInRsch", Rs.ResearchName));
-                ASPxTreeList1.Columns.Add(new DevExpress.Web.ASPxTreeList.TreeListDataColumn("IsMoneInCompared", ASPxComboBox1.SelectedItem.Text));
-                ConvertTreeViewToTreeList(TreeView1.Nodes[0], null);
-            }
+            var etalonRsch = ResearchManager.GetEtalonRsch(researchId);
+            UpdateTreeView(true);
             if (Rs == null)
             {
                 Response.Redirect("~/Error");
             }
+            if (etalonRsch == null)
+            {
+                lEtalonEx.Text = "Эталонного ислледования не найдено";
+            }
+
              if (!IsPostBack)
              {
                  
@@ -54,103 +57,255 @@ namespace SandBox.WebUi.Pages.Research
                  siPrice.ShowInColumn = "KeyName";
                  ASPxTreeList1.Summary.Add(siPrice);
              }
-             LHeader.Text = String.Format("Исследлвание (№{0}): {1}", Rs.Id, Rs.ResearchName);
+             //LHeader.Text = String.Format("Исследлвание (№{0}): {1}", Rs.Id, Rs.ResearchName);
 
         }
 
         protected void ASPxButton1_Click(object sender, EventArgs e)
         {
-            ASPxTreeList1.Columns.Clear();
-            
-            //tl.Columns[0].Caption = "Customer";
+            //if (etalonRsch == null)
+            //{
+            //    ASPxTreeList1.Columns.Clear();
 
-            TreeView1.Nodes.Clear();
-            int rschId;
-            if (ASPxComboBox1.SelectedItem.Text != "")
-            {
-                //ASPxTreeList1.BeginUpdate();
-                //ASPxTreeList1.Columns.Add();
-                //tl.Columns[0].Caption = "Customer";
-                //tl.Columns[0].VisibleIndex = 0;
-                //tl.Columns.Add();
-                //tl.Columns[1].Caption = "Location";
-                //tl.Columns[1].VisibleIndex = 1;
-                //tl.Columns.Add();
-                //tl.Columns[2].Caption = "Phone";
-                //tl.Columns[2].VisibleIndex = 2;
-                //tl.EndUpdate();
+            //    //tl.Columns[0].Caption = "Customer";
 
-                ASPxTreeList1.Columns.Add(new DevExpress.Web.ASPxTreeList.TreeListDataColumn("KeyName", "Имя ключя"));
-                ASPxTreeList1.Columns.Add(new DevExpress.Web.ASPxTreeList.TreeListDataColumn("IsNodeInRsch", Rs.ResearchName));
-                ASPxTreeList1.Columns.Add(new DevExpress.Web.ASPxTreeList.TreeListDataColumn("IsMoneInCompared", ASPxComboBox1.SelectedItem.Text));
-                //var r = CreateNodeCore( "test root","1", "2", null);
-                //CreateNodeCore("child", "2", "1", r);
-                //CreateNodeCore("test root2", "3", "3", null);
+            //    TreeView1.Nodes.Clear();
+            //    int rschId;
+            //    if (ASPxComboBox1.SelectedItem.Text != "")
+            //    {
+            //        ASPxTreeList1.Columns.Add(new DevExpress.Web.ASPxTreeList.TreeListDataColumn("KeyName", "Имя ключя"));
+            //        ASPxTreeList1.Columns.Add(new DevExpress.Web.ASPxTreeList.TreeListDataColumn("IsNodeInRsch", Rs.ResearchName));
+            //        ASPxTreeList1.Columns.Add(new DevExpress.Web.ASPxTreeList.TreeListDataColumn("IsNodeInCompared", ASPxComboBox1.SelectedItem.Text));
+            //    }
+            //    Int32.TryParse((string)ASPxComboBox1.SelectedItem.Value, out rschId);
+            //    CompareTrees ct = new CompareTrees();
+            //    try
+            //    {
+            //        ASPxTreeList1.ClearNodes();
+            //        var nodes = ct.GetRschTree(Rs.Id, rschId);
+            //        for (int i = 0; i < nodes.Nodes.Count; i++) //TreeNode tn in nodes.Nodes)
+            //            TreeView1.Nodes.Add(nodes.Nodes[i]);
+            //        //TreeView1.Nodes[0].Text = "Сравнение ветвей реестра";
+            //        List<TreeNode> res = new List<TreeNode>();
+            //        ct.GetNodesList(nodes.Nodes[0], res);
+            //        List<string> pathList = new List<string>();
+            //        foreach (TreeNode tn in res)
+            //        {
+            //            string path = String.Empty;
+            //            ct.GetFullPathForNode(tn, ref path, true);
+            //            pathList.Add(path);
+            //        }
+
+            //        ConvertTreeViewToTreeList(pathList, TreeView1.Nodes[0], null, ct);
+            //        ASPxTreeList1.ExpandAll();
+            //    }
+            //    catch
+            //    {
+            //        TreeView1.Nodes.Add(new TreeNode("Нет этементов для сравнения"));
+            //    }
+            //}
+            //else
+            //{
                 
-                
-                //ASPxTreeList1.AppendNode(1,new { IsNodeInRsch = "1", IsMoneInCompared = "2" }, null);
-                //ASPxLabel3.Text = ASPxComboBox1.SelectedItem.Text;
-                //LComparePie.Text = ASPxComboBox1.SelectedItem.Text;
-            }
-            //rschId = (int)ASPxComboBox1.SelectedItem.Value;
-            Int32.TryParse((string)ASPxComboBox1.SelectedItem.Value, out rschId);
-            CompareTrees ct = new CompareTrees();
-            try
+            //}
+        }
+
+
+        private void UpdateTreeView(bool testMode = false)
+        {
+            #region testing
+
+
+            #endregion
+
+            if (etalonRsch == null&&!testMode)
             {
-                ASPxTreeList1.ClearNodes();
-                var nodes = ct.GetRschTree(Rs.Id, rschId);
-                for (int i = 0; i < nodes.Nodes.Count; i++) //TreeNode tn in nodes.Nodes)
-                    TreeView1.Nodes.Add(nodes.Nodes[i]);
-               TreeView1.Nodes[0].Text = "Сравнение ветвей реестра";
-               ConvertTreeViewToTreeList(TreeView1.Nodes[0], null);
-               ASPxTreeList1.ExpandAll();
+               
+                if (ASPxComboBox1.SelectedItem.Text != "")
+                {
+                    #region
+                    TreeView1.Nodes.Clear();
+                    int rschId;
+
+                    ASPxTreeList1.Columns.Clear();
+                    ASPxTreeList1.Columns.Add(new DevExpress.Web.ASPxTreeList.TreeListDataColumn("KeyName", "Имя ключя"));
+                    ASPxTreeList1.Columns.Add(new DevExpress.Web.ASPxTreeList.TreeListDataColumn("IsNodeInRsch", Rs.ResearchName));
+                    ASPxTreeList1.Columns.Add(new DevExpress.Web.ASPxTreeList.TreeListDataColumn("IsNodeInCompared", ASPxComboBox1.SelectedItem.Text));
+                   
+                    
+                    ct._rschFullPathesDict.Clear();
+                    try
+                    {
+
+                        ASPxTreeList1.ClearNodes();
+                        Int32.TryParse((string)ASPxComboBox1.SelectedItem.Value, out rschId);
+                        var nodes = ct.GetRschTree(Rs.Id, rschId);
+                        for (int i = 0; i < nodes.Nodes.Count; i++) //TreeNode tn in nodes.Nodes)
+                            TreeView1.Nodes.Add(nodes.Nodes[i]);
+
+                        List<TreeNode> res = new List<TreeNode>();
+                        ct.GetNodesList(nodes.Nodes[0], res);
+                        List<string> pathList = new List<string>();
+                        foreach (TreeNode tn in res)
+                        {
+                            string path = String.Empty;
+                            ct.GetFullPathForNode(tn, ref path, true);
+                            pathList.Add(path);
+                        }
+
+                        ConvertTreeViewToTreeList(pathList,TreeView1.Nodes[0], null, ct);
+                        ASPxTreeList1.ExpandAll();
+                    }
+                    catch
+                    {
+                        TreeView1.Nodes.Add(new TreeNode("Нет этементов для сравнения"));
+                    }
+                    #endregion
+                }
+               
             }
-            catch
+            else
             {
-                TreeView1.Nodes.Add(new TreeNode("Нет этементов для сравнения"));
+                if (/*ASPxComboBox1.SelectedItem.Text == "" &&*/ !testMode)
+                {
+                    #region
+                    ct._rschFullPathesDict.Clear();
+                    TreeView1.Nodes.Clear();
+                    int rschId = etalonRsch.Id;
+
+                    ASPxTreeList1.Columns.Clear();
+                    ASPxTreeList1.Columns.Add(new DevExpress.Web.ASPxTreeList.TreeListDataColumn("KeyName", "Имя ключя"));
+                    ASPxTreeList1.Columns.Add(new DevExpress.Web.ASPxTreeList.TreeListDataColumn("IsNodeInRsch", Rs.ResearchName));
+                    ASPxTreeList1.Columns.Add(new DevExpress.Web.ASPxTreeList.TreeListDataColumn("IsNodeInCompared", ASPxComboBox1.SelectedItem.Text));
+
+                    try
+                    {
+                        ASPxTreeList1.ClearNodes();
+                        var nodes = ct.GetRschTree(Rs.Id, rschId);
+                        for (int i = 0; i < nodes.Nodes.Count; i++) //TreeNode tn in nodes.Nodes)
+                            TreeView1.Nodes.Add(nodes.Nodes[i]);
+                        //TreeView1.Nodes[0].Text = "Сравнение ветвей реестра";
+
+                        List<TreeNode> res = new List<TreeNode>();
+                        ct.GetNodesList(nodes.Nodes[0], res);
+                        List<string> pathList = new List<string>();
+                        foreach (TreeNode tn in res)
+                        {
+                            string path = String.Empty;
+                            ct.GetFullPathForNode(tn, ref path, true);
+                            pathList.Add(path);
+                        }
+
+                        ConvertTreeViewToTreeList(pathList, TreeView1.Nodes[0], null, ct);
+                        ASPxTreeList1.ExpandAll();
+                    }
+                    catch
+                    {
+                        TreeView1.Nodes.Add(new TreeNode("Нет этементов для сравнения"));
+                    }
+                    #endregion
+                }
+                else
+                { 
+                    
+                    #region
+                    ct._rschFullPathesDict.Clear();
+              
+                    TreeView1.Nodes.Clear();
+                    int rschId;
+                    if (!testMode)
+                        rschId = etalonRsch.Id;
+                    else
+                    {
+                        rschId = 105;
+                        Rs = ResearchManager.GetResearch(104);
+                        etalonRsch = ResearchManager.GetResearch(105);
+
+                    }
+                    ASPxTreeList1.Columns.Clear();
+                    ASPxTreeList1.Columns.Add(new DevExpress.Web.ASPxTreeList.TreeListDataColumn("KeyName", "Имя ключя"));
+                    ASPxTreeList1.Columns.Add(new DevExpress.Web.ASPxTreeList.TreeListDataColumn(Rs.ResearchName, Rs.ResearchName));
+                    ASPxTreeList1.Columns.Add(new DevExpress.Web.ASPxTreeList.TreeListDataColumn(etalonRsch.ResearchName, etalonRsch.ResearchName));
+
+                    try
+                    {
+                        ASPxTreeList1.ClearNodes();
+                        var nodes = ct.GetRschTree(Rs.Id, etalonRsch.Id);
+                        for (int i = 0; i < nodes.Nodes.Count; i++) //TreeNode tn in nodes.Nodes)
+                            TreeView1.Nodes.Add(nodes.Nodes[i]);
+
+                        if (!testMode) Int32.TryParse((string)ASPxComboBox1.SelectedItem.Value, out rschId);
+                        else rschId = 105;
+                        ct.AddRschToTreeView(nodes, ResearchManager.GetResearch(rschId));
+                        ASPxTreeList1.Columns.Add(new DevExpress.Web.ASPxTreeList.TreeListDataColumn( ResearchManager.GetResearch(rschId).ResearchName, ResearchManager.GetResearch(rschId).ResearchName));
+
+                        List<TreeNode> res = new List<TreeNode>();
+                        ct.GetNodesList(nodes.Nodes[0], res);
+                        List<string> pathList = new List<string>();
+                        foreach (TreeNode tn in res)
+                        {
+                            string path = String.Empty;
+                            ct.GetFullPathForNode(tn, ref path, true);
+                            pathList.Add(path);
+                        }
+
+                        ConvertTreeViewToTreeList(pathList, nodes.Nodes[0], null, ct);
+
+                        ASPxTreeList1.ExpandAll();
+                    }
+                    catch
+                    {
+                        TreeView1.Nodes.Add(new TreeNode("Нет этементов для сравнения"));
+                    }
+                    #endregion
+                }
+
             }
         }
-        TreeListNode CreateNodeCore(string keyName, string text, string text1, TreeListNode parentNode)
+
+        TreeListNode CreateNodeCore(List<string> treeFullPathes, TreeNode tvn, TreeListNode tln, CompareTrees ctt)
         {
             i++;
-            TreeListNode node = ASPxTreeList1.AppendNode(i, parentNode);
-            node["KeyName"] = keyName;
-            node["IsNodeInRsch"] = text;
-            node["IsMoneInCompared"] = text1;
+            TreeListNode node = ASPxTreeList1.AppendNode(i, tln);
+            node["KeyName"] = tvn.Text;
+            foreach (var key in ct._rschFullPathesDict.Keys)
+            {
+                string test = key.ResearchName;
+                string nodeFullPath=String.Empty;
+                ct.GetFullPathForNode(tvn, ref nodeFullPath);
+                if(ct._rschFullPathesDict[key].Contains(nodeFullPath))
+                    node[test] = "+";
+                else
+                    node[test] = "-";
+            }
             return node;
         }
 
-        void ConvertTreeViewToTreeList(TreeNode tvn, TreeListNode tln)
+        void ConvertTreeViewToTreeList(List<string> treeFullPathes, TreeNode tvn, TreeListNode tln, CompareTrees ctt)
         {
-            string fc = string.Empty;
-            string sc = string.Empty;
-            if(tvn.Text.Contains("1(+)"))
-            {
-                fc = "+";
-            }
-            if (tvn.Text.Contains("1(-)"))
-            {
-                fc = "-";
-            }
-            if (tvn.Text.Contains("2(+)"))
-            {
-                sc = "+";
-            }
-            if (tvn.Text.Contains("2(-)"))
-            {
-                sc = "-";
-            }
-
-            var ttln = CreateNodeCore(tvn.Text, fc, sc,tln);
+            var ttln = CreateNodeCore(treeFullPathes, tvn, tln,ct);
             if (tvn.ChildNodes != null) //дочерние элементы есть
             {
                 foreach (TreeNode childNode in tvn.ChildNodes) //не зацикливаеться ли от родителя к 1 ребенку и обратно?
                 {
                     tln = ttln;
                     tvn = childNode; //посетить ребенка
-                    ConvertTreeViewToTreeList(tvn, tln);
+                    ConvertTreeViewToTreeList(treeFullPathes, tvn, tln, ct);
                 }
 
+            }
+        }
+
+        protected void ASPxTreeList1_HtmlDataCellPrepared(object sender, TreeListHtmlDataCellEventArgs e)
+        {
+            string value = (string)e.CellValue;
+            if (value == "+")
+            {
+                e.Cell.BackColor = Color.Green;
+            }
+            if (value == "-")
+            {
+                e.Cell.BackColor = Color.Red;
             }
         }
     }

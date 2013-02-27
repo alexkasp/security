@@ -45,6 +45,7 @@
     <Type Name="VmSystem">
       <Column Name="System" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortDest" Type="System.String" DbType="VarChar(50)" CanBeNull="false" />
       <Association Name="Vm_VmSystem" Member="Vm" ThisKey="System" OtherKey="System" Type="Vm" IsForeignKey="true" />
     </Type>
   </Table>
@@ -503,6 +504,14 @@
       <Column Name="adddata1" Type="System.String" DbType="NChar(250)" CanBeNull="true" />
       <Column Name="adddata2" Type="System.String" DbType="NChar(250)" CanBeNull="true" />
       <Column Name="timeofevent" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vpotop5" Member="vpotop5s">
+    <Type Name="vpotop5">
+      <Column Name="name" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="danger" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

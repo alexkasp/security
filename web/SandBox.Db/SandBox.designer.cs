@@ -580,6 +580,14 @@ namespace SandBox.Db
 			}
 		}
 		
+		public System.Data.Linq.Table<vpotoos> vpotoos
+		{
+			get
+			{
+				return this.GetTable<vpotoos>();
+			}
+		}
+		
 		public System.Data.Linq.Table<EventsTableView> EventsTableViews
 		{
 			get
@@ -587,11 +595,12 @@ namespace SandBox.Db
 				return this.GetTable<EventsTableView>();
 			}
 		}
-		public System.Data.Linq.Table<vpotoos> vpotoos
+		
+		public System.Data.Linq.Table<vpotop5> vpotop5s
 		{
 			get
 			{
-				return this.GetTable<vpotoos>();
+				return this.GetTable<vpotop5>();
 			}
 		}
 	}
@@ -1312,6 +1321,8 @@ namespace SandBox.Db
 		
 		private string _Description;
 		
+		private string _ShortDest;
+		
 		private EntityRef<Vm> _Vm;
 		
     #region Extensibility Method Definitions
@@ -1322,6 +1333,8 @@ namespace SandBox.Db
     partial void OnSystemChanged();
     partial void OnDescriptionChanging(string value);
     partial void OnDescriptionChanged();
+    partial void OnShortDestChanging(string value);
+    partial void OnShortDestChanged();
     #endregion
 		
 		public VmSystem()
@@ -1370,6 +1383,26 @@ namespace SandBox.Db
 					this._Description = value;
 					this.SendPropertyChanged("Description");
 					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShortDest", DbType="VarChar(50)", CanBeNull=false)]
+		public string ShortDest
+		{
+			get
+			{
+				return this._ShortDest;
+			}
+			set
+			{
+				if ((this._ShortDest != value))
+				{
+					this.OnShortDestChanging(value);
+					this.SendPropertyChanging();
+					this._ShortDest = value;
+					this.SendPropertyChanged("ShortDest");
+					this.OnShortDestChanged();
 				}
 			}
 		}
@@ -8445,6 +8478,7 @@ namespace SandBox.Db
 			}
 		}
 	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.EventsTableView")]
 	public partial class EventsTableView
 	{
@@ -8665,6 +8699,87 @@ namespace SandBox.Db
 				if ((this._timeofevent != value))
 				{
 					this._timeofevent = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vpotop5")]
+	public partial class vpotop5
+	{
+		
+		private string _name;
+		
+		private System.Nullable<int> _count;
+		
+		private System.Nullable<int> _danger;
+		
+		private long _Id;
+		
+		public vpotop5()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NChar(50)")]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this._name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_count", DbType="Int")]
+		public System.Nullable<int> count
+		{
+			get
+			{
+				return this._count;
+			}
+			set
+			{
+				if ((this._count != value))
+				{
+					this._count = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_danger", DbType="Int")]
+		public System.Nullable<int> danger
+		{
+			get
+			{
+				return this._danger;
+			}
+			set
+			{
+				if ((this._danger != value))
+				{
+					this._danger = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.Always, DbType="BigInt NOT NULL IDENTITY", IsDbGenerated=true)]
+		public long Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
 				}
 			}
 		}
